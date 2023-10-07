@@ -1,9 +1,9 @@
 import { MDBFooter } from "mdb-react-ui-kit";
 import logotype from "../../assets/logotype.png";
-import instagramicon from "../../assets/instagramicon.png";
-import facebookicon from "../../assets/facebookicon.png";
-import tiktokicon from "../../assets/tiktokicon.png";
-import twittericon from "../../assets/twittericon.png";
+import instagram from "../../assets/icons/instagram.png";
+import facebook from "../../assets/icons/facebook.png";
+import tiktok from "../../assets/icons/tiktok.png";
+import twitter from "../../assets/icons/twitter.png";
 
 function Footer() {
     return (
@@ -22,10 +22,10 @@ function Footer() {
                 />
             </section>
             <section>
-                <img src={instagramicon} alt="Instagram icon" />
-                <img src={facebookicon} alt="Facebook icon" />
-                <img src={twittericon} alt="Twitter icon" />
-                <img src={tiktokicon} alt="Tik tok icon" />
+                <img src={instagram} alt="Instagram icon" />
+                <img src={facebook} alt="Facebook icon" />
+                <img src={twitter} alt="Twitter icon" />
+                <img src={tiktok} alt="Tik tok icon" />
             </section>
             <div className="text-center p-3">
                 © 2023 Copyright:

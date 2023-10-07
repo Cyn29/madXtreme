@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import logotype from "../../assets/logotype.png";
-import loginicon from "../../assets/loginicon.png";
+import login from "../../assets/icons/login.png";
 
 function Header() {
     return (
@@ -18,7 +18,7 @@ function Header() {
                         <Nav.Link href="#nosotros">Nosotros</Nav.Link>
                         <Nav.Link href="#contacto">Contacto</Nav.Link>
                     </Nav>
-                    <Nav.Link href="#login"><Image className="d-none d-sm-none d-md-block" height="70rem" src={loginicon} alt="Login icon"/></Nav.Link>
+                    <Nav.Link href="#login"><Image className="d-none d-sm-none d-md-block" height="70rem" src={login} alt="Login icon"/></Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

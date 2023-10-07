@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Cards from './components/Cards/Cards.jsx'
-import climbing from './assets/climbingphoto.jpg'
-import hiking  from './assets/hiking.png'
-import mtb from './assets/mtb.jpg'
-import canyoning from './assets/canyoning.jpg'
+import climbing from './assets/cards/climbing.jpg'
+import hiking  from './assets/cards/hiking.png'
+import mtb from './assets/cards/mtb.jpg'
+import kayak from './assets/cards/kayak.jpg'
 import CarouselComponent from './components/Carousel/Carousel.jsx'
 
 function App() {
@@ -35,8 +35,8 @@ function App() {
       opinions={"4.7/5  20 opiniones"}
       />
       <Cards
-      cardImage={canyoning}
-      title={"Barranquismo en río natural con los mejores paisajes."}
+      cardImage={kayak}
+      title={"Kayak en río natural con los mejores paisajes."}
       price={"60 €"}
       button={"Ver más"}
       opinions={"4.9/5  10 opiniones"}

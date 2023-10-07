@@ -2,14 +2,14 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
-import logotype from "../../assets/logotype.png"
+import logotype from "../../assets/logotype.png";
 import loginicon from "../../assets/loginicon.png";
 
 function Header() {
     return (
-        <Navbar expand="lg" sticky="top" className="bg-white">
+        <Navbar sticky="top" className="bg-white" expand="md" collapseOnSelect>
             <Container>
-                <Navbar.Brand href="#home"><Image src={logotype} alt="Image of logotype" fluid/></Navbar.Brand>
+                <Navbar.Brand href="#home"><Image src={logotype} width="65%" height="20%" alt="Image of logotype" fluid/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">

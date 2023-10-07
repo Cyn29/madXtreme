@@ -6,11 +6,13 @@ import climbing from './assets/climbingphoto.jpg'
 import hiking  from './assets/hiking.png'
 import mtb from './assets/mtb.jpg'
 import canyoning from './assets/canyoning.jpg'
+import CarouselComponent from './components/Carousel/Carousel.jsx'
 
 function App() {
   return (
     <>
       <Header />
+      <CarouselComponent/>
       <Cards
       cardImage={climbing}
       title={"Escalada en rocas naturales en un paisaje ídilico."}

@@ -16,7 +16,7 @@ function Footer() {
             <section width="100%">
                 <img
                     className="mt-4"
-                    width="10%"
+                    width="25%"
                     src={logotype}
                     alt="Image of logotype"
                 />

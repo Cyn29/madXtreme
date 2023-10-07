@@ -11,7 +11,7 @@ function Footer() {
             <section
                 style={{ backgroundColor: "#D10505", height: 90 }}
                 className="text-white d-flex justify-content-center align-items-center">
-                <h2>Disfruta de las mejores rutas MTB</h2>
+                <h3>Tus deportes de aventura en Madrid</h3>
             </section>
             <section width="100%">
                 <img

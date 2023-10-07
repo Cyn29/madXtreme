@@ -11,7 +11,7 @@ function Header() {
             <Container>
                 <Navbar.Brand href="#home"><Image src={logotype} alt="Image of logotype" fluid/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto" style={{ marginBottom: "7rem" }}>
+                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">
                         <Nav.Link href="#home">Inicio</Nav.Link>
                         <Nav.Link href="#actividades">Actividades</Nav.Link>

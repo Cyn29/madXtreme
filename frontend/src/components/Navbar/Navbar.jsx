@@ -7,9 +7,9 @@ import loginicon from "../../assets/loginicon.png";
 
 function Header() {
     return (
-        <Navbar expand="lg" sticky="top" className="bg-white">
+        <Navbar sticky="top" className="bg-white">
             <Container>
-                <Navbar.Brand href="#home"><Image src={logotype} alt="Image of logotype" fluid/></Navbar.Brand>
+                <Navbar href="#home"><Image src={logotype} width="70%" height="70%" alt="Image of logotype" fluid/></Navbar>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto" style={{ marginBottom: "7rem" }}>
                     <Nav className="fw-bold">

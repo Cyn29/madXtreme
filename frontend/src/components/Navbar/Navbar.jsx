@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
-import logotype from "../../assets/logotype.png";
+import logotype from "../../assets/logotype.png"
 import login from "../../assets/icons/login.png";
 
 function Header() {

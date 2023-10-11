@@ -14,7 +14,7 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">
                         <Nav.Link to="/">Inicio</Nav.Link>
-                        <Nav.Link to="/sports">Deportes</Nav.Link>
+                        <Nav.Link to="/Activities">Actividades</Nav.Link>
                         <Nav.Link to="/aboutUs">Nosotros</Nav.Link>
                         <Nav.Link to="/contact">Contacto</Nav.Link>
                     </Nav>

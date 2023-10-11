@@ -13,12 +13,12 @@ function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">
-                        <Nav.Link href="#home">Inicio</Nav.Link>
-                        <Nav.Link href="#actividades">Actividades</Nav.Link>
-                        <Nav.Link href="#nosotros">Nosotros</Nav.Link>
-                        <Nav.Link href="#contacto">Contacto</Nav.Link>
+                        <Nav.Link to="/">Inicio</Nav.Link>
+                        <Nav.Link to="/sports">Deportes</Nav.Link>
+                        <Nav.Link to="/aboutUs">Nosotros</Nav.Link>
+                        <Nav.Link to="/contact">Contacto</Nav.Link>
                     </Nav>
-                    <Nav.Link href="#login"><Image className="d-none d-sm-none d-md-block" height="70rem" src={login} alt="Login icon"/></Nav.Link>
+                    <Nav.Link to="/login"><Image className="d-none d-sm-none d-md-block" height="70rem" src={login} alt="Login icon"/></Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
@@ -26,3 +26,5 @@ function Header() {
 }
 
 export default Header
+
+

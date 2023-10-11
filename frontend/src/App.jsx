@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Header from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import Cards from './components/Cards/Cards.jsx'
 import climbing from './assets/cards/climbing.jpg'
@@ -11,7 +10,6 @@ import CarouselComponent from './components/Carousel/Carousel.jsx'
 function App() {
   return (
     <>
-      <Header />
       <CarouselComponent/>
       <Cards
       cardImage={climbing}
@@ -20,7 +18,7 @@ function App() {
       button={"Ver más"}
       opinions={"4.5/5  15 opiniones"}
       />
-       <Cards
+      <Cards
       cardImage={hiking}
       title={"Rutas de senderismo en la sierra de Madrid."}
       price={"75 €"}

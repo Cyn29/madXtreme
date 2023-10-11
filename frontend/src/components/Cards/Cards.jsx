@@ -9,7 +9,7 @@ function Cards({ cardImage, title, price, button, opinions }) {
                 className="mb-5"
                 style={{
                     width: "20rem",
-                    marginLeft: "3rem",
+                    margin: ".5rem",
                     borderBottom: "#D10505 0.5rem solid ",
                 }}>
                 <Card.Img variant="top" src={cardImage} />

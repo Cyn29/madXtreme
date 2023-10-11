@@ -24,7 +24,7 @@ function Login() {
                     </Form.Group>
                 </Col>
             </Row>
-             <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-2">
                 <Col xs={12} md={6} lg={4} className="text-center">
                     <Button variant="primary" className="Button1" style={{ width: 130, height: 36, background: '#D10505', borderRadius: 50, color: 'white' }}>
                         Acceder

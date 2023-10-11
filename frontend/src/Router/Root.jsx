@@ -2,30 +2,20 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-function ConditionalHeaderAndFooter() {
+function Root() {
     const location = useLocation();
-    const showHeaderAndFooter = location.pathname !== "/login";
 
-    if (showHeaderAndFooter) {
+    if (location.pathname === "/login") {
+        return <Outlet />;
+    } else {
         return (
             <>
                 <Header />
-                <Outlet/>
+                <Outlet />
                 <Footer />
             </>
         );
     }
-
-    return null;
-}
-
-function Root() {
-    return (
-        <>
-            <ConditionalHeaderAndFooter />
-            <Outlet />
-        </>
-    );
 }
 
 export default Root;

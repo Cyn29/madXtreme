@@ -2,11 +2,10 @@ import {
     MDBRow,
     MDBCol,
     MDBInput,
-    MDBTextArea,
-    MDBBtn,
+    MDBTextArea
 } from "mdb-react-ui-kit";
 
-export default function App() {
+function Contact() {
     return (
         <section className="text-center m-5">
             <h2 className="mb-5">¡Contáctanos!</h2>
@@ -96,3 +95,5 @@ export default function App() {
         </section>
     );
 }
+
+export default Contact;

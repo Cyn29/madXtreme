@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Footer from './components/Footer/Footer.jsx'
 import Cards from './components/Cards/Cards.jsx'
 import climbing from './assets/cards/climbing.jpg'
 import hiking  from './assets/cards/hiking.png'
@@ -39,8 +38,6 @@ function App() {
       button={"Ver más"}
       opinions={"4.9/5  10 opiniones"}
       />
-      
-      <Footer />
       
     </>
   )

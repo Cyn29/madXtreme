@@ -15,6 +15,6 @@ app.use(session({
     saveUninitialized: true
 }))
 
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 3000 //default port 3000
 app.listen(PORT, () =>
 console.log(`listening port ${PORT}`))

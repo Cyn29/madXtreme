@@ -5,8 +5,6 @@ import bcryptjs from 'bcryptjs'
 import session from 'express-session'
 import connection from './database/db.js';
 
-dotenv.config()
-
 const app = express()
 app.disable('x-powered-by')
 app.use(json())
@@ -16,7 +14,6 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
-
 
 const PORT = process.env.PORT ?? 3000
 app.listen(PORT, () =>

@@ -1,4 +1,7 @@
 import mysql from 'mysql2'
+import dotenv from 'dotenv'
+
+dotenv.config({path: './.env'})
 
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -6,14 +9,6 @@ const connection = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE
 })
-
-console.log('Cargando archivo .env...');
-console.log('Variables de entorno cargadas:');
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
-console.log('DB_DATABASE:', process.env.DB_DATABASE);
-
 
 connection.connect((error)=>{
     if(error){

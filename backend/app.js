@@ -5,7 +5,7 @@ import bcryptjs from 'bcryptjs'
 import session from 'express-session'
 import connection from './database/db.js';
 
-dotenv.config({path: './env/.env'})
+dotenv.config()
 
 const app = express()
 app.disable('x-powered-by')

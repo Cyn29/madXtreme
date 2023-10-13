@@ -33,7 +33,7 @@ function AboutUs() {
         {
             name: "Jaime",
             role: "El rey en la montaña",
-            image: "ruta-a-la-imagen-de-jaime.jpg",
+            image: "../assets/aboutUs/JaimeThekingInTheMountain.png",
             description:
                 "Jaime, el maestro de la escalada, el boulder y el MTB enduro, es un mago en las rocas y los bosques. Cada ascenso y descenso es un desafío que Jaime conquista con maestría y pasión.",
         },

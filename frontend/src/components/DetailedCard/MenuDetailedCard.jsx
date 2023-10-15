@@ -2,29 +2,29 @@ import Nav from 'react-bootstrap/Nav';
 
 function MenuDetailedCard() {
     return (
-        <Nav className="justify-content-around align-items-center" activeKey="/home">
+        <Nav className="justify-content-around align-items-center mt-2 mb-5" activeKey="/home">
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/Description" disabled>Descripción</Nav.Link>
+                <Nav.Link href="/activity/Description" disabled>Descripción</Nav.Link>
             </Nav.Item>
               |  
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/Price">Precio</Nav.Link>
+                <Nav.Link href="/activity/Price">Precio</Nav.Link>
             </Nav.Item>
               |  
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/Details">Detalles</Nav.Link>
+                <Nav.Link href="/activity/Details">Detalles</Nav.Link>
             </Nav.Item>
               |  
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/Opinions">Opiniones</Nav.Link>
+                <Nav.Link href="/activity/Opinions">Opiniones</Nav.Link>
             </Nav.Item>
               |  
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/MeetingPoint">Punto de encuentro</Nav.Link>
+                <Nav.Link href="/activity/MeetingPoint">Punto de encuentro</Nav.Link>
             </Nav.Item>
               |  
             <Nav.Item>
-                <Nav.Link href="/DetailsCard/Group">Grupo</Nav.Link>
+                <Nav.Link href="/activity/Group">Grupo</Nav.Link>
             </Nav.Item>
         </Nav>
     );

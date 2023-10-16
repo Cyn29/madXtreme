@@ -1,9 +1,12 @@
 import UserModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { Sequelize } from "sequelize";
 
 export const postRegistration = async (req, res) => {
     const { email, user_password } = req.body;
+    const uuid = Sequelize.fn("uuid");
+    const binaryUuid = Sequelize.fn("UUID_TO_BIN", uuid);
     const alreadyExistsUser = await UserModel.findOne({
         where: { email },
     }).catch((err) => {
@@ -19,6 +22,7 @@ export const postRegistration = async (req, res) => {
     const hashedPassword = await bcrypt.hash(user_password, 10);
 
     const newUser = await UserModel.create({
+        id: binaryUuid,
         email,
         user_password: hashedPassword,
     });
@@ -45,7 +49,7 @@ export const postLogin = async (req, res) => {
     );
 
     if (!match) {
-        return res.status(401).json({ message: "Contraseña incorrecta." });
+        return res.status(401).json({ message: "Email or password does not match!" });
     }
 
     const jwtToken = jwt.sign(

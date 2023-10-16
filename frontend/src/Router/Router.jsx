@@ -12,6 +12,7 @@ import cynthia from "../assets/team/cynthia.png";
 import ainhoa from "../assets/team/ainhoa.png"
 import jaime from "../assets/team/jaime.png";
 import raul from "../assets/team/raul.png";
+import Register from '../pages/register/Register';
 
 const router = createBrowserRouter([
     {
@@ -108,6 +109,11 @@ const router = createBrowserRouter([
                 path: "/contact",
                 element: <Contact />,
             },
+            {
+                path: "/register",
+                element: <Register />,
+            },
+            
         ],
     },
 ]);

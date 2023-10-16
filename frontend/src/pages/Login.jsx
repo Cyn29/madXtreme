@@ -1,5 +1,7 @@
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
 import logotype from '../assets/logotype.png'
+import { Link } from 'react-router-dom';
+
 function Login() {
     return (
         <Container className="Group12" style={{marginTop: "9rem"}}>
@@ -38,7 +40,7 @@ function Login() {
             </Row>
             <Row className="justify-content-center mb-5">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                    <Button variant="link" style={{color: "black"}}>Regístrate</Button>
+                <Button as={Link} to="/register" variant="link" style={{color: "black"}}>Regístrate</Button>
                 </Col>
             </Row>
         </Container>

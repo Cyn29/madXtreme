@@ -1,24 +1,18 @@
-import { v4 as uuidv4 } from 'uuid';
-import createPool from '../database/db.js';
+import db from '../database/db.js'
+import { DataTypes, Sequelize } from 'sequelize';
 
-class UserModel {
-    static async getUsers() {
-        try {
-            const pool = createPool();
-            const [rows] = await pool.query("SELECT * FROM users");
-            const usersWithUUID = rows.map(user => {
-                return {
-                    ...user,
-                    id: user.id ? uuidv4({ slug: Buffer.from(user.id).toString('hex') }) : null
-                };
-            });
-
-            return usersWithUUID;
-        } catch (error) {
-            console.error("Error al consultar la base de datos:", error);
-            throw error;
-        }
-    }
-}
+const UserModel = db.define("users", {
+    id: {
+        type: DataTypes.UUIDV4,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+        allowNull: false,
+    },
+    email: { type: DataTypes.STRING },
+    user_password: { type: DataTypes.STRING }
+},
+    {
+        timestamps: false
+    })
 
 export default UserModel;

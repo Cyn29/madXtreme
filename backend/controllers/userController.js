@@ -58,3 +58,38 @@ export const createUser = async (req, res) => {
         });
     }
 };
+
+export const updateUser = async (req, res) => {
+    try {
+        const bufferedId = Buffer.from(req.params.id, "hex");
+        const existingUser = await UserModel.findOne({
+            where: { id: bufferedId },
+        })
+        if(!existingUser) {
+            return res.status(400).json({message: "User not found"});
+        }
+        const updatedUser = await UserModel.update(req.body, {
+            where: { id: req.params.id },
+        });
+        if (updatedUser) {
+            return res.status(200).json({ message: "User updated successfully!" });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+
+export const deleteUser = async (req, res) => {
+    try {
+        const bufferedId = Buffer.from(req.params.id, "hex");
+        const deletedUser = await UserModel.destroy({
+            where: { id: bufferedId },
+        });
+        if (deletedUser) {
+            return res.status(200).json({ message: "User deleted successfully!" });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+};
+

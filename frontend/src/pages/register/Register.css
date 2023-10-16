@@ -16,3 +16,14 @@
     border-bottom: 2px #D10505 solid;
     border-radius: 10px;
 }
+
+.Button1:not(:disabled):not(.disabled):active, 
+.Button1:not(:disabled):not(.disabled).active,
+.Button1:hover, 
+.Button1:focus {
+    background-color: #D10505 !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: white !important;
+    opacity: 1 !important;
+}

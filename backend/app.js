@@ -25,11 +25,14 @@ app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
 }))
 
 app.use("/users", userRoutes)
 app.use("/activities", activityRoutes)
 
-const PORT = process.env.PORT ?? 3000 //default port 3000
+const PORT = process.env.PORT ?? 3000 
 app.listen(PORT, () =>
 console.log(`listening port ${PORT}`))

@@ -5,6 +5,7 @@ import bcryptjs from 'bcryptjs'
 import session from 'express-session'
 import connection from './database/db.js';
 import userRoutes from './router/userRoutes.js';
+import loginRoutes from './router/loginRoutes.js'
 
 const app = express()
 app.disable('x-powered-by')
@@ -17,6 +18,7 @@ app.use(session({
 }))
 
 app.use("/users", userRoutes)
+app.use("/login", loginRoutes)
 
 const PORT = process.env.PORT ?? 3000 //default port 3000
 app.listen(PORT, () =>

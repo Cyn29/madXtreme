@@ -1,0 +1,42 @@
+
+
+Inicializar con Node.js:
+npm init -y
+Instalar dependencias: 
+npm install express sequelize mysql2 bcryptjs jsonwebtoken; jsonwebtoken JWT (JSON Web Tokens para autenticación)
+
+Configurar sequelize:
+npm install --save-dev sequelize-cli
+
+Instalar dotenv:
+npm install dotenv
+
+Crear archivo .env en root.
+
+Añadir .env a gitignore.
+
+Instalar Middleware helmet(https://www.npmjs.com/package/helmet):
+npm install helmet
+
+Nota: para hacer la web mas segura habria que instalar un certificado https que puede que lo añada gitpage: https://letsencrypt.org/es/
+
+Crear entorno de desarrollo:
+/backend
+|-- /login
+|   |-- /models
+|   |   |-- user.js
+|   |-- /routes
+|   |   |-- index.js
+|   |-- /controllers
+|   |   |-- loginController.js
+|   |-- /middlewares
+|   |   |-- authMiddleware.js
+|   |-- /config
+|   |   |-- dbConfig.json
+|   |-- loginServer.js
+
+Creamos DB en la AWS para el manejo de datos en remoto. (https://www.youtube.com/watch?v=VvgobUd_6MM&ab_channel=SinRuedaTecnol%C3%B3gica  a partir del min 13)
+
+IMPORTANTE!!!: Es muy importante para la base de datos cada vez que dejemos de trabajar con ella desde AWS para evitar cargos(Es gratuita solo 750H mes y el mes tiene 888H)
+
+Conectar base de datos con workbench:

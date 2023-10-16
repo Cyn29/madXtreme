@@ -16,7 +16,7 @@ app.use(session({
     saveUninitialized: true
 }))
 
-app.use("/", userRoutes)
+app.use("/users", userRoutes)
 
 const PORT = process.env.PORT ?? 3000 //default port 3000
 app.listen(PORT, () =>

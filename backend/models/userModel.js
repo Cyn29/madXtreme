@@ -3,7 +3,7 @@ import { DataTypes, Sequelize } from 'sequelize';
 
 const UserModel = db.define("users", {
     id: {
-        type: DataTypes.UUIDV4,
+        type: DataTypes.BLOB(16),
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
         allowNull: false,

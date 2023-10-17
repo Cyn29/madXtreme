@@ -1,43 +1,43 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cards from "../components/Cards/Cards";
-import climbing from "../assets/cards/climbing.jpg";
-import hiking from "../assets/cards/hiking.png";
-import mtb from "../assets/cards/mtb.jpg";
-import kayak from "../assets/cards/kayak.jpg";
 import CarouselComponent from "../components/Carousel/Carousel.jsx";
+import React, { useState, useEffect } from "react";
+
 
 function Home() {
+  const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/activities")
+      .then((response) => response.json())
+      .then((data) => {
+        setActivities(data); 
+        setLoading(false); 
+      })
+      .catch((error) => {
+        console.error("Error getting activities:", error);
+        setLoading(false); 
+      });
+  }, []); 
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
   return (
     <>
       <CarouselComponent />
-      <Cards
-        cardImage={climbing}
-        title={"Escalada en rocas naturales en un paisaje ídilico."}
-        price={"65 €"}
-        button={"Ver más"}
-        opinions={"4.5/5  15 opiniones"}
-      />
-      <Cards
-        cardImage={hiking}
-        title={"Rutas de senderismo en la sierra de Madrid."}
-        price={"75 €"}
-        button={"Ver más"}
-        opinions={"5/5  30 opiniones"}
-      />
-      <Cards
-        cardImage={mtb}
-        title={"MTB/Enduro-DH experiencia extrema."}
-        price={"85 €"}
-        button={"Ver más"}
-        opinions={"4.7/5  20 opiniones"}
-      />
-      <Cards
-        cardImage={kayak}
-        title={"Kayak en río natural con los mejores paisajes."}
-        price={"60 €"}
-        button={"Ver más"}
-        opinions={"4.9/5  10 opiniones"}
-      />
+      {activities.map((activity) => (
+        <Cards
+          key={activity.id_activity}
+          cardImage={activity.imageURL} 
+          title={activity.title}
+          price={`${activity.price} €`}
+          button={"Ver más"}
+          opinions={`Rating: ${activity.rating}/5  ${activity.reviews} opiniones`}
+        />
+      ))}
     </>
   );
 }

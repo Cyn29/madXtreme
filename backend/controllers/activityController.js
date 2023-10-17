@@ -1,5 +1,6 @@
 import activitiesModel from "../models/activitiesModel.js";
 import { Sequelize } from "sequelize";
+import {validateActivity } from "../validations/activitiesValidations.js";
 
 export const getActivities = async (req, res) => {
     try {
@@ -25,7 +26,7 @@ export const getActivityById = async (req, res) => {
 };
 
 export const createActivity = async (req, res) => {
-    const result = (req.body);
+    const result = validateActivity(req.body);
     if (result.success) {
         const activityData = result.data; 
         const uuid = Sequelize.fn("uuid");

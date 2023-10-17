@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {postRegistration} from '../controllers/authController.js'
+import {postRegistration} from '../controllers/registerController.js'
 
 const registerRoutes = Router()
 registerRoutes.post("/", postRegistration)

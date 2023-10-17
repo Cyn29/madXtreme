@@ -1,9 +1,6 @@
 import express, { json } from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv'
-import bcryptjs from 'bcryptjs'
 import session from 'express-session'
-import connection from './database/db.js';
 import userRoutes from './router/userRoutes.js';
 import loginRoutes from './router/loginRoutes.js'
 import registerRoutes from './router/registerRoutes.js';
@@ -18,9 +15,9 @@ app.use(session({
     saveUninitialized: true
 }))
 
-app.use("/users", userRoutes)
-app.use("/login", loginRoutes)
 app.use("/register", registerRoutes)
+app.use("/login", loginRoutes)
+app.use("/users", userRoutes)
 
 const PORT = process.env.PORT ?? 3000 //default port 3000
 app.listen(PORT, () =>

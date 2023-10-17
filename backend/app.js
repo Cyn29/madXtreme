@@ -1,6 +1,8 @@
 import express, { json } from 'express';
 import cors from 'cors';
 import session from 'express-session'
+import registerRoutes from './router/registerRoutes.js'
+import loginRoutes from './router/loginRoutes.js';
 import userRoutes from './router/userRoutes.js';
 import adminRoutes from './router/adminRoutes.js';
 
@@ -14,6 +16,8 @@ app.use(session({
     saveUninitialized: true
 }))
 
+app.use("/register", registerRoutes)
+app.use("/login", loginRoutes)
 app.use("/users", userRoutes)
 app.use("/admins", adminRoutes)
 

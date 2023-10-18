@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cards from "../components/Cards/Cards";
 import CarouselComponent from "../components/Carousel/Carousel.jsx";
-import React, { useState, useEffect } from "react";
+import Cards from "../components/Cards/Cards";
+import { useState, useEffect } from "react";
 
 
 function Home() {
@@ -10,7 +10,13 @@ function Home() {
 
   useEffect(() => {
     fetch("http://localhost:3000/activities")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Error to obtain activities');
+        }
+        return response.json()
+      })
+
       .then((data) => {
         setActivities(data); 
         setLoading(false); 
@@ -31,11 +37,14 @@ function Home() {
       {activities.map((activity) => (
         <Cards
           key={activity.id_activity}
-          cardImage={activity.imageURL} 
+          activity_image={activity.activity_image}
           title={activity.title}
-          price={`${activity.price} €`}
+          act_description={activity.act_description}
+          price={activity.price}
           button={"Ver más"}
-          opinions={`Rating: ${activity.rating}/5  ${activity.reviews} opiniones`}
+          opinion={activity.opinion}
+         /* opinions={`Rating: ${activity.rating}/5  ${activity.reviews} opiniones`}*/
+
         />
       ))}
     </>

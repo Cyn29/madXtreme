@@ -3,7 +3,7 @@ import logotype from '../assets/logotype.png'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login({onLogin}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,18 +15,32 @@ function Login() {
         setPassword(e.target.value)
     }
 
-    const handleLoginSubmit = (e) => {
+    const handleLoginSubmit = async (e) => {
         e.preventDefault()
         console.log("Email:", email)
         console.log("Contraseña", password)
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            onLogin(data.token);
+        } else {
+            console.error('Error en el inicio de sesión');
+        }
     }
     return (
-        <Container className="group-12" style={{marginTop: "9rem"}}>
+        <Form onSubmit={handleLoginSubmit}>
+        <Container className="group-12" style={{ marginTop: "9rem" }}>
             <Row className="justify-content-center mb-4">
                 <Col xs={12} md={6} lg={4}>
-                    <Image src= {logotype} fluid />
+                    <Image src={logotype} fluid />
                 </Col>
-            </Row>   
+            </Row>
             <Row className="justify-content-center mb-2">
                 <Col xs={12} md={6} lg={4}>
                     <Form.Group>
@@ -45,7 +59,7 @@ function Login() {
             </Row>
             <Row className="justify-content-center mb-2">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                    <Button onClick={handleLoginSubmit} variant="primary" className="button1 mt-3" style={{ border: "none", width: 130, height: 36, background: '#D10505', borderRadius: 50, color: 'white' }}>
+                    <Button type="submit" variant="primary" className="button1 mt-3" style={{ border: "none", width: 130, height: 36, background: '#D10505', borderRadius: 50, color: 'white' }}>
                         Acceder
                     </Button>
                 </Col>
@@ -57,10 +71,11 @@ function Login() {
             </Row>
             <Row className="justify-content-center mb-5">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                <Button as={Link} to="/register" variant="link" style={{color: "black"}}>Regístrate</Button>
+                    <Button as={Link} to="/register" variant="link" style={{ color: "black" }}>Regístrate</Button>
                 </Col>
             </Row>
         </Container>
+        </Form>
     );
 }
 

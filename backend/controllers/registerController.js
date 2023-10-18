@@ -1,16 +1,16 @@
 import UserModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import { Sequelize } from "sequelize";
-import { validateUser } from "../validations/usersValidations.js";
+import { validateRegistration } from "../validations/registrationValidations.js";
 
 export const postRegistration = async (req, res) => {
-    const validation = validateUser(req.body);
+    const validation = validateRegistration(req.body);
 
     if (!validation.success) {
         return res.status(400).json({ message: "Check that all fields are correct" });
     }
     
-    const { email, user_password } = validation.data;
+    const { fullName, email, user_password } = validation.data;
     const uuid = Sequelize.fn("uuid");
     const binaryUuid = Sequelize.fn("UUID_TO_BIN", uuid);
     const alreadyExistsUser = await UserModel.findOne({
@@ -29,6 +29,7 @@ export const postRegistration = async (req, res) => {
 
     const newUser = await UserModel.create({
         id: binaryUuid,
+        fullName,
         email,
         user_password: hashedPassword,
     });

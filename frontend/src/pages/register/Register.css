@@ -1,8 +1,47 @@
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.3rem 0.2rem;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 1.5rem; 
+}
+
+.home-button {
+    margin-left: auto;
+    margin-right: -1rem; 
+    border: none;
+    background: transparent;
+    transition: none !important;
+}
+
+.home-button:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.home-button img {
+    width: 30%;
+    height: auto;
+}
+
 .register {
-    min-height: 100vh;
+    margin-top: 9rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.form-control {
+    background: rgba(255, 232.69, 232.69, 0.70);
+    border-bottom: 2px #D10505 solid;
+    border-radius: 10px;
 }
 
 .Button1 {
@@ -14,27 +53,25 @@
     color: white;
 }
 
-.form-control {
-    background: rgba(255, 232.69, 232.69, 0.70);
-    border-bottom: 2px #D10505 solid;
-    border-radius: 10px;
+.Button1:hover {
+    background: #D10505;
+    box-shadow: none;
+    border: none;
+    color: white;
 }
 
 .Button1:not(:disabled):not(.disabled):active, 
-.Button1:not(:disabled):not(.disabled).active,
-.Button1:hover, 
-.Button1:focus {
-    background-color: #D10505 !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: white !important;
-    opacity: 1 !important;
+.Button1:not(:disabled):not(.disabled).active {
+    background-color: #D10505;
+    border: none;
+    box-shadow: none;
+    color: white;
 }
 
 .login-link {
     color: #D10505;
     display: block;
-    margin-top: 5px;
+    margin-top: 0.3125rem; 
     text-decoration: none;
 }
 

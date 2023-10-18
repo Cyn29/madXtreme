@@ -1,10 +1,17 @@
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
 import logotype from '../../assets/logotype.png';
 import './Register.css';
+import homeLogo from '../../assets/homeLogo.png';
+
 
 function Register() {
     return (
         <Container className="register">
+            <div className="top-bar">
+                <Button className="home-button" href="/">
+                <Image src={homeLogo} alt="Home" />
+                </Button>
+            </div>
             <Row className="justify-content-center mb-4">
                 <Col xs={12} md={6} lg={4}>
                     <Image src={logotype} fluid />

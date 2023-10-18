@@ -12,7 +12,7 @@ MadXtreme is an adventure sports company located at the Sierra de Guadarrama at 
 
 The project is divided into a frontend and a backend.
 
-### Frontend (Vite)
+### Frontend
 
 #### Main Dependencies:
 

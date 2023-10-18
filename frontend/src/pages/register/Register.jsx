@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap';
 import logotype from '../../assets/logotype.png';
 import './Register.css';
 import { useState } from 'react';
@@ -7,6 +7,8 @@ function Register() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [user_password, setPassword] = useState('');
+    const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+    const [showErrorAlert, setShowErrorAlert] = useState(false)
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
@@ -23,8 +25,16 @@ function Register() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Registration status:', data);
+                setShowSuccessAlert(true);
+                setTimeout(() => {
+                    setShowSuccessAlert(false);
+                }, 10000);
             } else {
                 console.error('Registration error');
+                setShowErrorAlert(true)
+                setTimeout(() => {
+                    setShowErrorAlert(false);
+                }, 10000);
             }
         } catch (error) {
             console.error('Failed request:', error);
@@ -43,8 +53,7 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Nombre y apellidos</h5>
-                            <Form.Control onChange={(e) =>
-                                setFullName(e.target.value)} value={fullName} />
+                            <Form.Control onChange={(e) => setFullName(e.target.value)} value={fullName} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -52,8 +61,7 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Email</h5>
-                            <Form.Control type="email" onChange={(e) =>
-                                setEmail(e.target.value)} value={email} />
+                            <Form.Control type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -61,8 +69,7 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Contraseña</h5>
-                            <Form.Control type="password" onChange={(e) =>
-                                setPassword(e.target.value)} value={user_password} />
+                            <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} value={user_password} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -74,11 +81,19 @@ function Register() {
                     </Col>
                 </Row>
                 <Row className="justify-content-center mt-3">
-                <Col xs={12} md={6} lg={4} className="text-center">
-                    <p>¿Tienes una cuenta?</p>
-                    <a className="login-link" href="/login">Iniciar sesión</a>
-                </Col>
-            </Row>
+                    <Col xs={12} md={6} lg={4} className="text-center">
+                        <Alert show={showSuccessAlert} variant="success">
+                            Registro exitoso. ¡Bienvenido!
+                        </Alert>
+                        <Alert show={showErrorAlert} variant="danger">
+                            Ha habido un error con su registro.
+                        </Alert>
+                        <p>¿Tienes una cuenta?</p>
+                        <a className="login-link" href="/login">
+                            Iniciar sesión
+                        </a>
+                    </Col>
+                </Row>
             </Container>
         </Form>
     );

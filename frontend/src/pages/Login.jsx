@@ -1,6 +1,8 @@
 import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
 import logotype from '../assets/logotype.png'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -55,7 +57,7 @@ function Login() {
             </Row>
             <Row className="justify-content-center mb-5">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                    <Button variant="link" style={{color: "black"}}>Regístrate</Button>
+                <Button as={Link} to="/register" variant="link" style={{color: "black"}}>Regístrate</Button>
                 </Col>
             </Row>
         </Container>

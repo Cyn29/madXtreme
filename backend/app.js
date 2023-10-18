@@ -4,7 +4,6 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import bcryptjs from 'bcryptjs'
 import session from 'express-session'
-import connection from './database/db.js';
 import userRoutes from './router/userRoutes.js';
 import activityRoutes from './router/activityRoutes.js';
 
@@ -32,6 +31,7 @@ app.use(session({
 
 app.use("/users", userRoutes)
 app.use("/activities", activityRoutes)
+
 
 const PORT = process.env.PORT ?? 3000 
 app.listen(PORT, () =>

@@ -2,7 +2,7 @@ import UserModel from "../models/userModel.js";
 import { Sequelize } from "sequelize";
 import { validateUser } from "../validations/usersValidations.js";
 
-export const getUsers = async (req, res) => {
+export const getUsers = async (_req, res) => {
     try {
         const users = await UserModel.findAll();
         const usersWithUUID = users.map((user) => {

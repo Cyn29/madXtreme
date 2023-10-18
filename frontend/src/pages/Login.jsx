@@ -1,35 +1,34 @@
-import { Container, Row, Col, Form, Button, Image } from 'react-bootstrap';
-import logotype from '../assets/logotype.png'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
+import logotype from "../assets/logotype.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
-    const [email, setEmail] = useState('')
-    const [user_password, setPassword] = useState('')
+    const [email, setEmail] = useState("");
+    const [user_password, setPassword] = useState("");
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
-                method: 'POST',
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ email, user_password }),
             });
 
             if (response.ok) {
                 const data = await response.json();
-                console.log('Login success:', data);
+                console.log("Login success:", data);
             } else {
-                console.error('Login error');
+                console.error("Login error");
             }
         } catch (error) {
-            console.error('Failed request:', error);
+            console.error("Failed request:", error);
         }
-    }
+    };
 
     return (
         <Form onSubmit={handleLoginSubmit}>
@@ -43,8 +42,16 @@ function Login() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Email</h5>
-                            <Form.Control onChange={(e) =>
-                                setEmail(e.target.value)} value={email} style={{ background: 'rgba(255, 232.69, 232.69, 0.70)', borderBottom: '2px #D10505 solid', borderRadius: 10 }} />
+                            <Form.Control
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
+                                style={{
+                                    background:
+                                        "rgba(255, 232.69, 232.69, 0.70)",
+                                    borderBottom: "2px #D10505 solid",
+                                    borderRadius: 10,
+                                }}
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -52,14 +59,34 @@ function Login() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Contraseña</h5>
-                            <Form.Control onChange={(e) =>
-                                setPassword(e.target.value)} type="password" value={user_password} style={{ background: 'rgba(255, 232.69, 232.69, 0.70)', borderBottom: '2px #D10505 solid', borderRadius: 10 }} />
+                            <Form.Control
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                value={user_password}
+                                style={{
+                                    background:
+                                        "rgba(255, 232.69, 232.69, 0.70)",
+                                    borderBottom: "2px #D10505 solid",
+                                    borderRadius: 10,
+                                }}
+                            />
                         </Form.Group>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
                     <Col xs={12} md={6} lg={4} className="text-center">
-                        <Button type="submit" variant="primary" className="button1 mt-3" style={{ border: "none", width: 130, height: 36, background: '#D10505', borderRadius: 50, color: 'white' }}>
+                        <Button
+                            type="submit"
+                            variant="primary"
+                            className="button1 mt-3"
+                            style={{
+                                border: "none",
+                                width: 130,
+                                height: 36,
+                                background: "#D10505",
+                                borderRadius: 50,
+                                color: "white",
+                            }}>
                             Acceder
                         </Button>
                     </Col>
@@ -71,7 +98,24 @@ function Login() {
                 </Row>
                 <Row className="justify-content-center mb-5">
                     <Col xs={12} md={6} lg={4} className="text-center">
-                        <Button as={Link} to="/register" variant="link" style={{ color: "black" }}>Regístrate</Button>
+                        <Button
+                            as={Link}
+                            to="/register"
+                            variant="link"
+                            style={{ color: "black" }}>
+                            Regístrate
+                        </Button>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mb-5">
+                    <Col xs={12} md={6} lg={4} className="text-center">
+                        <Button
+                            as={Link}
+                            to="/register"
+                            variant="link"
+                            style={{ color: "#D10505" }}>
+                            Regístrate
+                        </Button>
                     </Col>
                 </Row>
             </Container>

@@ -1,5 +1,8 @@
 .register {
-    margin-top: 9rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Button1 {
@@ -26,4 +29,15 @@
     box-shadow: none !important;
     color: white !important;
     opacity: 1 !important;
+}
+
+.login-link {
+    color: #D10505;
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
 }

@@ -22,7 +22,7 @@ function Register() {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log('Registration success:', data);
+                console.log('Registration status:', data);
             } else {
                 console.error('Registration error');
             }
@@ -32,60 +32,55 @@ function Register() {
     };
 
     return (
-        <Container className="register">
-            <Row className="justify-content-center mb-4">
-                <Col xs={12} md={6} lg={4}>
-                    <Image src={logotype} fluid />
-                </Col>
-            </Row>   
-            <Row className="justify-content-center mb-2">
-                <Col xs={12} md={6} lg={4}>
-                    <Form.Group>
-                        <h5>Nombre</h5>
-                        <Form.Control />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-center mb-2">
-                <Col xs={12} md={6} lg={4}>
-                    <Form.Group>
-                        <h5>Apellidos</h5>
-                        <Form.Control />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-center mb-2">
-                <Col xs={12} md={6} lg={4}>
-                    <Form.Group>
-                        <h5>Email</h5>
-                        <Form.Control type="email" />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-center mb-2">
-                <Col xs={12} md={6} lg={4}>
-                    <Form.Group>
-                        <h5>Contraseña</h5>
-                        <Form.Control type="password" />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-center mb-2">
-                <Col xs={12} md={6} lg={4}>
-                    <Form.Group>
-                        <h5>Confirmar Contraseña</h5>
-                        <Form.Control type="password" />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-center mb-2">
+        <Form onSubmit={handleRegisterSubmit}>
+            <Container className="register">
+                <Row className="justify-content-center mb-4">
+                    <Col xs={12} md={6} lg={4}>
+                        <Image src={logotype} fluid />
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mb-2">
+                    <Col xs={12} md={6} lg={4}>
+                        <Form.Group>
+                            <h5>Nombre y apellidos</h5>
+                            <Form.Control onChange={(e) =>
+                                setFullName(e.target.value)} value={fullName} />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mb-2">
+                    <Col xs={12} md={6} lg={4}>
+                        <Form.Group>
+                            <h5>Email</h5>
+                            <Form.Control type="email" onChange={(e) =>
+                                setEmail(e.target.value)} value={email} />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mb-2">
+                    <Col xs={12} md={6} lg={4}>
+                        <Form.Group>
+                            <h5>Contraseña</h5>
+                            <Form.Control type="password" onChange={(e) =>
+                                setPassword(e.target.value)} value={user_password} />
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mb-2">
+                    <Col xs={12} md={6} lg={4} className="text-center">
+                        <Button type="submit" variant="primary" className="Button1 mt-3">
+                            Registrarse
+                        </Button>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mt-3">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                    <Button variant="primary" className="Button1 mt-3">
-                        Registrarse
-                    </Button>
+                    <p>¿Tienes una cuenta?</p>
+                    <a className="login-link" href="/login">Iniciar sesión</a>
                 </Col>
             </Row>
-        </Container>
+            </Container>
+        </Form>
     );
 }
 

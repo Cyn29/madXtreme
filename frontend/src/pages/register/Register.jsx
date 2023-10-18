@@ -8,16 +8,6 @@ function Register() {
     const [email, setEmail] = useState('');
     const [user_password, setPassword] = useState('');
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    }
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value)
-    }
-    const handleFullNameChange = (e) => {
-        setFullName(e.target.value)
-    }
-    
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
 
@@ -27,17 +17,17 @@ function Register() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({fullName, email, user_password}),
+                body: JSON.stringify({ fullName, email, user_password }),
             });
 
             if (response.ok) {
                 const data = await response.json();
-                console.log('Registro exitoso:', data);
+                console.log('Registration success:', data);
             } else {
-                console.error('Error en el registro');
+                console.error('Registration error');
             }
         } catch (error) {
-            console.error('Error en la solicitud:', error);
+            console.error('Failed request:', error);
         }
     };
 
@@ -53,7 +43,8 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Nombre y apellidos</h5>
-                            <Form.Control onChange={handleFullNameChange} value={fullName}/>
+                            <Form.Control onChange={(e) =>
+                                setFullName(e.target.value)} value={fullName} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -61,7 +52,8 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Email</h5>
-                            <Form.Control type="email" onChange={handleEmailChange} value={email}/>
+                            <Form.Control type="email" onChange={(e) =>
+                                setEmail(e.target.value)} value={email} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -69,7 +61,8 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Contraseña</h5>
-                            <Form.Control type="password" onChange={handlePasswordChange} value={user_password}/>
+                            <Form.Control type="password" onChange={(e) =>
+                                setPassword(e.target.value)} value={user_password} />
                         </Form.Group>
                     </Col>
                 </Row>

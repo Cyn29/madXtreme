@@ -40,7 +40,7 @@ function Login() {
             </Row>
             <Row className="justify-content-center mb-5">
                 <Col xs={12} md={6} lg={4} className="text-center">
-                <Button as={Link} to="/register" variant="link" style={{color: "black"}}>Regístrate</Button>
+                <Button as={Link} to="/register" variant="link" style={{color: "#D10505"}}>Regístrate</Button>
                 </Col>
             </Row>
         </Container>

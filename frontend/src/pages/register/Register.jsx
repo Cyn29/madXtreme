@@ -57,6 +57,12 @@ function Register() {
                     </Button>
                 </Col>
             </Row>
+            <Row className="justify-content-center mt-3">
+                <Col xs={12} md={6} lg={4} className="text-center">
+                    <p>¿Tienes una cuenta?</p>
+                    <a className="login-link" href="/login">Iniciar sesión</a>
+                </Col>
+            </Row>
         </Container>
     );
 }

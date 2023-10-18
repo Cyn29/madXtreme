@@ -1,15 +1,15 @@
-import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Image, Alert } from "react-bootstrap";
 import logotype from "../assets/logotype.png";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [user_password, setPassword] = useState("");
+    const [showErrorAlert, setShowErrorAlert] = useState(false)
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const response = await fetch("http://localhost:3000/login", {
                 method: "POST",
@@ -18,13 +18,19 @@ function Login() {
                 },
                 body: JSON.stringify({ email, user_password }),
             });
-
             if (response.ok) {
                 const data = await response.json();
                 console.log("Login status:", data);
-            } else {
-                console.error("Login error");
-            }
+                if (data.message === "Welcome back!") {
+                    window.location.href = "/";
+                } else {
+                    console.error('Email  or password does not match');
+                    setShowErrorAlert(true)
+                setTimeout(() => {
+                    setShowErrorAlert(false);
+                }, 10000);
+                }
+            } 
         } catch (error) {
             console.error("Failed request:", error);
         }
@@ -46,8 +52,7 @@ function Login() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 style={{
-                                    background:
-                                        "rgba(255, 232.69, 232.69, 0.70)",
+                                    background: "rgba(255, 232.69, 232.69, 0.70)",
                                     borderBottom: "2px #D10505 solid",
                                     borderRadius: 10,
                                 }}
@@ -64,8 +69,7 @@ function Login() {
                                 type="password"
                                 value={user_password}
                                 style={{
-                                    background:
-                                        "rgba(255, 232.69, 232.69, 0.70)",
+                                    background: "rgba(255, 232.69, 232.69, 0.70)",
                                     borderBottom: "2px #D10505 solid",
                                     borderRadius: 10,
                                 }}
@@ -89,6 +93,13 @@ function Login() {
                             }}>
                             Acceder
                         </Button>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center mt-3">
+                    <Col xs={12} md={6} lg={4} className="text-center">
+                        <Alert show={showErrorAlert} variant="danger">
+                            Usuario no registrado
+                        </Alert>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">

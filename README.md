@@ -2,6 +2,8 @@
 
 MadXtreme is an adventure sports company located at the Sierra de Guadarrama at the Community of Madrid.
 
+Join MadXtreme and discover the Community of Madrid like never before. With a passionate team like ours, every adventure becomes a story to tell, an experience that will change your life. Let MadXtreme be your gateway to a world of emotions and discoveries in nature
+
 ## Design and Planning Tools
 
 - **Design**: The project design is configured in Figma.

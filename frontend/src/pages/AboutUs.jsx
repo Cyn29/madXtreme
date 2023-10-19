@@ -22,48 +22,42 @@ function AboutUsPage() {
         </p>
         <AboutUs
             image={andrea}
-            name={"Andrea"}
-            role={"La vigilante de la montaña"}
+            name={"Andrea, La vigilante de la montaña."}
             description={
                 "Andrea no solo es una experta en barranquismo, sino que también es la encargada de la seguridad y auxilio en montaña. Su conocimiento de la sierra y su destreza en los barrancos la convierten en nuestra roca en la montaña. Andrea es una apasionada de la naturaleza y los deportes de aventura."
             }
         />
         <AboutUs
             image={wanda}
-            name={"Wanda"}
-            role={"Experta en kayak y animación"}
+            name={"Wanda, Experta en kayak y animación."}
             description={
                 "Wanda es nuestra reina de las aguas y una talentosa animadora sociocultural y coordinadora de equipos. Su dominio del kayak es equiparable a su habilidad para unir a las personas y crear momentos inolvidables. Con Wanda, cada aventura es una fiesta en el agua y siempre hay café de por medio."
             }
         />
         <AboutUs
             image={cynthia}
-            name={"Cynthia"}
-            role={"Experta en deportes acuáticos y risas"}
+            name={"Cynthia, Experta en deportes acuáticos."}
             description={
-                "Cynthia, nuestra directora de operaciones y creadora de rutas, es la mente maestra detrás de nuestras emocionantes expediciones. Su pasión por los deportes y su visión estratégica dan forma a experiencias inolvidables. Bajo su dirección, cada ruta es una obra maestra en movimiento. Si no está en la montaña, búscala en algún concierto."
+                "Cynthia, nuestra directora de operaciones y creadora de rutas, es la mente maestra detrás de nuestras emocionantes expediciones. Su pasión por los deportes y su visión estratégica dan forma a experiencias inolvidables. Bajo su dirección, cada ruta es una obra maestra en movimiento. Si no está en la montaña, estará en algún concierto."
             }
         />
         <AboutUs
             image={ainhoa}
-            name={"Ainhoa"}
-            role={"Capturadora de momentos extremos"}
+            name={"Ainhoa, Capturadora de momentos extremos."}
             description={
                 "Ainhoa es nuestra aventurera, fotógrafa extrema y creadora de contenidos. Con su cámara, conjura la esencia de la adrenalina en cada instantánea, transformando momentos audaces en obras maestras visuales. Además, es una experta en supervivencia, lo que añade un toque de intriga y seguridad a todo."
             }
         />
         <AboutUs
             image={jaime}
-            name={"Jaime"}
-            role={"El rey en la montaña"}
+            name={"Jaime, Nuestro experto en la montaña y la escalada."}
             description={
                 "Jaime, el maestro de la escalada, el boulder y el MTB enduro, es un mago en las rocas y los bosques. Cada ascenso y descenso es un desafío que Jaime conquista con maestría y pasión. La sierra de Madrid es su hábitat natural donde siempre podrás encontrarlo con una sonrisa en la cara."
             }
         />
         <AboutUs
             image={raul}
-            name={"Raúl"}
-            role={"Explorador de ríos, bosques y montañas"}
+            name={"Raúl, Explorador de ríos, bosques y montañas."}
             description={
                 "Raúl, nuestro guía de montaña, aventurero y mountain biker, lidera nuestras expediciones a través de montañas y bosques. Su espíritu intrépido nos lleva más allá de lo conocido, explorando terrenos inexplorados y creando historias inolvidables. Le encanta ayudar al resto en todo lo que necesiten."
             }

@@ -9,6 +9,7 @@ import {
 const ActivityRoutes = Router();
 ActivityRoutes.get("/", getActivities);
 ActivityRoutes.get("/:id_activity", getActivityById);
+ActivityRoutes.get("/:id_activity", getActivityById);
 ActivityRoutes.post("/", createActivity);
 ActivityRoutes.patch("/:id_activity", updateActivity);
 ActivityRoutes.delete("/:id_activity", deleteActivity);

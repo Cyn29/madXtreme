@@ -1,9 +1,22 @@
 import activitiesModel from "../models/activitiesModel.js";
 import { Sequelize } from "sequelize";
+import { validateActivity } from "../validations/activitiesValidations.js";
 
+export const getActivities = async (_req, res) => {
 export const getActivities = async (_req, res) => {
     try {
         const activities = await activitiesModel.findAll();
+        const activitiesWithUUID = activities.map((Activity) => {
+            return {
+                id_activity: Activity.id_activity,
+                activity_image: Activity.activity_image,
+                title: Activity.title,
+                act_description: Activity.act_description,
+                price: Activity.price,
+                opinion: Activity.opinion,
+            };
+        });
+        res.json(activitiesWithUUID);
         const activitiesWithUUID = activities.map((Activity) => {
             return {
                 id_activity: Activity.id_activity,
@@ -42,22 +55,25 @@ export const getActivityById = async (req, res) => {
 };
 export const createActivity = async (req, res) => {
     try {
-        const { activity_image, title, act_description, price, opinion} = req.body;
-        const newActivity = await activitiesModel.create({
-            activity_image,
-            title,
-            act_description,
-            price,
-            opinion,
-        });
-        res.status(201).json({
-            message: "The activity has been created successfully!",
-            id_activity: newActivity.id_activity
-        });
+        const validationResult = validateActivity(req.body);
+        if (validationResult.success) {
+            const newActivity = await activitiesModel.create(validationResult.data);
+            res.status(201).json({
+                message: "Activity created succesfully!",
+                id_activity: newActivity.id_activity
+            });
+        } else {
+            res.status(400).json({
+                message: "Invalid data in the request body",
+                errors: validationResult.error
+            });
+        }
     } catch (error) {
         res.status(500).json({ message: error.message });
-    }
+    }   
 };
+
+
 export const updateActivity = async (req, res) => {
     try {
         const { id_activity } = req.params;

@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 function PackDetailedCard({ packImage, title, price, button, opinions}) {
     return (
-        <section className="d-inline-flex ">
+        <section className="d-inline-flex">
             <Card
                 className="mb-4"
                 style={{

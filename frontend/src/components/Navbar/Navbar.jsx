@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-        <Navbar sticky="top" className="bg-white" expand="md" collapseOnSelect>
+        <Navbar aria-label="Navbar" sticky="top" className="bg-white" expand="md" collapseOnSelect>
             <Container>
-                <Nav.Link as={Link} to="/"><Image src={logotype} width="65%" height="20%" alt="Image of logotype" fluid/></Nav.Link>
+                <Nav.Link as={Link} to="/"><Image aria-label="logotype" src={logotype} width="65%" height="20%" alt="Image of logotype" fluid/></Nav.Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">
@@ -19,7 +19,7 @@ function Header() {
                         <Nav.Link as={Link} to="/aboutUs">Nosotros</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     </Nav>
-                    <Nav.Link as={Link} to="/login"><Image className="d-none d-sm-none d-md-block" height="70rem" src={login} alt="Login icon"/></Nav.Link>
+                    <Nav.Link as={Link} to="/login"><Image aria-label="login-icon" className="d-none d-sm-none d-md-block" height="70rem" src={login} alt="Login icon"/></Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

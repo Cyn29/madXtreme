@@ -4,7 +4,7 @@ import "./Cards.css"
 function Cards({ activity_image, price, act_description, button, opinion}) {
   return (
     <main className="d-inline-flex ">
-      <Card className="section">
+      <Card className="section" aria-label="Card">
         <Card.Img variant="top" src={activity_image} alt="Activity Image" /> 
         <Card.Body>
           <h4><Card.Text>{act_description}</Card.Text></h4>

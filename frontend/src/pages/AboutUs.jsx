@@ -22,7 +22,7 @@ function AboutUsPage() {
         image={andrea}
         name={"Andrea, la vigilante de la montaña."}
         description={
-            "Andrea no solo es una experta en barranquismo, sino que también es la encargada de la seguridad y auxilio en montaña. Su conocimiento de la sierra y su destreza en los barrancos la convierten en nuestra roca en la montaña. Andrea es una apasionada de la naturaleza y los deportes de aventura."
+            "Andrea no solo es una experta en barranquismo, sino que también es la encargada de la seguridad y auxilio en montaña. Su conocimiento de la sierra y su destreza en los barrancos la convierten en nuestra roca en la montaña. Andrea es una apasionada de la naturaleza y los deportes de aventura, siempre sonriendo."
         }
       />
       <AboutUs
@@ -34,9 +34,9 @@ function AboutUsPage() {
       />
       <AboutUs
         image={cynthia}
-        name={"Cynthia, experta en deportes acuáticos."}
+        name={"Cynthia, experta en deportes."}
         description={
-            "Cynthia, nuestra directora de operaciones y creadora de rutas, es la mente maestra detrás de nuestras emocionantes expediciones. Su pasión por los deportes y su visión estratégica dan forma a experiencias inolvidables. Bajo su dirección, cada ruta es una obra maestra en movimiento. Si no está en la montaña, estará en algún concierto."
+            "Cynthia, nuestra directora de operaciones y creadora de rutas, es la mente maestra detrás de nuestras emocionantes expediciones. Su pasión por los deportes y su visión estratégica dan forma a experiencias inolvidables. Bajo su dirección, cada ruta es una obra maestra en movimiento. Siempre en la montaña o algún concierto."
         }
       />
       <AboutUs

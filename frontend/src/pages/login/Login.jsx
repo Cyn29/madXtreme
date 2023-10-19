@@ -41,7 +41,7 @@ function Login() {
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image src={logotype} fluid />
+                        <Image name="logotype" src={logotype} fluid />
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
@@ -49,6 +49,7 @@ function Login() {
                         <Form.Group>
                             <h5>Email</h5>
                             <Form.Control
+                                name="email"
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 style={{
@@ -65,6 +66,7 @@ function Login() {
                         <Form.Group>
                             <h5>Contraseña</h5>
                             <Form.Control
+                                name="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 value={user_password}

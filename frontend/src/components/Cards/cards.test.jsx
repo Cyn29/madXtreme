@@ -5,7 +5,7 @@ import Cards from './Cards';
 test('Cards', () => {
     it('renders correctly', () => {
         render(<Cards />);
-        const cardsElement = screen.getByTestId('cards');
+        const cardsElement = screen.getByLabelText('Card');
         expect(cardsElement).toBeInTheDocument();
     });
 });

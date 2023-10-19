@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-        <Navbar sticky="top" className="bg-white" expand="md" collapseOnSelect>
+        <Navbar aria-label="Navbar" sticky="top" className="bg-white" expand="md" collapseOnSelect>
             <Container>
                 <Nav.Link as={Link} to="/"><Image src={logotype} width="65%" height="20%" alt="Image of logotype" fluid/></Nav.Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

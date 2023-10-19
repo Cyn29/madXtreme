@@ -6,6 +6,7 @@ function Cards({ cardImage, title, price, button, opinions }) {
     return (
         <main className="d-inline-flex ">
             <Card
+                aria-label="Card"
                 className="mb-5"
                 style={{
                     width: "20rem",

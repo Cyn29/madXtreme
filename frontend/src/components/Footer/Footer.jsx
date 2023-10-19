@@ -1,4 +1,4 @@
-import { MDBFooter } from "mdb-react-ui-kit";
+
 import logotype from "../../assets/logotype.png";
 import instagram from "../../assets/icons/instagram.png";
 import facebook from "../../assets/icons/facebook.png";
@@ -7,7 +7,7 @@ import twitter from "../../assets/icons/twitter.png";
 
 function Footer() {
     return (
-        <MDBFooter className="text-center" color="black" bgColor="white">
+        <main className="text-center w-100" color="black" bgColor="white" aria-label="Footer">
             <section
                 style={{ backgroundColor: "#D10505", height: 90 }}
                 className="text-white d-flex justify-content-center align-items-center">
@@ -33,7 +33,7 @@ function Footer() {
                     madXtreme.com
                 </a>
             </div>
-        </MDBFooter>
+        </main>
     );
 }
 

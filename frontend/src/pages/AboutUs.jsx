@@ -50,7 +50,7 @@ function AboutUsPage() {
         image={jaime}
         name={"Jaime, nuestro experto en la montaña y la escalada."}
         description={
-            "Jaime, el maestro de la escalada, el boulder y el MTB enduro, es un mago en las rocas y los bosques. Cada ascenso y descenso es un desafío que Jaime conquista con maestría y pasión. La sierra de Madrid es su hábitat natural donde siempre podrás encontrarlo con una sonrisa en la cara."
+            "Jaime, el maestro de la escalada, el boulder y el MTB enduro, es un mago en las rocas y los bosques. Cada ascenso y descenso es un desafío que Jaime conquista con maestría y pasión. La sierra de Madrid y los sexshop son sus hábitats naturales donde siempre podrás encontrarlo con una sonrisa en la cara."
         }
       />
       <AboutUs

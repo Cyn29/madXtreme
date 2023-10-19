@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 function Contact() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     return (
-        <section className="contact-container">
+        <section className="contact-container" aria-label="Contact">
             <h2 className="title">¡Contáctanos!</h2>
             <div className="form-map-container">
             <div className="col-lg-5">

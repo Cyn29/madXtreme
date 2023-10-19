@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import "./AboutUs.css"
 // eslint-disable-next-line react/prop-types
 function AboutUs({ image, name, role, description }) {
     return (

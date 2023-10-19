@@ -8,24 +8,36 @@ const ActivityModel = db.define("activities", {
     },
     activity_image: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    title:{
+    title_activity:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+    },
+    category_activity:{
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     act_description: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    price: {
+    price_activity: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
-    opinion: {
+    opinion_activity: {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    stock_activity: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    activityDetails: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
 },{
     timestamps: true,
     createdAt: 'createdAt',

@@ -3,28 +3,19 @@ import { Sequelize } from "sequelize";
 import { validateActivity } from "../validations/activitiesValidations.js";
 
 export const getActivities = async (_req, res) => {
-export const getActivities = async (_req, res) => {
     try {
         const activities = await activitiesModel.findAll();
         const activitiesWithUUID = activities.map((Activity) => {
             return {
                 id_activity: Activity.id_activity,
                 activity_image: Activity.activity_image,
-                title: Activity.title,
+                title_activity: Activity.title_activity,
+                category_activity: Activity.category_activity,
                 act_description: Activity.act_description,
-                price: Activity.price,
-                opinion: Activity.opinion,
-            };
-        });
-        res.json(activitiesWithUUID);
-        const activitiesWithUUID = activities.map((Activity) => {
-            return {
-                id_activity: Activity.id_activity,
-                activity_image: Activity.activity_image,
-                title: Activity.title,
-                act_description: Activity.act_description,
-                price: Activity.price,
-                opinion: Activity.opinion,
+                price_activity: Activity.price_activity,
+                opinion_activity: Activity.opinion_activity,
+                stock_activity: Activity.stock_activity,
+                activityDetails: Activity.activityDetails,
             };
         });
         res.json(activitiesWithUUID);
@@ -43,10 +34,13 @@ export const getActivityById = async (req, res) => {
         const ActivityId = {
             id_activity: Activity.id_activity,
             activity_image: Activity.activity_image,
-            title: Activity.title,
+            title_activity: Activity.title_activity,
+            category_activity: Activity.category_activity,
             act_description: Activity.act_description,
-            price: Activity.price,
-            opinion: Activity.opinion,
+            price_activity: Activity.price_activity,
+            opinion_activity: Activity.opinion_activity,
+            stock_activity: Activity.stock_activity,
+            activityDetails: Activity.activityDetails,
         };
         res.json(ActivityId);
     } catch (error) {

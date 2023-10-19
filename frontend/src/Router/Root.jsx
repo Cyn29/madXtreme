@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 function Root() {
     const location = useLocation();
 
-    if (location.pathname === "/login") {
+    if (location.pathname === "/login" || location.pathname === "/register") {
         return <Outlet />;
     } else {
         return (

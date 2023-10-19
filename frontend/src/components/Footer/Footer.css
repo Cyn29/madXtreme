@@ -1,0 +1,9 @@
+.banner{
+    background-color:#D10505;
+    height:7rem;
+}
+.icon-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

@@ -1,5 +1,4 @@
 import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
 import mountain from "../../assets/carousel/mountain.png";
 import rafting from "../../assets/carousel/rafting.png";
 import climbing from "../../assets/carousel/climbing.png";
@@ -21,16 +20,6 @@ function CarouselComponent() {
                         width="100%"
                     />
                     <Carousel.Caption className="d-flex justify-content-end">
-                        <Button
-                            className="rounded-pill mb-3"
-                            style={{
-                                width: "18rem",
-                                color: "#D10505",
-                                backgroundColor: "#fff",
-                                border: "none",
-                            }}>
-                            <h4>Reserva tu aventura</h4>
-                        </Button>
                     </Carousel.Caption>
                 </Carousel.Item>
             ))}

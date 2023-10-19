@@ -6,7 +6,7 @@
         flex-direction: column;
         margin: 1%;
     }
-    .mb-5{
+    .section{
         display: flex;
         border-bottom: #D10505 0.5rem solid;
     }
@@ -35,7 +35,7 @@
         width: 32%;
         margin-inline: .5%;
     }
-    .mb-5{
+    .section{
         display: flex;
         border-bottom: #D10505 0.5rem solid;
     }

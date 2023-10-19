@@ -1,35 +1,29 @@
 import db from '../database/db.js'
 import { DataTypes, Sequelize } from 'sequelize';
-
 const ActivityModel = db.define("activities", {
     id_activity: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER, autoIncrement: true,
         primaryKey: true,
+        allowNull: true,
+    },
+    activity_image: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
-
     title:{
         type: DataTypes.STRING,
         allowNull: false,
     },
-
-    user_id: {  
-        type: DataTypes.UUID,
-    },
-
     act_description: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-
     price: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-
-    stock: {
-        type: DataTypes.INTEGER,
+    opinion: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
 },{
@@ -37,5 +31,5 @@ const ActivityModel = db.define("activities", {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
 });
-
-export default ActivityModel;
+export default ActivityModel
+;

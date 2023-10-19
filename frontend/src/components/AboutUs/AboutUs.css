@@ -23,3 +23,8 @@
         border-bottom: #D10505 0.5rem solid;
     }
 }
+
+.text-center{
+    max-width: 800px;
+    margin: 0 auto
+}

@@ -7,24 +7,14 @@
 }
 
 .Card {
-    width: 25rem;
-    margin: 2rem; 
+    flex: 1; 
+    max-width: 28rem; 
+    margin: 2rem;
     border-bottom: #D10505 0.5rem solid;
 }
 
-@media (max-width: 767px) {
-    .main {
-        flex-direction: column; 
-    }
-
-    .Card {
-        width: 80%; 
-        margin: 1rem auto;
-        border-bottom: #D10505 0.5rem solid;
-    }
+.text-center {
+    max-width: 80%; 
+    margin: 0 auto; 
 }
 
-.text-center{
-    max-width: 800px;
-    margin: 0 auto
-}

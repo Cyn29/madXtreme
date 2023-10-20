@@ -1,47 +1,85 @@
-import React from 'react'
-import BannerDetailedCard from '../components/DetailedCard/BannerDetailedCard'
-import ImgDetailedCard from '../components/DetailedCard/ImgDetailedCard.jsx'
-import MenuDetailedCard from '../components/DetailedCard/MenuDetailedCard.jsx'
-import PackDetailedCard from '../components/DetailedCard/PackDetailedCard.jsx'
-import DescriptionDetailedCard from '../components/DetailedCard/DescriptionDetailedCard'
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-import iconBoulder from '../assets/detailedCard/iconBoulder.png'
-import bgRed from '../assets/detailedCard/bgRed.png'
-import imgBoulder from '../assets/detailedCard/imgBoulder.png'
-import imgPack1 from '../assets/detailedCard/imgPack1.jpg'
-import imgPack2 from '../assets/detailedCard/imgPack2.jpg'
-import imgPack3 from '../assets/detailedCard/imgPack3.jpg'
-import buyIcon from '../assets/detailedCard/buyIcon.png'
+import BannerDetailedCard from "../components/DetailedCard/BannerDetailedCard";
+import ImgDetailedCard from "../components/DetailedCard/ImgDetailedCard.jsx";
+import MenuDetailedCard from "../components/DetailedCard/MenuDetailedCard.jsx";
+import PackDetailedCard from "../components/DetailedCard/PackDetailedCard.jsx";
+import ItineraryDetailedCard from "../components/DetailedCard/ItineraryDetailedCard.jsx";
 
+import iconBoulder from "../assets/detailedCard/iconBoulder.png";
+import bgRed from "../assets/detailedCard/bgRed.png";
+import buyIcon from "../assets/detailedCard/buyIcon.png";
 
 function DetailedCard() {
-    return (
-        <main>
-            <BannerDetailedCard 
-                title="Escalada/Boulder"
-                icon={iconBoulder}
-                backgroundRed={bgRed}
-            />
-            <ImgDetailedCard img={imgBoulder} />
-            <section className='w-75 mx-auto'>
-                <MenuDetailedCard/>
-                <article className="d-flex flex-column flex-lg-row justify-content-between align-items-start">
-                <div >
-                        <DescriptionDetailedCard />
-                        {/* <PriceDetailedCard /> */}
-                        {/* <DetailsDetailedCard /> */}
-                        {/* <CommentsDetailedCard /> */}
-                        {/* <MeetingPointDetailedCard /> */}
-                </div>
-                <div className="d-flex flex-column justify-content-cener align-items-center">
-                    <PackDetailedCard packImage={imgPack1} title={"15 de Noviembre"} price={"65€"} button={buyIcon} opinions={"4.7/5 opiniones"} />
-                    <PackDetailedCard packImage={imgPack2} title={"20 de Diciembre"} price={"65€"} button={buyIcon} opinions={"4.9/5 opiniones"} />
-                    <PackDetailedCard packImage={imgPack3} title={"1 de Enero 2024"} price={"65€"} button={buyIcon} opinions={"4.8/5 opiniones"} />
-                    </div>
-                </article>
-             </section>
-        </main>
-    )
+  const { category } = useParams();
+  const [activitiesDetails, setActivitiesDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/activities?category=${category}")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error to obtain activity details");
+        }
+        return response.json();
+      })
+
+      .then((data) => {
+        setActivitiesDetails(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error getting activity details:", error);
+        setLoading(false);
+      });
+  }, [category]);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
+  return (
+    <main>
+      <BannerDetailedCard
+       title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}
+       /*title={activitiesDetails[0].category_activity}*/
+        /* title={"Escalada/Boulder"}*/
+        icon={iconBoulder}
+        backgroundRed={bgRed}
+      />
+
+      <ImgDetailedCard img={activitiesDetails[0].activity_image} />
+
+      <section className="w-75 mx-auto">
+        <MenuDetailedCard />
+        {activitiesDetails.map((activity) => (
+          <article key={activity.id} className="d-flex flex-column flex-lg-row justify-content-between align-items-start">
+            <div>
+              <ItineraryDetailedCard
+                title={activity.title_activity}
+                description={activity.act_description}
+                details={activity.activityDetails}
+              />
+            </div>
+            <div className="d-flex flex-column justify-content-cener align-items-center">
+              {activitiesDetails.map((activity) => (
+                <PackDetailedCard
+                  packImage={activity.activity_image}
+                  title={activity.category_activity}
+                  date={"12 Septiembre"}
+                  price={activity.price_activity}
+                  button={buyIcon}
+                  stock={activity.stock_activity}
+                />
+              ))}
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
 }
 
 export default DetailedCard;

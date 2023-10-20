@@ -1,15 +1,11 @@
+import React from "react";
 import Card from "react-bootstrap/Card";
-// eslint-disable-next-line react/prop-types
+import './AboutUs.css';
+
 function AboutUs({ image, name, role, description }) {
     return (
         <main className="d-inline-flex mb-5">
-            <Card
-                style={{
-                    width: "25rem",
-                    margin: "2rem",
-                    marginLeft: "4rem",
-                    borderBottom: "#D10505 0.5rem solid ",
-                }}>
+            <Card className="Card"> 
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -21,4 +17,6 @@ function AboutUs({ image, name, role, description }) {
     );
 }
 
+
 export default AboutUs;
+

@@ -13,7 +13,7 @@ function CarouselComponent() {
         <Carousel className="mb-3">
             {carouselImages.map((image, index) => (
                 <Carousel.Item key={index} style={{ color: "black" }}>
-                    <img
+                    <img 
                         src={image}
                         className="img-fluid"
                         alt="Carousel image"

@@ -21,7 +21,7 @@ function Contact() {
             <Form id="form" onSubmit={handleSubmit(() => {})}>
                 <Form.Group className='formGroup'>
                     <Form.Label id="fullName">Nombre y apellidos</Form.Label>
-                    <Form.Control type="text" {...register('fullName', {
+                    <Form.Control type="text" name="fullname" {...register('fullName', {
                         required: true,
                         minLength: 3,
                     })}>
@@ -31,21 +31,21 @@ function Contact() {
                 </Form.Group>
                 <Form.Group className='formGroup'>
                     <Form.Label id="email">Email</Form.Label>
-                    <Form.Control type="text" {...register('email', {
+                    <Form.Control type="text" name="email" {...register('email', {
                         required: true,
                     })}></Form.Control>
                     {errors.email?.type === 'required' && <p>El email es obligatorio</p>}
                 </Form.Group>
                 <Form.Group className='formGroup'>
                     <Form.Label id="subject">Asunto</Form.Label>
-                    <Form.Control type="text" {...register('subject', {
+                    <Form.Control type="text" name="subject" {...register('subject', {
                         required: true,
                     })}></Form.Control>
                     {errors.subject?.type === 'required' && <p>El asunto es obligatorio</p>}
                 </Form.Group>
                 <Form.Group className='formGroup'>
                     <Form.Label id="comments">¡Déjanos tu comentario!</Form.Label>
-                    <Form.Control type="text" {...register('comments', {
+                    <Form.Control type="text" name="comment" {...register('comments', {
                         required: true,
                         minLength: 3,
                     })}>

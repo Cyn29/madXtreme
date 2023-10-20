@@ -1,4 +1,3 @@
-
 import logotype from "../../assets/logotype.png";
 import instagram from "../../assets/icons/instagram.png";
 import facebook from "../../assets/icons/facebook.png";
@@ -8,7 +7,11 @@ import './Footer.css'
 
 function Footer() {
     return (
-        <main>
+        <main
+            className="text-center w-100"
+            color="black"
+            bgColor="white"
+            aria-label="Footer">
             <section
                 aria-label="Footer"
                 className="banner text-white d-flex justify-content-center align-items-center">
@@ -24,17 +27,27 @@ function Footer() {
                 />
             </section>
             <section>
-                <img src={instagram} aria-label="instagram-icon" alt="Instagram icon" />
-                <img src={facebook} aria-label="facebook-icon" alt="Facebook icon" />
-                <img src={twitter} aria-label="twitter-icon" alt="Twitter icon" />
+                <img
+                    src={instagram}
+                    aria-label="instagram-icon"
+                    alt="Instagram icon"
+                />
+                <img
+                    src={facebook}
+                    aria-label="facebook-icon"
+                    alt="Facebook icon"
+                />
+                <img
+                    src={twitter}
+                    aria-label="twitter-icon"
+                    alt="Twitter icon"
+                />
                 <img src={tiktok} aria-label="tiktok-icon" alt="Tik tok icon" />
             </section>
             </div>
             <div className="text-center p-3">
                 © 2023 Copyright:
-                <a className="text-black" href="https://madXtreme.com/">
-                    madXtreme.com
-                </a>
+                <a className="text-black" href="/">madXtreme.com</a>
             </div>
         </main>
     );

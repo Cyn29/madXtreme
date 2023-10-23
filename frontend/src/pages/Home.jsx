@@ -18,7 +18,6 @@
             }
             return response.json()
           })
- 
           .then((data) => {
             setActivities(data); 
             setLoading(false); 
@@ -37,7 +36,7 @@
         <>
           <CarouselComponent />
           {activities.map((activity) => (
-            <Link to={`/activity/${activity.category_activity}`} key={activity.id_activity}>
+            <Link to={`/activities/categories/${activity.category_activity}`} key={activity.id_activity}>
             <Cards
               image={activity.activity_image}
               title={activity.title_activity}

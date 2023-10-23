@@ -1,4 +1,4 @@
-function DescriptionDetailedCard() {
+/*function DescriptionDetailedCard() {
     return (
       <article className="w-75" m-left>
         <h3>Itinerario</h3>
@@ -35,4 +35,4 @@ function DescriptionDetailedCard() {
   }
   
   export default DescriptionDetailedCard;
-  
+  */

@@ -1,7 +1,6 @@
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function PackDetailedCard({ packImage, title, price, button, stock, date}) {
+function PackDetailedCard({ packImage, price, button, stock, date}) {
     return (
         <section className="d-inline-flex">
             <Card

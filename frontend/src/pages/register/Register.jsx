@@ -21,7 +21,7 @@ function Register() {
                 },
                 body: JSON.stringify({ fullName, email, user_password }),
             });
-
+ 
             if (response.ok) {
                 const data = await response.json();
                 console.log('Registration status:', data);

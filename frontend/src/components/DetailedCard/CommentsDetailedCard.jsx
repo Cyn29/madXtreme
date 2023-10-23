@@ -1,8 +1,8 @@
-function CommentsDetailedCard({opinion_activity}) {
+function CommentsDetailedCard({opinion}) {
     return (
       <>   
       <p id="comments">comments</p>  
-      <p className="my-4">{opinion_activity}</p> 
+      <p className="my-4">{opinion}</p> 
       </>
     );
   }

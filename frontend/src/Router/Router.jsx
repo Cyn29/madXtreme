@@ -22,7 +22,7 @@ const router = createBrowserRouter([
                 element: <Login />,
             },
             {
-                path: "/activity/:category",
+                path: "/activities/categories/:category",
                 element: <DetailedCard />
             },
             {

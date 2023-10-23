@@ -1,5 +1,5 @@
 import { expect, test, it } from "vitest";
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Login from "./Login";
 
 test('Login', () => {
@@ -57,6 +57,13 @@ test("Login", () => {
         expect(loginElement).toBeInTheDocument();
     });
 });
+
+/*test("Contact", () => {
+    it("click works correctly", () => {
+        const accessBtn = screen.getByText(/Acceder/i)
+        fireEvent.click(accessBtn)
+    } )
+})*/
 
 test("Login", () => {
     it("renders password text", () => {

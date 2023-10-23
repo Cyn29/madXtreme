@@ -1,10 +1,10 @@
-
-@media (min-width: 320px) {
-    
-    .d-inline-flex {
-        display: flex;
-        flex-direction: column;
-        margin: 1%;
+   .main{
+    width: 25rem;
+        margin-top:1rem;
+        margin-left: .5rem;
+    }
+    .CardBody{
+        text-align: left;
     }
     .section{
         display: flex;
@@ -14,41 +14,13 @@
         background-color: #D10505;
         color: white;
         border: none;
-        width: 5rem;
-        height: 2.3rem;
+        width: 5.5rem;
+        height: 2.5rem;
         border-radius: 2rem;
         justify-content: center;
-        margin: .5rem;
-        margin-left: 11.5rem;
-        
-}
-.text-price {
-    font-weight:600;
-    font-size: 2rem;
-    color: #D10505;
-}
-}
-@media (min-width: 850px) {
-    
-    .d-inline-flex {
-        display: inline;
-        width: 32%;
-        margin-inline: .5%;
-    }
-    .section{
-        display: flex;
-        border-bottom: #D10505 0.5rem solid;
-    }
-    .detail-button{
-        background-color: #D10505;
-        color: white;
-        border: none;
-        width: 6.5rem;
-        height: 2.7rem;
-        border-radius: 2rem;
-        justify-content: center;
-        margin-left: 40%;
-        font-size: 1.3rem;      
+        margin-left: 9rem;
+        font-size: 1.2rem;  
+        font-weight: 600;    
 }
 .text-price {
     display: flex;
@@ -57,4 +29,4 @@
     color: #D10505;
     font-weight: 700;
 }
-}
+

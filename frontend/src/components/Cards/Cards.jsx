@@ -3,11 +3,11 @@ import Card from 'react-bootstrap/Card';
 import "./Cards.css"
 function Cards({ activity_image, price, act_description, button, opinion}) {
   return (
-    <main className="d-inline-flex ">
+    <main className="main">
       <Card className="section" aria-label="Card">
         <Card.Img variant="top" src={activity_image} alt="Activity Image" /> 
-        <Card.Body>
-          <h4><Card.Text>{act_description}</Card.Text></h4>
+        <Card.Body className='CardBody'>
+          <h5><Card.Text>{act_description}</Card.Text></h5>
           <section className="d-flex">
             <Card.Text className='text-price'>{price} €</Card.Text>
             <button className="detail-button">

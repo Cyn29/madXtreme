@@ -1,41 +1,38 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import CarouselComponent from "../components/Carousel/Carousel.jsx";
 import { useState, useEffect } from 'react';
-import Cards from '../components/Cards/Cards.jsx';
+import CarouselComponent from '../components/Carousel/Carousel';
+import Cards from '../components/Cards/Cards';
+import { activitiesService } from '../Services/ActivitiesServices';
+import { Row, Col } from 'react-bootstrap';
 
 function Home() {
   const [activities, setActivities] = useState([]);
+
   useEffect(() => {
-    fetch('http://localhost:3000/activities') 
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error to obtain activities');
-        }
-        return response.json();
-      })
-      .then((activities) => {
-        setActivities(activities);
+    activitiesService.getProducts()
+      .then((fetchedActivities) => {
+        setActivities(fetchedActivities);
       })
       .catch((error) => {
-        console.error('Error to obtain activities', error);
+        console.error('Error fetching activities', error);
       });
-  },);
+  }, []); 
 
   return (
     <>
       <CarouselComponent />
-      
-       {activities.map((activity, index) => (
-        <Cards
-          key={index}
-          activity_image={activity.activity_image}
-          title={activity.title}
-          act_description={activity.act_description}
-          price={activity.price}
-          button={"Ver más"}
-          opinion={activity.opinion}
-        />
-      ))}
+      <Row xs={1} md={2} lg={3} className='mb-5'>
+        {activities.map((activity, index) => (
+          <Cards
+            key={index}
+            activity_image={activity.activity_image}
+            title={activity.title}
+            act_description={activity.act_description}
+            price={activity.price}
+            button={"Ver más"}
+            opinion={activity.opinion}
+          />
+        ))}
+      </Row>
     </>
   );
 }

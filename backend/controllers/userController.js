@@ -69,7 +69,7 @@ export const updateUser = async (req, res) => {
             return res.status(400).json({message: "User not found"});
         }
         const updatedUser = await UserModel.update(req.body, {
-            where: { id: req.params.id },
+            where: { id: bufferedId },
         });
         if (updatedUser) {
             return res.status(200).json({ message: "User updated successfully!" });

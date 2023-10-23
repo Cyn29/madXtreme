@@ -22,7 +22,6 @@ ActivityRoutes.get("/image/:id_activity", async (req, res) => {
       return res.status(404).json({ error: "Activity not found" });
     }
     const imagePath = activity.image;
-
     res.sendFile(imagePath);
   } catch (error) {
     res.status(500).json({ error: "Error getting the image" });

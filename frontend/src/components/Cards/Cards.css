@@ -1,32 +1,33 @@
-   .main{
-    width: 25rem;
-        margin-top:1rem;
-        margin-left: .5rem;
-    }
-    .CardBody{
-        text-align: left;
-    }
-    .section{
-        display: flex;
-        border-bottom: #D10505 0.5rem solid;
-    }
-    .detail-button{
-        background-color: #D10505;
-        color: white;
-        border: none;
-        width: 5.5rem;
-        height: 2.5rem;
-        border-radius: 2rem;
-        justify-content: center;
-        margin-left: 9rem;
-        font-size: 1.2rem;  
-        font-weight: 600;    
-}
-.text-price {
-    display: flex;
-    font-weight:600;
-    font-size: 1.8rem;
-    color: #D10505;
-    font-weight: 700;
-}
+   .main {
+       margin-top: 1.5rem;
+   }
 
+   .CardBody {
+       text-align: left;
+   }
+
+   .section {
+       display: flex;
+       border-bottom: #D10505 0.5rem solid;
+   }
+
+   .detail-button {
+       background-color: #D10505;
+       color: white;
+       border: none;
+       width: 5.5rem;
+       height: 2.5rem;
+       border-radius: 2rem;
+       justify-content: center;
+       margin-left: 9rem;
+       font-size: 1.2rem;
+       font-weight: 600;
+   }
+
+   .text-price {
+       display: flex;
+       font-weight: 600;
+       font-size: 1.8rem;
+       color: #D10505;
+       font-weight: 700;
+   }

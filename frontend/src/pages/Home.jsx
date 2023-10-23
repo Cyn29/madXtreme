@@ -20,7 +20,7 @@ function Home() {
   return (
     <>
       <CarouselComponent />
-      <Row xs={1} md={2} lg={3} className='mb-5'>
+      <Row xs={1} md={2} lg={3}>
         {activities.map((activity, index) => (
           <Cards
             key={index}

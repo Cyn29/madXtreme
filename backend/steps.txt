@@ -1,3 +1,0 @@
-npm init -y
-npm i express express-session mysql2 dotenv bcryptjs nodemon cors
-//no instalo ejs porque lo hacemos con react

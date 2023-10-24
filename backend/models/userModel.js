@@ -15,4 +15,12 @@ const UserModel = db.define("users", {
         timestamps: false
     })
 
+    db.sync()
+    .then(() => {
+        console.log('Modelo sincronizado correctamente');
+    })
+    .catch((error) => {
+        console.error('Error al sincronizar el modelo:', error);
+    });
+
 export default UserModel;

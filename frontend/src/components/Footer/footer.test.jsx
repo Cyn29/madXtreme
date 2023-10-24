@@ -65,3 +65,11 @@ test("Footer", () => {
         expect(footerElement).toBeInTheDocument();
     });
 });
+
+test("Footer", () => {
+    it("renders link to web", () => {
+        render(<Footer />);
+        const footerElement = screen.getByText("madXtreme.com");
+        expect(footerElement).toBeInTheDocument();
+    });
+});

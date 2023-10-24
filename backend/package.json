@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll --no-cache --detectOpenHandles",
     "dev": "nodemon app.js"
   },
   "keywords": [],
@@ -21,10 +21,14 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.1",
-    "nodemon": "^3.0.1",
     "sequelize": "^6.33.0",
     "uuidv4": "^6.2.13",
     "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
   }
 }
 

@@ -10,7 +10,7 @@ import activityRoutes from './router/activityRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const app = express();
+export const app = express();
 app.disable('x-powered-by');
 app.use(json());
 
@@ -44,5 +44,6 @@ app.use("/activities", activityRoutes)
 
 
 const PORT = process.env.PORT ?? 3000 
-app.listen(PORT, () =>
+export const server= app.listen(PORT, () =>
 console.log(`listening port ${PORT}`))
+

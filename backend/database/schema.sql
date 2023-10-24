@@ -18,6 +18,7 @@ create table admins(
     createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+SELECT *, BIN_TO_UUID(id) id FROM admins;
 SHOW GRANTS FOR 'root'@'localhost';
 GRANT ALL PRIVILEGES ON madxtreme.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
@@ -47,4 +48,5 @@ values
 ( 6 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_51_m9m6bo.png', 'Kayak' , 'Kayak en río natural con los mejores paisajes..', 55, '4.7/5 15 opiniones' , 5);
 
 drop table activities;
+truncate table users;
 drop table users;

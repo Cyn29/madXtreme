@@ -27,7 +27,7 @@ function DetailedCard() {
       })
       .then((data) => {
         setActivitiesDetails(data);
-        console.log(activitiesDetails)
+        console.log(activitiesDetails);
         setLoading(false);
       })
       .catch((error) => {
@@ -44,7 +44,7 @@ function DetailedCard() {
     <main>
       <BannerDetailedCard
        /*title={`${category.charAt(0).toUpperCase() + category.slice(1)}`}*/
-      title={category.category_activity}
+      title={activitiesDetails[0].category_activity}
        /*title={activitiesDetails[0].category_activity}*/
         /* title={"Escalada/Boulder"}*/
         icon={iconBoulder}
@@ -52,8 +52,6 @@ function DetailedCard() {
       />
 
       <ImgDetailedCard img={activitiesDetails[0].activity_image} />
-     
-
 
       <section className="w-75 mx-auto">
         <MenuDetailedCard />
@@ -71,7 +69,7 @@ function DetailedCard() {
                 <PackDetailedCard
                   packImage={activity.activity_image}
                   title={activity.category_activity}
-                  date={"12 Septiembre"}
+                  date={activity.date1_activity}
                   price={activity.price_activity}
                   button={buyIcon}
                   stock={activity.stock_activity}

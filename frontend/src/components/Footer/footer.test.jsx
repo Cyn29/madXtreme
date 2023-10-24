@@ -1,5 +1,5 @@
 import { expect, test, it } from "vitest";
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Footer from "./Footer";
 
 test('Footer', () => {
@@ -71,5 +71,13 @@ test("Footer", () => {
         render(<Footer />);
         const footerElement = screen.getByText("madXtreme.com");
         expect(footerElement).toBeInTheDocument();
+    });
+});
+
+test("Footer", () => {
+    it("works link in login icon", () => {
+        render(<Footer />);
+        const webLink = screen.getByText("madXtreme.com");
+        fireEvent.click(webLink)
     });
 });

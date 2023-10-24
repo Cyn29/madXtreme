@@ -44,7 +44,7 @@ const ActivityModel = db.define('activities', {
         allowNull: false,
     },
     date1_activity: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
     },
     stock1_activity: {
@@ -52,7 +52,7 @@ const ActivityModel = db.define('activities', {
         allowNull: false,
     },
     date2_activity: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
     },
     stock2_activity: {

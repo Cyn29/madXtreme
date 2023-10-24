@@ -69,10 +69,12 @@ function DetailedCard() {
                 <PackDetailedCard
                   packImage={activity.activity_image}
                   title={activity.category_activity}
-                  date={activity.date1_activity}
+                  date1={activity.date1_activity}
+                  stock1={activity.stock1_activity}
+                  date2={activity.date2_activity}
+                  stock2={activity.stock2_activity}
                   price={activity.price_activity}
                   button={buyIcon}
-                  stock={activity.stock_activity}
                 />
               ))}
             </div>

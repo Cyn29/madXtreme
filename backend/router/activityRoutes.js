@@ -5,6 +5,7 @@ import {
   createActivity,
   updateActivity,
   deleteActivity,
+ getActivitiesByCategory,
 } from "../controllers/activityController.js";
 
 const ActivityRoutes = Router();
@@ -14,6 +15,9 @@ ActivityRoutes.get("/:id_activity", getActivityById);
 ActivityRoutes.post("/", createActivity);
 ActivityRoutes.patch("/:id_activity", updateActivity);
 ActivityRoutes.delete("/:id_activity", deleteActivity);
+
+
+ActivityRoutes.get("/categories/:category", getActivitiesByCategory);
 
 ActivityRoutes.get("/image/:id_activity", async (req, res) => {
   try {

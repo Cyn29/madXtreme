@@ -1,24 +1,10 @@
 import activitiesModel from "../models/activitiesModel.js";
-import { Sequelize } from "sequelize";
 import { validateActivity } from "../validations/activitiesValidations.js";
 
 export const getActivities = async (_req, res) => {
     try {
         const activities = await activitiesModel.findAll();
-        const activitiesWithUUID = activities.map((Activity) => {
-            return {
-                id_activity: Activity.id_activity,
-                activity_image: Activity.activity_image,
-                title_activity: Activity.title_activity,
-                category_activity: Activity.category_activity,
-                act_description: Activity.act_description,
-                price_activity: Activity.price_activity,
-                opinion_activity: Activity.opinion_activity,
-                stock_activity: Activity.stock_activity,
-                activityDetails: Activity.activityDetails,
-            };
-        });
-        res.json(activitiesWithUUID);
+        res.json(activities);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -26,33 +12,39 @@ export const getActivities = async (_req, res) => {
 export const getActivityById = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const Activity = await activitiesModel.findByPk(id_activity);
-        if (!Activity) {
-            res.status(404).json({ message: "Activity not found" });
+        const activity = await activitiesModel.findByPk(id_activity);
+        if (!activity) {
+            res.status(404).json({ message: "activity not found" });
             return;
         }
-        const ActivityId = {
-            id_activity: Activity.id_activity,
-            activity_image: Activity.activity_image,
-            title_activity: Activity.title_activity,
-            category_activity: Activity.category_activity,
-            act_description: Activity.act_description,
-            price_activity: Activity.price_activity,
-            opinion_activity: Activity.opinion_activity,
-            stock_activity: Activity.stock_activity,
-            activityDetails: Activity.activityDetails,
-        };
-        res.json(ActivityId);
+        res.status(200).json(activity);
+       /* res.json(activityId);*/
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const getActivitiesByCategory = async (req, res) => {
+    try {
+        const { category } = req.params;
+        const activities = await activitiesModel.findAll({
+            where: {
+                category_activity: category,
+            },
+        });
+
+        res.status(200).json(activities);
+    } catch (error) {
+        res.status(500).json({ error: "Error getting activities by category" });
+    }
+};
+
 export const createActivity = async (req, res) => {
     try {
         const validationResult = validateActivity(req.body);
         if (validationResult.success) {
             const newActivity = await activitiesModel.create(validationResult.data);
-            res.status(201).json({
+            res.status(201).json({  
                 message: "Activity created succesfully!",
                 id_activity: newActivity.id_activity
             });
@@ -67,36 +59,34 @@ export const createActivity = async (req, res) => {
     }   
 };
 
-
 export const updateActivity = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const existingactivity = await activitiesModel.findOne({
-            where: { id_activity: id_activity },
-        })
-        if(!existingactivity) {
-            return res.status(400).json({message: "activity not found"});
+        const existingActivity = await activitiesModel.findByPk(id_activity);
+        if (!existingActivity) {
+            return res.status(404).json({ message: "Activity not found" });
         }
-        const updatedactivity = await activitiesModel.update(req.body, {
-            where: { id_activity: req.params.id_activity },
-        });
-        if (updatedactivity) {
-            return res.status(200).json({ message: "activity updated successfully!" });
-        }
+        const updatedActivity = await existingActivity.update(req.body);
+        res.status(200).json(updatedActivity);
     } catch (error) {
-        return res.status(500).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 };
+
 export const deleteActivity = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const deletedactivity = await activitiesModel.destroy({
-            where: { id_activity: id_activity },
+        const deletedRows = await activitiesModel.destroy({
+            where: {
+                id_activity: id_activity,
+            },
         });
-        if (deletedactivity) {
-            return res.status(200).json({ message: "activity deleted successfully!" });
+        if (deletedRows > 0) {
+            res.status(200).json({ message: "Activity deleted successfully" });
+        } else {
+            res.status(404).json({ message: "Activity not found" });
         }
     } catch (error) {
-        return res.status(500).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 };

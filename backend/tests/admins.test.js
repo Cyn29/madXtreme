@@ -25,6 +25,9 @@ describe("test CRUD admins", () => {
         const wrongAdmin = {
             wrong_field: "test",
         };
+        beforeAll(async () => {
+            await AdminModel.destroy({ where: { email: "test@gmail.com" } });
+        });
         test("should return a response with status 201 and type json", async () => {
             const response = await request(app).post("/admins").send(newAdmin);
             expect(response.status).toBe(201);
@@ -39,7 +42,9 @@ describe("test CRUD admins", () => {
     });
     describe("PATCH /admins", () => {
         let createdAdmin = {};
-    
+        beforeAll(async () => {
+            await AdminModel.destroy({ where: { email: "test@gmail.com" } });
+        });
         beforeEach(async () => {
             try {
                 createdAdmin = await AdminModel.findOne({
@@ -106,7 +111,8 @@ describe("test CRUD admins", () => {
         });
     });
 
-    afterAll(() => {
+    afterAll(async() => {
+        await AdminModel.destroy({ where: { email: "test@gmail.com" }});
         server.close();
         db.close();
     });

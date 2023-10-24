@@ -18,6 +18,7 @@ create table admins(
     createAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+SELECT *, BIN_TO_UUID(id) id FROM admins;
 SHOW GRANTS FOR 'root'@'localhost';
 GRANT ALL PRIVILEGES ON madxtreme.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
@@ -40,4 +41,5 @@ insert into activities(title, act_description, price, stock) values
 ('Boulder', 'prueba a escalar sin cuerda', 40, 10),
 ('MTB', 'bici extrema', 35, 5);
 drop table activities;
+truncate table users;
 drop table users;

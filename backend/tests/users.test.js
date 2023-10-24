@@ -25,6 +25,9 @@ describe("test CRUD users", () => {
         const wrongUser = {
             wrong_field: "test",
         };
+        beforeAll(async () => {
+            await UserModel.destroy({ where: { email: "test@gmail.com" } });
+        });
         test("should return a response with status 201 and type json", async () => {
             const response = await request(app).post("/users").send(newUser);
             expect(response.status).toBe(201);
@@ -39,7 +42,9 @@ describe("test CRUD users", () => {
     });
     describe("PATCH /users", () => {
         let createdUser = {};
-    
+        beforeAll(async () => {
+            await UserModel.destroy({ where: { email: "test@gmail.com" } });
+        });   
         beforeEach(async () => {
             try {
                 createdUser = await UserModel.findOne({
@@ -106,7 +111,8 @@ describe("test CRUD users", () => {
         });
     });
 
-    afterAll(() => {
+    afterAll(async() => {
+        await UserModel.destroy({ where: { email: "test@gmail.com" }});
         server.close();
         db.close();
     });

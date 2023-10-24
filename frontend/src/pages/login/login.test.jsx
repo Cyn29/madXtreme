@@ -58,12 +58,13 @@ test("Login", () => {
     });
 });
 
-/*test("Contact", () => {
-    it("click works correctly", () => {
-        const accessBtn = screen.getByText(/Acceder/i)
-        fireEvent.click(accessBtn)
-    } )
-})*/
+test("Login", () => {
+    it("works link in access button", () => {
+        render(<Login />);
+        const accessBtn = screen.getByText("Acceder");
+        fireEvent.click(accessBtn);
+    });
+    });
 
 test("Login", () => {
     it("renders password text", () => {
@@ -80,3 +81,11 @@ test("Login", () => {
         expect(loginElement).toBeInTheDocument();
     });
 });
+
+test("Login", () => {
+    it("works link in '¿Todavía no tienes una cuenta' text", () => {
+        render(<Login />);
+        const registrationLink = screen.getByText("¿Todavía no tienes una cuenta?");
+        fireEvent.click(registrationLink);
+    });
+    })

@@ -1,5 +1,5 @@
 import { expect, test, it } from "vitest";
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Register from "./Register";
 
 test('Register', () => {
@@ -9,6 +9,14 @@ test('Register', () => {
         expect(registerElement).toBeInTheDocument();
     });
 });
+
+test("Register", () => {
+    it("works link in registration button", () => {
+        render(<Register />);
+        const registerBtn = screen.getByText("Registrarse");
+        fireEvent.click(registerBtn);
+    });
+    })
 
 test("Register", () => {
     it("renders logotype image correctly", () => {
@@ -65,6 +73,14 @@ test("Register", () => {
         expect(registerElement).toBeInTheDocument();
     });
 });
+
+test("Register", () => {
+    it("works link in '¿Tienes una cuenta' text", () => {
+        render(<Register />);
+        const haveAccountLink = screen.getByText("¿Tienes una cuenta?");
+        fireEvent.click(haveAccountLink);
+    });
+    });
 
 test("Register", () => {
     it("renders login text", () => {

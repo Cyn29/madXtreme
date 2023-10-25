@@ -26,8 +26,8 @@ function MountainBike () {
       image1={MTB1}
       image2={MTB2}
       image3={MTB3} />
-       <Description 
-       title={"MTB-Enduro/DH"}
+      <Description 
+      title={"MTB-Enduro/DH"}
       description={"¡Embárcate en una emocionante aventura en la Sierra de Madrid y descubre la emoción del MTB Enduro y el Downhill (DH)! Nuestra experiencia de ciclismo de montaña te lleva a través de intrincados senderos, empinadas pendientes y descensos vertiginosos. Siente la adrenalina bombeando mientras te lanzas cuesta abajo en terrenos desafiantes, desafiando tus habilidades de ciclismo en una experiencia única. Ya sea que seas un apasionado del Enduro o un amante de la velocidad en DH, la Sierra de Madrid ofrece un escenario impresionante para que experimentes la emoción de la montaña de una manera completamente nueva. ¡Únete a nosotros para un paseo que nunca olvidarás!"} 
       text1={"Ubicación escénica: MTB/Enduro-DH experiencia extrema en bici."}
       text2={"Aventura en las rutas y BikeParks: Tanto para principiantes como para expertos, ¡hay rutas para todos!"}

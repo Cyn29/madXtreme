@@ -26,8 +26,8 @@ function Kayak() {
       image1={kayak1}
       image2={kayak2}
       image3={kayak3} />
-       <Description 
-       title={"Kayak río natural"}
+      <Description 
+      title={"Kayak río natural"}
       description={"¡Sumérgete en la emoción de explorar las aguas cristalinas de un entorno natural único en la Sierra de Madrid con nuestra experiencia de kayak! Navegar en kayak te brinda la oportunidad de disfrutar de la belleza de la naturaleza mientras remas a través de impresionantes paisajes. Aventúrate en este emocionante viaje acuático y descubre la serenidad de los lagos y ríos de la región en una experiencia de kayak inolvidable. ¡Ven y rema con nosotros!"} 
       text1={"Ubicación escénica: Kayak en río natural con los mejores paisajes."}
       text2={"Aventura en los ríos: Tanto para principiantes como para expertos, ¡hay rutas para todos!"}

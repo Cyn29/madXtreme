@@ -83,7 +83,10 @@ function activityToResponse(Activity) {
         title: Activity.title,
         act_description: Activity.act_description,
         price: Activity.price,
+        bookingDate: Activity.bookingDate,
         opinion: Activity.opinion,
+        stock: Activity.stock
+        
     };
 }
 

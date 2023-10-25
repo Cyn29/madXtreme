@@ -3,10 +3,9 @@ import Card from '../components/DetailedCard/Card';
 import { useState, useEffect } from 'react';
 import { activitiesService } from '../Services/ActivitiesServices';
 import Description from '../components/DetailedCard/Description';
-
 function DetailedCardPage() {
   const [activities, setActivities] = useState([]);
-
+  const cardIndexToShow = 0;
   useEffect(() => {
     activitiesService
       .getProducts()
@@ -20,18 +19,16 @@ function DetailedCardPage() {
   return (
     <>
       <Images />
-      <Description/>
-      {activities.map((activity, index) => (
-        <div key={index}>
-          <Card
-            activity_image={activity.activity_image}
-            bookingDate={activity.bookingDate}
-            price={activity.price}
-            stock={activity.stock}
-          />
-        </div>
-      ))}
+      <Description />
+      {cardIndexToShow < activities.length && (
+        <Card
+          activity_image={activities[cardIndexToShow].activity_image}
+          bookingDate={activities[cardIndexToShow].bookingDate}
+          price={activities[cardIndexToShow].price}
+          stock={activities[cardIndexToShow].stock}
+        />
+      )}
     </>
   );
 }
-export default DetailedCardPage;  
+export default DetailedCardPage;

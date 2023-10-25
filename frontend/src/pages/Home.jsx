@@ -3,6 +3,7 @@ import CarouselComponent from '../components/Carousel/Carousel';
 import Cards from '../components/Cards/Cards';
 import { activitiesService } from '../Services/ActivitiesServices';
 import { Row, Col } from 'react-bootstrap';
+import './Home.css'
 
 function Home() {
   const [activities, setActivities] = useState([]);
@@ -18,11 +19,13 @@ function Home() {
   }, []); 
 
   return (
-    <>
+    <div className='home-container'>
       <CarouselComponent />
+      <div className='container-father'>
+      <div className='cards-container'>
       <Row xs={1} md={2} lg={3}>
         {activities.map((activity, index) => (
-      <Col key={index} className="d-flex align-items-center">
+      <Col key={index} className="mt-4">
           <Cards
             key={index}
             activity_image={activity.activity_image}
@@ -31,10 +34,12 @@ function Home() {
             price={activity.price}
             opinion={activity.opinion}
           />
-             </Col>
+          </Col>
         ))}
       </Row>
-    </>
+      </div>
+      </div>
+    </div>
   );
 }
 

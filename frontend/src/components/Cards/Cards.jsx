@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import "./Cards.css"
 function Cards({ activity_image, price, act_description, opinion}) {
   return (
-    <main className="main">
       <Card className="section" aria-label="Card">
         <Card.Img variant="top" src={activity_image} alt="Activity Image" /> 
         <Card.Body className='CardBody'>
@@ -17,7 +16,6 @@ function Cards({ activity_image, price, act_description, opinion}) {
           <Card.Text>{opinion}</Card.Text>
         </Card.Body>
       </Card>
-    </main>
   );
 }
 

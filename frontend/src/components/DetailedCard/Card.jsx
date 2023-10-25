@@ -4,7 +4,7 @@ function Cards({ activity_image, bookingDate , price, stock}) {
   return (
     <main className="main">
       <Card className="section" aria-label="Card">
-        <Card.Img variant="top" src={activity_image} alt="Activity Image" /> 
+        <Card.Img variant="top" src={activity_image} alt="Activity Image" />
         <Card.Body className='CardBody'>
           <h5><Card.Text>{bookingDate}</Card.Text></h5>
           <section className="d-flex">
@@ -19,12 +19,10 @@ function Cards({ activity_image, bookingDate , price, stock}) {
     </main>
   );
 }
-
 Cards.propTypes = {
   activity_image: PropTypes.string.isRequired,
   bookingDate: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   stock: PropTypes.number.isRequired,
 };
-
 export default Cards;

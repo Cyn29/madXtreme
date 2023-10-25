@@ -42,21 +42,6 @@ test("Header", () => {
     });
 });
 
-test("Header", () => {
-    it("renders 'Actividades' section correctly", () => {
-        render(<Header />);
-        const headerElement = screen.getByText("Actividades");
-        expect(headerElement).toBeInTheDocument();
-    });
-});
-
-test("Header", () => {
-    it("works link in 'Actividades' section", () => {
-        render(<Header />);
-        const activitiesLink = screen.getByText("Activities");
-        fireEvent.click(activitiesLink);
-    });
-});
 
 test("Header", () => {
     it("renders 'Nosotros' section correctly", () => {

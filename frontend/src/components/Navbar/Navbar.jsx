@@ -15,7 +15,6 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end ml-auto">
                     <Nav className="fw-bold">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
-                        <Nav.Link as={Link} to="/activities">Actividades</Nav.Link>
                         <Nav.Link as={Link} to="/aboutUs">Nosotros</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     </Nav>

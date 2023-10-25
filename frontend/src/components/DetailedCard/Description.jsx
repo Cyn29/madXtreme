@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
 function Description({ title, description, text1 , text2, text3, duration, opinion }) {
   return (
     <Card className="container" style={{ width: '87vw', display:'flex', justifyContent:'center'}}>
@@ -21,6 +19,4 @@ function Description({ title, description, text1 , text2, text3, duration, opini
     </Card>
   );
 }
-
 export default Description;
-

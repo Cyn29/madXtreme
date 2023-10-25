@@ -2,6 +2,7 @@ import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap
 import logotype from '../../assets/logotype.png';
 import './Register.css';
 import { useState } from 'react';
+import { registrationService } from '../../Services/RegisterServices';
 
 function Register() {
     const [fullName, setFullName] = useState('');
@@ -12,16 +13,8 @@ function Register() {
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            const response = await fetch('http://localhost:3000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ fullName, email, user_password }),
-            });
-
+            const response = registrationService.postRegistration()
             if (response.ok) {
                 const data = await response.json();
                 console.log('Registration status:', data);

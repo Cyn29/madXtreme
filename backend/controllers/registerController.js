@@ -22,7 +22,7 @@ export const postRegistration = async (req, res) => {
     if (alreadyExistsUser) {
         return res
             .status(409)
-            .json({ message: "User with email already exists!" });
+            .json({ message: "Check that all fields are correct" });
     }
 
     const hashedPassword = await bcrypt.hash(user_password, 10);

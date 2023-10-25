@@ -13,19 +13,7 @@ dotenv.config();
 export const app = express();
 app.disable('x-powered-by');
 app.use(json());
-
-const corsOptions = {
-  origin: 'http://localhost:5173',
-  methods: 'GET',
-  optionsSuccessStatus: 204
-};
-app.use(cors(corsOptions));
-
-app.use(cors({
-    origin: 'http://localhost:5173',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,  // Habilita las cookies y encabezados de autorización
-}));
+app.use(cors());
 
 app.use(session({
     secret: 'secret',

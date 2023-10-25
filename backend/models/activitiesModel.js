@@ -25,7 +25,15 @@ const ActivityModel = db.define("activities", {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    bookingDate: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     opinion: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    stock: {
         type: DataTypes.STRING,
         allowNull: false,
     },

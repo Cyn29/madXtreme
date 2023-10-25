@@ -1,48 +1,43 @@
 import { useState } from "react";
 import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  Image,
-  Alert,
+    Container,
+    Row,
+    Col,
+    Form,
+    Button,
+    Image,
+    Alert,
 } from "react-bootstrap";
 import logotype from "../../assets/logotype.png";
 import { Link } from "react-router-dom";
+import { loginService } from "../../Services/LoginServices";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [user_password, setPassword] = useState("");
-  const [showErrorAlert, setShowErrorAlert] = useState(false);
+    const [email, setEmail] = useState("");
+    const [user_password, setPassword] = useState("");
+    const [showErrorAlert, setShowErrorAlert] = useState(false);
 
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:3000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, user_password }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Login status:", data);
-        if (data.message === "Welcome back!") {
-          window.location.href = "/";
-        } else {
-          console.error("Email  or password does not match");
-          setShowErrorAlert(true);
-          setTimeout(() => {
-            setShowErrorAlert(false);
-          }, 10000);
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = loginService.postLogin()
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Login status:", data);
+                if (data.message === "Welcome back!") {
+                    window.location.href = "/";
+                } else {
+                    console.error("Email  or password does not match");
+                    setShowErrorAlert(true);
+                    setTimeout(() => {
+                        setShowErrorAlert(false);
+                    }, 10000);
+                }
+            }
+        } catch (error) {
+            console.error("Failed request:", error);
         }
-      }
-    } catch (error) {
-      console.error("Failed request:", error);
-    }
-  };
+    };
 
     return (
         <Form onSubmit={handleLoginSubmit}>
@@ -61,7 +56,8 @@ function Login() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 style={{
-                                    background: "rgba(255, 232.69, 232.69, 0.70)",
+                                    background:
+                                        "rgba(255, 232.69, 232.69, 0.70)",
                                     borderBottom: "2px #D10505 solid",
                                     borderRadius: 10,
                                 }}
@@ -79,7 +75,8 @@ function Login() {
                                 type="password"
                                 value={user_password}
                                 style={{
-                                    background: "rgba(255, 232.69, 232.69, 0.70)",
+                                    background:
+                                        "rgba(255, 232.69, 232.69, 0.70)",
                                     borderBottom: "2px #D10505 solid",
                                     borderRadius: 10,
                                 }}

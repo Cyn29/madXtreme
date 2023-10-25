@@ -1,0 +1,11 @@
+.about-us-card {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.about-us-card .card {
+    /*width: 90%;*/
+    max-width: 25rem;
+    margin: 2rem;
+    border-bottom: 0.5rem solid #D10505;
+}

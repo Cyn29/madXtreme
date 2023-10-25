@@ -24,7 +24,7 @@ describe("test POST register", () => {
         test("should return a message 'Thanks for registering'", async () => {
             const response = await request(app).post("/register").send(newRegister);
             expect(response.status).toBe(409); 
-            expect(response.body.message).toContain("User with email already exists!");
+            expect(response.body.message).toContain("Check that all fields are correct");
         });
 
         afterAll(async () => {

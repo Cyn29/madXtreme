@@ -1,23 +1,21 @@
+/* eslint-disable react/prop-types */
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import Image1 from '../../assets/Images/Escalada.png'
-import Image2 from '../../assets/Images/Escalada2.png'
-import Image3 from '../../assets/Images/Escalada3.png'
 
-function Images() {
+function Images({image1, image2, image3}) {
   return (
     <Container>
       <Row>
         <Col xs={6} md={4}>
-          <Image src={Image1} thumbnail />
+          <Image src={image1} thumbnail />
         </Col>
         <Col xs={6} md={4}>
-          <Image src={Image2} thumbnail />
+          <Image src={image2} thumbnail />
         </Col>
         <Col xs={6} md={4}>
-          <Image src={Image3} thumbnail />
+          <Image src={image3} thumbnail />
         </Col>
       </Row>
     </Container>

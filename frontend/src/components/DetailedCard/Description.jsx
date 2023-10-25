@@ -2,8 +2,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 function Description({ title, description, text1 , text2, text3, duration, opinion }) {
   return (
-    <Card className="container" style={{ width: '87vw', display:'flex', justifyContent:'center'}}>
-      <Card.Body>;
+    <Card className="container mt-4" style={{ width: '84vw', display:'flex', justifyContent:'center'}}>
+      <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
           {description}

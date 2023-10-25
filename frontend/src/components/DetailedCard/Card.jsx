@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 function Cards({ activity_image, bookingDate , price, stock}) {
   return (
-    <main className="main">
+    <main className="main mt-4">
       <Card className="section" aria-label="Card">
         <Card.Img variant="top" src={activity_image} alt="Activity Image" />
         <Card.Body className='CardBody'>
@@ -13,7 +13,7 @@ function Cards({ activity_image, bookingDate , price, stock}) {
               Reservar actividad
             </button>
           </section>
-          <Card.Text>{stock}</Card.Text>
+          <Card.Text>Plazas disponibles: {stock}</Card.Text>
         </Card.Body>
       </Card>
     </main>

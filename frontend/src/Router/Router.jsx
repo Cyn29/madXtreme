@@ -3,10 +3,10 @@ import Root from "./Root";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Contact from "../pages/contact/Contact.jsx";
-import DetailedCard from "../pages/DetailedCard";
 import Login from "../pages/login/Login";
 import Register from '../pages/register/Register';
 import AboutUsPage from "../pages/AboutUs";
+import DetailedCardPage from "../pages/DetailedCard";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/activities",
-                element: <DetailedCard />,
+                element: <DetailedCardPage/>,
             },
             {
                 path: "/aboutUs",

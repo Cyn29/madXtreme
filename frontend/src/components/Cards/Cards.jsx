@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import "./Cards.css"
-function Cards({ activity_image, price, act_description, button, opinion}) {
+function Cards({ activity_image, price, act_description, opinion}) {
   return (
     <main className="main">
       <Card className="section" aria-label="Card">
@@ -11,7 +11,7 @@ function Cards({ activity_image, price, act_description, button, opinion}) {
           <section className="d-flex">
             <Card.Text className='text-price'>{price} €</Card.Text>
             <button className="detail-button">
-              {button}
+              Ver más
             </button>
           </section>
           <Card.Text>{opinion}</Card.Text>

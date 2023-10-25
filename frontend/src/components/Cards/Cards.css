@@ -1,8 +1,12 @@
    .main {
-       margin-top: 1.5rem;
+    display:flex;
+     margin: 1.5rem;
+     max-width: 20rem;
+     max-height: 30rem;
    }
 
    .CardBody {
+       width: 18rem;
        text-align: left;
    }
 
@@ -12,14 +16,15 @@
    }
 
    .detail-button {
+       display: flex;
        background-color: #D10505;
        color: white;
        border: none;
-       width: 5.5rem;
-       height: 2.5rem;
+       width: 6rem;
+       height: 2rem;
        border-radius: 2rem;
        justify-content: center;
-       margin-left: 9rem;
+       margin-left: 5rem;
        font-size: 1.2rem;
        font-weight: 600;
    }

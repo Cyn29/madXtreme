@@ -22,15 +22,16 @@ function Home() {
       <CarouselComponent />
       <Row xs={1} md={2} lg={3}>
         {activities.map((activity, index) => (
+      <Col key={index} className="d-flex align-items-center">
           <Cards
             key={index}
             activity_image={activity.activity_image}
             title={activity.title}
             act_description={activity.act_description}
             price={activity.price}
-            button={"Ver más"}
             opinion={activity.opinion}
           />
+             </Col>
         ))}
       </Row>
     </>

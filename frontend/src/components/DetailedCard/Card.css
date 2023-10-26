@@ -1,8 +1,14 @@
 .mainCard{
     justify-content: center;
+ 
+}
+.sectionCard{
     width:16rem;
 }
 .priceBtnContainer{
     text-align: center;
     justify-content: space-between;
+   }
+   .detail-button{
+    border: white;
    }

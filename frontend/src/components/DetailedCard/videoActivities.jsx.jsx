@@ -1,18 +1,26 @@
-import "./videoActivity.css"
+
+import { Row, Col } from 'react-bootstrap';
 
 function YouTubeVideo() {
   return (
-    <div className="containerVideo w-100">
-    <iframe
-      title="Vimeo Video"
-      src="https://player.vimeo.com/video/878287866?h=6eee783720&autoplay=1&title=0&byline=0&portrait=0"
-      width="100%"
-      height="50%"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-  </div>
-);
+    <header>
+      <Row>
+        <Col md={12}>
+          <video
+            autoPlay 
+            width="100%"
+            height="auto"
+          >
+            <source
+              src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1698277665/video_2160p_ogi7ia.mp4" 
+              type="video/mp4"
+            />
+
+          </video>
+        </Col>
+      </Row>
+    </header>
+  );
 }
 
 export default YouTubeVideo;

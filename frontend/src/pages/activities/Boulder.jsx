@@ -6,6 +6,7 @@ import Card from '../../components/DetailedCard/Card';
 import boulder1 from '../../assets/activitiesImages/boulder1.png';
 import boulder2 from '../../assets/activitiesImages/boulder2.png';
 import boulder3 from '../../assets/activitiesImages/boulder3.png';
+import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
 
 function Boulder() {
   const [activities, setActivities] = useState([]);
@@ -49,11 +50,12 @@ function Boulder() {
 
   return (
     <>
-      <Images
-        image1={boulder1}
-        image2={boulder2}
-        image3={boulder3}
-      />
+    <div>
+     <YouTubeVideo/>
+     </div>
+
+     <div className='d-flex justify-content-center align-items-center'>
+      <div className='w-60 m-5'>
       <Description
         title={"Disfruta de los mejores bloques"}
         description={
@@ -65,6 +67,9 @@ function Boulder() {
         duration={"Duración 3 horas  |  Idioma: Español/Inglés"}
         opinion={"🌟🌟🌟🌟🌟"}
       />
+      </div>
+      <div>
+  
       {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
       {cardIndexToShow < activities.length && (
         <Card
@@ -74,7 +79,15 @@ function Boulder() {
           stock={availableStock}
           onReserve={handleReserve}
         />
+        
       )}
+      </div>
+      </div>
+
+        <div className="w-60 m-5 ">
+          <Images image1={boulder1} image2={boulder2} image3={boulder3} />
+          <Images image1={boulder1} image2={boulder2} image3={boulder3} />
+        </div>
     </>
   );
 }

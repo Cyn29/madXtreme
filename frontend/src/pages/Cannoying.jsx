@@ -8,11 +8,9 @@ import canyoning1 from '../assets/activitiesImages/canyoning1.png';
 import canyoning2 from '../assets/activitiesImages/canyoning2.png';
 import canyoning3 from '../assets/activitiesImages/canyoning3.png';
 import { activitiesService } from '../Services/ActivitiesServices';
-
 function Cannoying() {
   const [activities, setActivities] = useState([]);
   const cardIndexToShow = 3;
-
   useEffect(() => {
     activitiesService
       .getProducts()
@@ -23,13 +21,11 @@ function Cannoying() {
         console.error('Error fetching activities', error);
       });
   }, []);
-
   return (
-    <Container>  
+    <Container>
       <div className="">
-            <YouTubeVideo className=""/>
+            <YouTubeVideo/>
           </div>
-          
         <Col lg={12} xs={12} className="mb-5">
           <Description
             title="El mejor Barranquismo"
@@ -38,7 +34,7 @@ function Cannoying() {
             text2="Aventura de barrancos: Tanto para principiantes como para expertos, ¡hay rutas para todos!"
             text3="Seguridad en Todo Momento: Equipamiento y guías profesionales para una experiencia segura."
             duration="Duración 6 horas  |  Idioma: Español/Inglés"
-            opinion="🌟🌟🌟🌟🌟"
+            opinion=":estrella2::estrella2::estrella2::estrella2::estrella2:"
           />
         </Col>
         <div className='d-flex'>
@@ -68,6 +64,4 @@ function Cannoying() {
     </Container>
   );
 }
-
 export default Cannoying;
-

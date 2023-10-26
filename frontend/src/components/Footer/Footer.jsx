@@ -11,7 +11,7 @@ function Footer() {
             <section
                 aria-label="Footer"
                 className="banner text-white d-flex justify-content-center align-items-center">
-                <h3 className="slogan-txt">Tus deportes de aventura en Madrid</h3>
+                <h3 aria-label="description" className="slogan-txt">Tus deportes de aventura en Madrid</h3>
             </section>
             <div className="icon-container">
             <section width="100%">
@@ -23,27 +23,17 @@ function Footer() {
                 />
             </section>
             <section>
-                <img
-                    src={instagram}
-                    aria-label="instagram-icon"
-                    alt="Instagram icon"
-                />
-                <img
-                    src={facebook}
-                    aria-label="facebook-icon"
-                    alt="Facebook icon"
-                />
-                <img
-                    src={twitter}
-                    aria-label="twitter-icon"
-                    alt="Twitter icon"
-                />
-                <img src={tiktok} aria-label="tiktok-icon" alt="Tik tok icon" />
+                <img src={instagram} alt="Instagram icon" aria-label="instagram"/>
+                <img src={facebook} alt="Facebook icon" aria-label="facebook"/>
+                <img src={twitter} alt="Twitter icon" aria-label="twitter"/>
+                <img src={tiktok} alt="Tik tok icon" aria-label="tiktok"/>
             </section>
             </div>
-            <div className="text-center p-3">
+            <div aria-label="copyright" className="text-center p-3">
                 © 2023 Copyright:
-                <a className="text-black" href="/">madXtreme.com</a>
+                <a className="text-black" aria-label="web" href="https://madXtreme.com/">
+                    madXtreme.com
+                </a>
             </div>
         </main>
     );

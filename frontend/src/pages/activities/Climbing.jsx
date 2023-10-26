@@ -1,11 +1,11 @@
-import Images from "../components/DetailedCard/Images";
-import Description from "../components/DetailedCard/Description";
+import Images from "../../components/DetailedCard/Images";
+import Description from "../../components/DetailedCard/Description";
 import { useState, useEffect } from "react";
-import { activitiesService } from "../Services/ActivitiesServices";
-import Card from "../components/DetailedCard/Card";
-import climbing1 from "../assets/activitiesImages/climbing1.png";
-import climbing2 from "../assets/activitiesImages/climbing2.png";
-import climbing3 from "../assets/activitiesImages/climbing3.png";
+import { activitiesService } from "../../services/ActivitiesServices";
+import Card from "../../components/DetailedCard/Card";
+import climbing1 from "../../assets/activitiesImages/climbing1.png";
+import climbing2 from "../../assets/activitiesImages/climbing2.png";
+import climbing3 from "../../assets/activitiesImages/climbing3.png";
 import Alert from 'react-bootstrap/Alert';
 
 function Climbing() {

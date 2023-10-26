@@ -1,4 +1,4 @@
-import logotype from "../../assets/logotype.png"
+import logotype from "../../assets/logotype/logotype.png"
 import login from "../../assets/icons/login.png";
 import './Navbar.css'
 import { Link } from "react-router-dom";

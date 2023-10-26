@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import CarouselComponent from '../../components/Carousel/Carousel';
-import Cards from '../../components/Cards/Cards';
-import { activitiesService } from '../../Services/ActivitiesServices';
+import Cards from '../../components/CardsHome/CardsHome';
+import { activitiesService } from '../../services/ActivitiesServices';
 import { Row, Col } from 'react-bootstrap';
 import './Home.css'
 

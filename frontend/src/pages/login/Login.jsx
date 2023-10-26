@@ -8,9 +8,9 @@ import {
     Image,
     Alert,
 } from "react-bootstrap";
-import logotype from "../../assets/logotype.png";
+import logotype from "../../assets/logotype/logotype.png";
 import { Link } from "react-router-dom";
-import { loginService } from "../../Services/LoginServices";
+import { loginService } from "../../services/LoginServices";
 
 function Login() {
     const [email, setEmail] = useState("");

@@ -1,11 +1,11 @@
-import Images from '../components/DetailedCard/Images';
-import Description from '../components/DetailedCard/Description';
+import Images from '../../components/DetailedCard/Images';
+import Description from '../../components/DetailedCard/Description';
 import { useState, useEffect } from 'react';
-import { activitiesService } from '../Services/ActivitiesServices';
-import Card from '../components/DetailedCard/Card';
-import kayak1 from '../assets/activitiesImages/kayak1.png'
-import kayak2 from '../assets/activitiesImages/kayak2.png'
-import kayak3 from '../assets/activitiesImages/kayak3.png'
+import { activitiesService } from '../../services/ActivitiesServices';
+import Card from '../../components/DetailedCard/Card';
+import kayak1 from '../../assets/activitiesImages/kayak1.png'
+import kayak2 from '../../assets/activitiesImages/kayak2.png'
+import kayak3 from '../../assets/activitiesImages/kayak3.png'
 
 function Kayak() {
   const [activities, setActivities] = useState([]);

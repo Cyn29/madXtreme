@@ -1,6 +1,6 @@
 import UserModel from "../models/userModel.js";
 import { Sequelize } from "sequelize";
-import { validateUser } from "../validations/usersValidations.js";
+import { validateUser } from "../validations/userValidations.js";
 
 export const getUsers = async (_req, res) => {
     try {

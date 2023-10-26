@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
-import "./Cards.css"
+import "./CardsHome.css"
 function Cards({ activity_image, price, act_description, opinion}) {
   return (
       <Card className="section" aria-label="Card">

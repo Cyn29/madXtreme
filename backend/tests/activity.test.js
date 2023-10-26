@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { app, server } from '../app.js';
-import ActivityModel from '../models/activitiesModel.js';
+import ActivityModel from '../models/activityModel.js';
 import db from '../database/db.js';
 
 describe('Activities Controller', () => {

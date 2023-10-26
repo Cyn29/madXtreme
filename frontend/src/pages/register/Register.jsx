@@ -1,8 +1,8 @@
 import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap';
-import logotype from '../../assets/logotype.png';
+import logotype from '../../assets/logotype/logotype.png';
 import './Register.css';
 import { useState } from 'react';
-import { registrationService } from '../../Services/RegisterServices';
+import { registrationService } from '../../services/RegisterServices';
 
 function Register() {
     const [fullName, setFullName] = useState('');

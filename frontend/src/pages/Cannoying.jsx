@@ -8,6 +8,7 @@ import canyoning1 from '../assets/activitiesImages/canyoning1.png';
 import canyoning2 from '../assets/activitiesImages/canyoning2.png';
 import canyoning3 from '../assets/activitiesImages/canyoning3.png';
 import { activitiesService } from '../Services/ActivitiesServices';
+
 function Cannoying() {
   const [activities, setActivities] = useState([]);
   const cardIndexToShow = 3;

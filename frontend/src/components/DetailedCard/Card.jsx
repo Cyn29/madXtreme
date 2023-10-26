@@ -9,9 +9,9 @@ function Cards({ activity_image, bookingDate , price, stock, onReserve}) {
         <Card.Img variant="top" src={activity_image} alt="Activity Image" />
         <Card.Body className='CardBody'>
           <h5><Card.Text>{bookingDate}</Card.Text></h5>
-          <section className="d-flex">
+          <section className="priceBtnContainer">
             <Card.Text className='text-price'>{price} €</Card.Text>
-            <button className="detail-button" onClick={onReserve}>
+            <button className="detail-btn" onClick={onReserve}>
             Reservar
           </button>
           </section>

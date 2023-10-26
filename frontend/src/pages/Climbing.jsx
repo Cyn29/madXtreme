@@ -22,7 +22,7 @@ function Climbing() {
   }, []);
   return (
     <>
-      <Images image1={climbing1} image2={climbing2} image3={climbing3} />
+     
       <Description
         title={"Escalada deportiva"}
         description={
@@ -52,8 +52,8 @@ function Climbing() {
           )}
         </div>
         <div className="w-60 m-5 ">
-          <Images image1={climbing1} image2={climbing2} image3={climbing3} />
-          <Images image1={climbing1} image2={climbing2} image3={climbing3} />
+        <Images image1={climbing1} image2={climbing2} image3={climbing3} />
+        
         </div>
       </div>
     </>

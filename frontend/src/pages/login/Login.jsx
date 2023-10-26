@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import logotype from "../../assets/logotype/logotype.png";
 import { Link } from "react-router-dom";
-import { loginService } from "../../services/LoginServices";
+import { loginService } from "../../services/LoginService";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ function Login() {
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image name="logotype" src={logotype} fluid />
+                        <Link to="/"><Image name="logotype" src={logotype} fluid /></Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">

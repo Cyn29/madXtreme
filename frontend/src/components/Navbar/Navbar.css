@@ -1,3 +1,7 @@
+.show-menu {
+    display: block;
+}
+
 .navbar-container {
     display: flex;
     justify-content: space-between;

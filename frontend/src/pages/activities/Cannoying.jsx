@@ -1,7 +1,7 @@
 import Images from '../../components/DetailedCard/Images';
 import Description from '../../components/DetailedCard/Description';
 import { useState, useEffect } from 'react';
-import { activitiesService } from '../../services/ActivityServices';
+import { activitiesService } from '../../services/ActivityService';
 import Card from '../../components/DetailedCard/Card';
 import canyoning1 from '../../assets/activitiesImages/canyoning1.png'
 import canyoning2 from '../../assets/activitiesImages/canyoning2.png'

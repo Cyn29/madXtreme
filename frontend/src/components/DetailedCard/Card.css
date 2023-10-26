@@ -2,9 +2,11 @@
     display: flex;
     align-items: left;
     justify-content: space-around;
-    width: 32vw;
+    width:20vw;
+    height: 20vh;
 }
-.section{
-    width:50vh;
-    align-items: left;
-}
+.priceBtnContainer{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+   }

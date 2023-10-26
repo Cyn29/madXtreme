@@ -4,7 +4,7 @@ import './Description.css'
 // eslint-disable-next-line react/prop-types
 function Description({ title, description, text1 , text2, text3, duration, opinion }) {
   return (
-    <Card className="container mt-4">
+    <Card className="descriptionContainer mt-4">
       <Card.Body>
         <Card.Title className='climbing'>{title}</Card.Title>
         <Card.Text >

@@ -11,12 +11,10 @@ import {
 import logotype from "../../assets/logotype.png";
 import { Link } from "react-router-dom";
 import { loginService } from "../../Services/LoginServices";
-
 function Login() {
     const [email, setEmail] = useState("");
     const [user_password, setPassword] = useState("");
     const [showErrorAlert, setShowErrorAlert] = useState(false);
-
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -38,13 +36,13 @@ function Login() {
             console.error("Failed request:", error);
         }
     };
-
     return (
         <Form onSubmit={handleLoginSubmit}>
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image name="logotype" src={logotype} fluid />
+
+                        <Link as={Link} to="/"> <Image name="logotype" src={logotype} fluid /></Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
@@ -129,5 +127,7 @@ function Login() {
         </Form>
     );
 }
-
 export default Login;
+
+
+

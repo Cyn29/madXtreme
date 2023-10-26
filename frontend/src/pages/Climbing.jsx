@@ -51,7 +51,7 @@ function Climbing() {
             />
           )}
         </div>
-        <div className="w-60 m-5 mb-3 ">
+        <div className="w-60 m-5 ">
           <Images image1={climbing1} image2={climbing2} image3={climbing3} />
           <Images image1={climbing1} image2={climbing2} image3={climbing3} />
         </div>

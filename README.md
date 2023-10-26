@@ -1,67 +1,107 @@
+
 # MadXtreme
 
-MadXtreme is an adventure sports company located at the Sierra de Guadarrama at the Community of Madrid.
+## Description
 
-Join MadXtreme and discover the Community of Madrid like never before. With a passionate team like ours, every adventure becomes a story to tell, an experience that will change your life. Let MadXtreme be your gateway to a world of emotions and discoveries in nature
+MadXtreme is a fullstack project from Team 2 of the Bootcamp at Orange Digital Center Factoría F5.
+
+The project offers various extreme and sports activities. Activities include climbing, hiking, MTB/Enduro-DH, canyoning, bouldering, and kayaking. 
+
+MadXtreme is an adventure sports company located in the Sierra de Guadarrama, in the Community of Madrid. 
+
+Join MadXtreme and discover the Community of Madrid like never before. 
+
+With a passionate team like ours, every adventure becomes a story to tell, an experience that will change your life. 
+
+Let MadXtreme be your gateway to a world of emotions and discoveries in nature.
+
+## Team 2
+
+- Cynthia Álvarez
+- Wanda Abreu
+- Andrea Sainz
+- Ainhoa Aguado
+- Jaime Martinez
+- Raúl Radillo
 
 ## Design and Planning Tools
 
-- **Design**: The project design is configured in Figma.
+- **Design**: The project design is set up in Figma.
 - **Agile Tool**: The project uses Jira as its agile tool.
 - **Project Duration**: The project is divided into 4 sprints.
 
-## Project Structure
-
-The project is divided into a frontend and a backend.
+## Installation
 
 ### Frontend
 
-#### Main Dependencies:
+1. Clone the repository:
 
-- **Vite**: A web application compiler that serves ES modules during development.
-- **React**: A JavaScript library for building user interfaces.
-- **React Bootstrap**: Bootstrap-specific components for React.
-- **React Router DOM**: Declarative routing for React web applications.
+git clone https://github.com/Cyn29/madXtreme.git
 
-#### Scripts:
+2. Navigate to the frontend project directory:
 
-- **dev**: Starts the Vite development server.
-- **build**: Builds the application for production.
-- **lint**: Runs ESLint on the project.
-- **preview**: Previews the built application.
+cd vite-project
 
-#### Installing Dependencies:
+3. Install the dependencies:
 
-To install the frontend dependencies, navigate to the frontend directory and run:
-
-```bash
 npm install
-```
 
-### Backend (Express)
 
-#### Main Dependencies:
+### Backend
 
-- **Express**: A minimalist and flexible web application framework for Node.js.
-- **Sequelize**: A promise-based ORM for Node.js.
-- **MySQL2**: A MySQL driver for Node.js.
-- **bcryptjs**: A library for hashing and verifying passwords.
-- **dotenv**: Loads environment variables from a .env file.
-- **uuidv4**: Generates v4 UUIDs.
-- **zod**: A schema builder and validator.
+1. Navigate to the backend project directory:
 
-#### Scripts:
+cd backend
 
-- **dev**: Starts the development server with Nodemon.
-- **test**: A default test script.
+2. Install the dependencies:
 
-#### Installing Dependencies:
-
-To install the backend dependencies, navigate to the backend directory and run:
-
-```bash
 npm install
-```
 
-## Author
 
+## Database Configuration
+
+1. Create a database named `madxtreme`.
+2. Use the provided SQL scripts to create and configure the `users`, `admins`, and `activities` tables.
+
+## Execution
+
+### Frontend
+
+- Development: `npm run dev`
+- Tests: `npm run test`
+
+### Backend
+
+- Development: `npm run dev`
+- Tests: `npm run test`
+
+## Testing
+
+### Unit Tests
+
+To run the unit tests, use the command:
+
+
+npm run test
+
+
+### CRUD Tests in Postman
+
+1. Open [Postman](https://www.postman.com/).
+2. Set up the URL and HTTP method according to the CRUD operation you want to test (GET, POST, PUT, DELETE).
+3. If you're testing a POST or PUT operation, make sure to add the request body in JSON format.
+4. Click "Send" to send the request and observe the response.
+
+For more details on how to perform CRUD tests in Postman, you can check the [official Postman documentation](https://learning.postman.com/docs/getting-started/introduction/).
+
+## Contribution
+
+If you wish to contribute to the project, please fork the repository, create a new branch, make your changes, and submit a pull request.
+
+## License
+
+ISC
+
+## Contact
+
+For any inquiries, you can contact through madxtreme.info@gmail.com

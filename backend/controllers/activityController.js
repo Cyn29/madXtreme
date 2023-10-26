@@ -1,9 +1,9 @@
-import activitiesModel from "../models/activitiesModel.js";
+import activityModel from "../models/activitiesModel.js";
 import { validateActivity } from "../validations/activitiesValidations.js";
 
 export const getActivities = async (_req, res) => {
     try {
-        const activities = await activitiesModel.findAll();
+        const activities = await activityModel.findAll();
         const activitiesWithId = activities.map(activityToResponse);
         res.json(activitiesWithId);
     } catch (error) {
@@ -14,7 +14,7 @@ export const getActivities = async (_req, res) => {
 export const getActivityById = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const Activity = await activitiesModel.findByPk(id_activity);
+        const Activity = await activityModel.findByPk(id_activity);
         if (!Activity) {
             return handleNotFound(res, "Activity not found");
         }
@@ -29,7 +29,7 @@ export const createActivity = async (req, res) => {
     try {
         const validationResult = validateActivity(req.body);
         if (validationResult.success) {
-            const newActivity = await activitiesModel.create(validationResult.data);
+            const newActivity = await activityModel.create(validationResult.data);
             res.status(201).json({
                 message: "Activity created successfully!",
                 id_activity: newActivity.id_activity
@@ -45,13 +45,13 @@ export const createActivity = async (req, res) => {
 export const updateActivity = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const existingactivity = await activitiesModel.findOne({
+        const existingactivity = await activityModel.findOne({
             where: { id_activity: id_activity },
         });
         if (!existingactivity) {
             return handleBadRequest(res, "Activity not found");
         }
-        const updatedactivity = await activitiesModel.update(req.body, {
+        const updatedactivity = await activityModel.update(req.body, {
             where: { id_activity: req.params.id_activity },
         });
         if (updatedactivity) {
@@ -65,7 +65,7 @@ export const updateActivity = async (req, res) => {
 export const deleteActivity = async (req, res) => {
     try {
         const { id_activity } = req.params;
-        const deletedactivity = await activitiesModel.destroy({
+        const deletedactivity = await activityModel.destroy({
             where: { id_activity: id_activity },
         });
         if (deletedactivity) {

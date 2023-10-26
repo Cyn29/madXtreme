@@ -5,13 +5,13 @@ import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact.jsx";
 import Login from "../pages/login/Login";
 import Register from '../pages/register/Register';
-import AboutUsPage from "../pages/AboutUs";
-import Climbing from "../pages/Climbing";
-import Hiking from '../pages/Hiking'
-import MountainBike from "../pages/MountainBikePage";
-import Boulder from "../pages/Boulder";
-import Cannoying from "../pages/Cannoying";
-import Kayak from "../pages/Kayak";
+import AboutUsPage from "../pages/aboutus/AboutUs";
+import Climbing from "../pages/activities/Climbing";
+import Hiking from '../pages/activities/Hiking'
+import MountainBike from "../pages/activities/MountainBikePage";
+import Boulder from "../pages/activities/Boulder";
+import Cannoying from "../pages/activities/Cannoying";
+import Kayak from "../pages/activities/Kayak";
 
 const router = createBrowserRouter([
     {

@@ -1,5 +1,5 @@
-import activityModel from "../models/activitiesModel.js";
-import { validateActivity } from "../validations/activitiesValidations.js";
+import activityModel from "../models/activityModel.js";
+import { validateActivity } from "../validations/activityValidations.js";
 
 export const getActivities = async (_req, res) => {
     try {

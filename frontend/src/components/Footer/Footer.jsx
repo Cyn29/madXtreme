@@ -1,4 +1,4 @@
-import logotype from "../../assets/logotype.png";
+import logotype from "../../assets/logotype/logotype.png";
 import instagram from "../../assets/icons/instagram.png";
 import facebook from "../../assets/icons/facebook.png";
 import tiktok from "../../assets/icons/tiktok.png";
@@ -54,9 +54,9 @@ function Footer() {
             </div>
             <div aria-label="copyright" className="text-center p-3">
                 © 2023 Copyright:
-                <Link to="/" className="text-black" aria-label="web">
+                <a href="/" className="text-black" aria-label="web">
                     madXtreme.com
-                </Link>
+                </a>
             </div>
         </main>
     );

@@ -1,0 +1,33 @@
+.Card-body {
+    text-align: left;
+}
+
+.card-section {
+    display: flex;
+    border-bottom: #d10505 0.5rem solid;
+}
+.price-btn-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.detail-button {
+    display: flex;
+    justify-content: center;
+    background-color: #d10505;
+    color: white;
+    border: none;
+    width: 6.5rem;
+    height: 2.3rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.text-price {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #d10505;
+    font-weight: 700;
+}

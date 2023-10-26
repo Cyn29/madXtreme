@@ -1,6 +1,6 @@
 import AdminModel from "../models/adminModel.js";
 import { Sequelize } from "sequelize";
-import { validateAdmin } from "../validations/adminsValidations.js"
+import { validateAdmin } from "../validations/adminValidations.js"
 
 export const getAdmins = async (req, res) => {
     try {

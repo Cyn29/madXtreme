@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import CarouselComponent from '../../components/Carousel/Carousel';
-import Cards from '../../components/Cards/Cards';
-import { activitiesService } from '../../Services/ActivitiesServices';
+import Cards from '../../components/CardsHome/CardsHome';
+import { activitiesService } from '../../services/ActivityService';
 import { Row, Col } from 'react-bootstrap';
 import './Home.css';
-
 function Home() {
   const [activities, setActivities] = useState([]);
   const activitiesLinks = [
@@ -15,7 +14,6 @@ function Home() {
     'http://localhost:5173/boulder',
     'http://localhost:5173/kayak'
   ];
-
   useEffect(() => {
     activitiesService.getProducts()
       .then((fetchedActivities) => {
@@ -25,7 +23,6 @@ function Home() {
         console.error('Error fetching activities', error);
       });
   }, []);
-
   return (
     <div className='home-container'>
       <CarouselComponent />
@@ -51,5 +48,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;

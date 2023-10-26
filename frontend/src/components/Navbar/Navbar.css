@@ -1,12 +1,17 @@
+.show-menu {
+    display: block;
+}
+
 .navbar-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 2;
     background-color: white;
+    margin-bottom: 1rem;
 }
 
 .logotype-img {

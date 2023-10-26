@@ -31,7 +31,7 @@ function Footer() {
             </div>
             <div aria-label="copyright" className="text-center p-3">
                 © 2023 Copyright:
-                <a className="text-black" aria-label="web" href="https://madXtreme.com/">
+                <a className="text-black" aria-label="web" href="/">
                     madXtreme.com
                 </a>
             </div>

@@ -46,14 +46,14 @@ function Register() {
             <Container className="register">
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image src={logotype} fluid />
+                        <Image name="logotype" src={logotype} fluid />
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Nombre y apellidos</h5>
-                            <Form.Control onChange={(e) => setFullName(e.target.value)} value={fullName} />
+                            <Form.Control name="fullname" onChange={(e) => setFullName(e.target.value)} value={fullName} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -61,7 +61,7 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Email</h5>
-                            <Form.Control type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                            <Form.Control type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
                         </Form.Group>
                     </Col>
                 </Row>
@@ -69,7 +69,7 @@ function Register() {
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group>
                             <h5>Contraseña</h5>
-                            <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} value={user_password} />
+                            <Form.Control type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={user_password} />
                         </Form.Group>
                     </Col>
                 </Row>

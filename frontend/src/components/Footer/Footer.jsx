@@ -1,4 +1,3 @@
-
 import logotype from "../../assets/logotype.png";
 import instagram from "../../assets/icons/instagram.png";
 import facebook from "../../assets/icons/facebook.png";
@@ -7,7 +6,10 @@ import twitter from "../../assets/icons/twitter.png";
 
 function Footer() {
     return (
-        <main className="text-center w-100" color="black" bgColor="white" aria-label="Footer">
+        <main
+            className="text-center w-100"
+            color="black"
+            aria-label="Footer">
             <section
                 style={{ backgroundColor: "#D10505", height: 90 }}
                 className="text-white d-flex justify-content-center align-items-center">
@@ -15,11 +17,11 @@ function Footer() {
             </section>
             <section width="100%">
                 <img
+                    aria-label="logotype"
                     className="mt-4"
                     width="15%"
                     src={logotype}
                     alt="Image of logotype"
-                    aria-label="logotype"
                 />
             </section>
             <section>

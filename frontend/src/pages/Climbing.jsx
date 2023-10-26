@@ -6,11 +6,13 @@ import Card from "../components/DetailedCard/Card";
 import climbing1 from "../assets/activitiesImages/climbing1.png";
 import climbing2 from "../assets/activitiesImages/climbing2.png";
 import climbing3 from "../assets/activitiesImages/climbing3.png";
+import Alert from 'react-bootstrap/Alert';
 
 function Climbing() {
   const [activities, setActivities] = useState([]);
   const [availableStock, setAvailableStock] = useState(0);
   const [showResetButton, setShowResetButton] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
   const cardIndexToShow = 0;
 
   useEffect(() => {
@@ -31,15 +33,19 @@ function Climbing() {
   }, []);
 
   const handleReserve = () => {
-    if (availableStock >= 1) {
+    if (availableStock > 0) {
       setAvailableStock(availableStock - 1);
 
       const reservedStock = localStorage.getItem('reservedStock') || 0;
       localStorage.setItem('reservedStock', parseInt(reservedStock, 10) + 1);
     } else {
-      alert('No hay plazas disponibles');
+      setShowErrorAlert(true);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 10000);
     }
   };
+
   const handleReset = () => {
     const initialStock = activities.length > 0 ? activities[0].stock : 0;
     setAvailableStock(initialStock);
@@ -51,7 +57,8 @@ function Climbing() {
       <Images
         image1={climbing1}
         image2={climbing2}
-        image3={climbing3} />
+        image3={climbing3}
+      />
       <Description
         title={"Escalada deportiva"}
         description={"¡Vive la emoción de la escalada con cuerdas en un entorno natural único en la Sierra de Madrid! Nuestra experiencia de escalada con cuerdas te ofrece!"}
@@ -59,7 +66,8 @@ function Climbing() {
         text2={"Aventura en la Roca: Tanto para principiantes como para expertos, ¡hay rutas para todos!"}
         text3={"Seguridad en Todo Momento: Equipamiento y guías profesionales para una experiencia segura."}
         duration={"Duración 6 horas  |  Idioma: Español/Inglés"}
-        opinion={"🌟🌟🌟🌟🌟"} />
+        opinion={"🌟🌟🌟🌟🌟"}
+      />
       {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
       {cardIndexToShow < activities.length && (
         <Card
@@ -70,7 +78,9 @@ function Climbing() {
           onReserve={handleReserve}
         />
       )}
+      {showErrorAlert && <Alert variant="danger">No quedan plazas disponibles.</Alert>}
     </>
   );
 }
+
 export default Climbing;

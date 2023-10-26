@@ -1,92 +1,63 @@
-import { expect, test, it } from "vitest";
+/* eslint-disable no-undef */
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import Header from "./Navbar";
 
-test("Header", () => {
-    it("renders correctly", () => {
+vi.mock("react-router-dom", () => ( {
+    Link: vi.fn()
+}))
+
+describe("Header", () => {
+    test("renders correctly", () => {
         render(<Header />);
         const headerElement = screen.getByLabelText("Navbar");
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Header", () => {
-    it("renders logotype image correctly", () => {
+    test("renders logotype image correctly", () => {
         render(<Header />);
-        const headerElement = screen.getByRole('img', { name: 'logotype' });
+        screen.debug()
+        const headerElement = screen.getByLabelText("logotype");
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Header", () => {
-    it("works link in logotype icon", () => {
+    test("works link in logotype icon", () => {
         render(<Header />);
-        const logotypeLink = screen.getByLabel("logotype");
+        const logotypeLink = screen.getByLabelText("logotype");
         fireEvent.click(logotypeLink)
     });
-});
-
-test("Header", () => {
-    it("renders 'Inicio' section correctly", () => {
+    test("renders 'Inicio' section correctly", () => {
         render(<Header />);
-        const headerElement = screen.getByText("Inicio");
+        const headerElement = screen.getByLabelText("home");
+        screen.debug(headerElement)
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Header", () => {
-    it("works link in 'Inicio' section", () => {
+    test("works link in 'Inicio' section", () => {
         render(<Header />);
-        const homeLink = screen.getByText("Inicio");
+        const homeLink = screen.getByLabelText("home");
         fireEvent.click(homeLink);
     });
-});
-
-
-test("Header", () => {
-    it("renders 'Nosotros' section correctly", () => {
+    test("renders 'Nosotros' section correctly", () => {
         render(<Header />);
-        const headerElement = screen.getByText("Nosotros");
+        const headerElement = screen.getByLabelText("aboutus");
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Header", () => {
-    it("works link in 'Nosotros' section", () => {
+    test("works link in 'Nosotros' section", () => {
         render(<Header />);
-        const aboutUsLink = screen.getByText("Nosotros");
+        const aboutUsLink = screen.getByLabelText("aboutus");
         fireEvent.click(aboutUsLink);
     });
-});
-
-test("Header", () => {
-    it("renders 'Contacto' section correctly", () => {
+    test("renders 'Contacto' section correctly", () => {
         render(<Header />);
-        const headerElement = screen.getByText("Contacto");
+        const headerElement = screen.getByLabelText("contact");
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Header", () => {
-    it("works link in 'Contacto' section", () => {
+    test("works link in 'Contacto' section", () => {
         render(<Header />);
-        const contactLink = screen.getByText("Contacto");
+        const contactLink = screen.getByLabelText("contact");
         fireEvent.click(contactLink);
     });
-});
-
-test("Header", () => {
-    it("renders login icon correctly", () => {
+    test("works link in login icon", () => {
         render(<Header />);
-        const headerElement = screen.getByRole('img', { name: 'login-icon' });
-        expect(headerElement).toBeInTheDocument();
-    });
-});
-
-test("Header", () => {
-    it("works link in login icon", () => {
-        render(<Header />);
-        const loginLink = screen.getByLabel("login-icon");
+        const loginLink = screen.getByLabelText("login");
         fireEvent.click(loginLink)
     });
 });

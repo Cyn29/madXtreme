@@ -1,83 +1,62 @@
-import { expect, test, it } from "vitest";
+/* eslint-disable no-undef */
+import { expect, test } from "vitest";
 import { render, screen, fireEvent } from '@testing-library/react';
 import Footer from "./Footer";
+import "@testing-library/jest-dom";
 
-test('Footer', () => {
-    it('renders correctly', () => {
+vi.mock("react-router-dom", () => ( {
+    Link: vi.fn()
+}))
+
+describe("Footer", () => {
+    test('renders correctly', () => {
         render(<Footer />);
         const footerElement = screen.getByLabelText('Footer');
         expect(footerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders footer slogan correctly", () => {
+    test("renders footer slogan correctly", () => {
         render(<Footer />);
-        const footerElement = screen.getByText("Tus deportes de aventura en Madrid");
+        const footerElement = screen.getByLabelText("description");
         expect(footerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders logotype image correctly", () => {
+    test("renders logotype image correctly", () => {
         render(<Footer />);
         const headerElement = screen.getByRole('img', { name: 'logotype' });
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders instagram icon correctly", () => {
+    test("renders instagram icon correctly", () => {
         render(<Footer />);
-        const headerElement = screen.getByRole('img', { name: 'instagram-icon' });
+        const headerElement = screen.getByRole('img', { name: 'instagram' });
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders facebook icon correctly", () => {
+    test("renders facebook icon correctly", () => {
         render(<Footer />);
-        const headerElement = screen.getByRole('img', { name: 'facebook-icon' });
+        const headerElement = screen.getByRole('img', { name: 'facebook' });
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders twitter icon correctly", () => {
+    test("renders twitter icon correctly", () => {
         render(<Footer />);
-        const headerElement = screen.getByRole('img', { name: 'twitter-icon' });
+        const headerElement = screen.getByRole('img', { name: 'twitter' });
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders tiktok icon correctly", () => {
+    test("renders tiktok icon correctly", () => {
         render(<Footer />);
-        const headerElement = screen.getByRole('img', { name: 'tiktok-icon' });
+        const headerElement = screen.getByRole('img', { name: 'tiktok' });
         expect(headerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders copyright text correctly", () => {
+    test("renders copyright text correctly", () => {
         render(<Footer />);
-        const footerElement = screen.getByText("2023 Copyright");
+        const footerElement = screen.getByLabelText("copyright");
         expect(footerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("renders link to web", () => {
+    test("renders link to web", () => {
         render(<Footer />);
-        const footerElement = screen.getByText("madXtreme.com");
+        const footerElement = screen.getByLabelText("web");
         expect(footerElement).toBeInTheDocument();
     });
-});
-
-test("Footer", () => {
-    it("works link in login icon", () => {
+    test("works link in login icon", () => {
         render(<Footer />);
-        const webLink = screen.getByText("madXtreme.com");
+        const webLink = screen.getByLabelText("web");
         fireEvent.click(webLink)
     });
-});
+})

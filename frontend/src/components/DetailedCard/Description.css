@@ -1,0 +1,14 @@
+.container{
+    width:84wh;
+    display: flex;
+    justify-content: center;
+}
+.climbing{
+    margin-bottom: 1rem;
+    color: #D10505;
+    font-size: 1.5rem;
+}
+.text:hover{
+    background-color: #D10505;
+    color:white
+}

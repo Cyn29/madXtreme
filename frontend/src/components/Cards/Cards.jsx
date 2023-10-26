@@ -7,12 +7,12 @@ function Cards({ activity_image, price, act_description, opinion}) {
         <Card.Img variant="top" src={activity_image} alt="Activity Image" /> 
         <Card.Body className='CardBody'>
           <h5><Card.Text>{act_description}</Card.Text></h5>
-          <section className="d-flex">
+          <div className='priceBtnContainer'>
             <Card.Text className='text-price'>{price} €</Card.Text>
             <button className="detail-button">
               Ver más
             </button>
-          </section>
+          </div>
           <Card.Text>{opinion}</Card.Text>
         </Card.Body>
       </Card>
@@ -23,7 +23,6 @@ Cards.propTypes = {
   activity_image: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   act_description: PropTypes.string.isRequired,
-  button: PropTypes.string.isRequired,
   opinion: PropTypes.string.isRequired,
 };
 

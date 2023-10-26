@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Root from "./Root";
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact.jsx";
 import Login from "../pages/login/Login";
 import Register from '../pages/register/Register';
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
                 element: <Kayak/>,
             },
             {
-                path: "/aboutUs",
+                path: "/aboutus",
                 element: <AboutUsPage />
             },
             {

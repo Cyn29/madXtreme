@@ -3,14 +3,19 @@ import Description from '../../components/DetailedCard/Description';
 import { useState, useEffect } from 'react';
 import { activitiesService } from '../../services/ActivityService';
 import Card from '../../components/DetailedCard/Card';
-import hiking1 from '../../assets/activitiesImages/hiking1.png'
-import kiking2 from '../../assets/activitiesImages/kiking2.png'
-import hiking3 from '../../assets/activitiesImages/hiking3.png'
+import hiking1 from '../../assets/activitiesImages/hiking1.png';
+import kiking2 from '../../assets/activitiesImages/kiking2.png';
+import hiking3 from '../../assets/activitiesImages/hiking3.png';
+import hiking4 from '../../assets/activitiesImages/hiking4.png';
+import hiking5 from '../../assets/activitiesImages/hiking5.png';
+import hiking6 from '../../assets/activitiesImages/hiking6.png';
+import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
 
 function Hiking() {
   const [activities, setActivities] = useState([]);
   const [availableStock, setAvailableStock] = useState(0);
   const [showResetButton, setShowResetButton] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
   const cardIndexToShow = 1;
 
   useEffect(() => {
@@ -37,9 +42,13 @@ function Hiking() {
       const reservedStock = localStorage.getItem('reservedStockHiking') || 0;
       localStorage.setItem('reservedStockHiking', parseInt(reservedStock, 10) + 1);
     } else {
-      alert('No hay plazas disponibles');
+      setShowErrorAlert(true);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 10000);
     }
   };
+
   const handleReset = () => {
     const initialStock = activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
@@ -48,28 +57,38 @@ function Hiking() {
 
   return (
     <>
-      <Images
-        image1={hiking1}
-        image2={kiking2}
-        image3={hiking3} />
-      <Description
-        title={"Puro senderismo"}
-        description={"¡Explora la belleza natural de la Sierra de Madrid a través de una apasionante experiencia de senderismo! El senderismo te permite sumergirte en la majestuosidad de la naturaleza mientras recorres intrincados caminos y senderos que serpentean a través de paisajes impresionantes."}
-        text1={"Ubicación Escénica: Senderismo, rutas en la sierra de Guadarrama."}
-        text2={"Aventura en el monte: Tanto para principiantes como para expertos, ¡hay rutas para todos!"}
-        text3={"Seguridad en Todo Momento: Guías profesionales para una experiencia segura."}
-        duration={"Duración 6 horas  |  Idioma: Español/Inglés"}
-        opinion={"🌟🌟🌟🌟🌟"} />
-      {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
-      {cardIndexToShow < activities.length && (
-        <Card
-          activity_image={activities[cardIndexToShow].activity_image}
-          bookingDate={activities[cardIndexToShow].bookingDate}
-          price={activities[cardIndexToShow].price}
-          stock={availableStock}
-          onReserve={handleReserve}
-        />
-      )}
+      <div>
+        <YouTubeVideo /> {/* Agrega el componente del video */}
+      </div>
+      <div className='d-flex justify-content-center align-items-center'>
+        <div className='w-60 m-5'>
+          <Description
+            title="Puro senderismo"
+            description="¡Explora la belleza natural de la Sierra de Madrid a través de una apasionante experiencia de senderismo! El senderismo te permite sumergirte en la majestuosidad de la naturaleza mientras recorres intrincados caminos y senderos que serpentean a través de paisajes impresionantes."
+            text1="Ubicación Escénica: Senderismo, rutas en la sierra de Guadarrama."
+            text2="Aventura en el monte: Tanto para principiantes como para expertos, ¡hay rutas para todos!"
+            text3="Seguridad en Todo Momento: Guías profesionales para una experiencia segura."
+            duration="Duración 6 horas  |  Idioma: Español/Inglés"
+            opinion="🌟🌟🌟🌟🌟"
+          />
+        </div>
+        <div>
+          {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
+          {cardIndexToShow < activities.length && (
+            <Card
+              activity_image={activities[cardIndexToShow].activity_image}
+              bookingDate={activities[cardIndexToShow].bookingDate}
+              price={activities[cardIndexToShow].price}
+              stock={availableStock}
+              onReserve={handleReserve}
+            />
+          )}
+        </div>
+      </div>
+      <div className="w-60 m-5">
+        <Images image1={hiking1} image2={kiking2} image3={hiking3} />
+        <Images image1={hiking4} image2={kiking5} image3={hiking6} />
+      </div>
     </>
   );
 }

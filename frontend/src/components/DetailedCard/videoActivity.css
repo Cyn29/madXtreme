@@ -1,0 +1,9 @@
+
+    .containerVideo{
+    border: 10px solid red;
+    width: 100%;
+    height: 50%;
+  }
+  .video{
+    width:1080px;
+  }

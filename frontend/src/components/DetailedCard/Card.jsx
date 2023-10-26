@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import "./Card.css"
 function Cards({ activity_image, bookingDate , price, stock}) {
   return (
-    <main className="main ">
+    <main className="mainCard ">
       <Card className="section " aria-label="Card">
         <Card.Img variant="top" src={activity_image} alt="Activity Image" />
         <Card.Body className='CardBody'>

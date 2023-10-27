@@ -55,7 +55,7 @@ function Footer() {
       </div>
       <div aria-label="copyright" className="text-center p-3">
         © 2023 Copyright:
-        <a href="/" className="text-black" aria-label="web">
+        <a href="/" className="text-black justify-content-center" aria-label="web">
           madXtreme.com
         </a>
       </div>

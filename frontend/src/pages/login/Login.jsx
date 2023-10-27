@@ -38,7 +38,7 @@ function Login() {
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image src={logotype} fluid />
+                        <Link to = "/"> <Image src={logotype} fluid /> </Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">

@@ -2,7 +2,7 @@ import { Container, Row, Col, Form, Button, Image, Alert } from 'react-bootstrap
 import logotype from '../../assets/logotype/logotype.png';
 import './Register.css';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function Register() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -42,7 +42,7 @@ function Register() {
             <Container className="register">
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Image src={logotype} fluid />
+                        <Link to = "/"> <Image src={logotype} fluid /> </Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">

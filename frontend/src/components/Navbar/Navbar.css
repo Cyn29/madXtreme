@@ -60,8 +60,14 @@
 .mobile-dropdown li {
   padding: 10px;
   text-align: center;
-  background-color: white;
+  border-bottom: 1px solid black;
   color: black;
+}
+a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: end;
 }
 /* Media query para mostrar/ocultar el menú desplegable */
 @media only screen and (max-width: 768px) {

@@ -24,7 +24,7 @@
 }
 @media (max-width: 768px) {
   .sectionCard {
-    width: 12rem;
+    width: 15rem;
     margin: 1rem; 
   }
 
@@ -33,15 +33,16 @@
   }
 
   .detail-btn {
-    width: 5rem; 
-    height: 2.2rem;
+    width: 4rem; 
+    height: 1.7rem;
     border-radius: 2rem; 
-    font-size: 1rem;
+    font-size: 0.7rem;
+  }
+  .text-price{
+    font-size: 1.5rem;
   }
 }
-En el ejemplo anterior, hemos aplicado media queries para dispositivos móviles que se activarán cuando el ancho de la pantalla sea igual o menor a 768 píxeles (ajustable según tus necesidades). En estos estilos para dispositivos móviles, hemos hecho que el ancho de .sectionCard ocupe el 100% del ancho de la pantalla, limitando el ancho máximo a 20rem para mantener un diseño atractivo. Además, hemos cambiado el diseño de .priceBtnContainer a una columna y hemos ajustado los estilos de .detail-btn para que se vean bien en dispositivos móviles.
 
-Puedes personalizar estos valores según tus preferencias y necesidades específicas.
 
 
 

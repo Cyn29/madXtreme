@@ -2,6 +2,7 @@
   width: 84wh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .climbing {
   margin-bottom: 1rem;
@@ -14,11 +15,21 @@
 }
 @media (max-width: 768px) {
   .description-container {
-    width: 100vw;
-    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .climbing {
     font-size: 1.2rem;
   }
+}
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 }

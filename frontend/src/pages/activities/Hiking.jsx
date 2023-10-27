@@ -58,8 +58,8 @@ function Hiking() {
       <div>
         <YouTubeVideo />
       </div>
-      <div className="d-flex justify-content-center align-items-center">
-        <div className="w-60 m-5">
+      <div >
+        <div >
           <Description
             title="Puro senderismo"
             description="¡Explora la belleza natural de la Sierra de Madrid a través de una apasionante experiencia de senderismo! El senderismo te permite sumergirte en la majestuosidad de la naturaleza mientras recorres intrincados caminos y senderos que serpentean a través de paisajes impresionantes."
@@ -91,8 +91,8 @@ function Hiking() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={hiking1} image2={hiking2} image3={hiking3} />
-        <Images image1={hiking4} image2={hiking5} image3={hiking6} />
+        <Images image1={hiking1} image2={hiking2} image3={hiking3} Images image4={hiking4} image5={hiking5} image6={hiking6} />
+  
       </div>
     </>
   );

@@ -31,7 +31,6 @@ function Hiking() {
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
         console.error("Error fetching activities", error);
-        console.error("Error fetching activities", error);
       }
     };
     fetchActivities();
@@ -51,10 +50,7 @@ function Hiking() {
   const handleReset = () => {
     const initialStock =
       activities.length > 0 ? activities[cardIndexToShow].stock : 0;
-    const initialStock =
-      activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
-    localStorage.removeItem("reservedStockHiking");
     localStorage.removeItem("reservedStockHiking");
   };
   return (
@@ -64,8 +60,6 @@ function Hiking() {
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="w-60 m-5">
-      <div className="d-flex justify-content-center align-items-center">
-        <div className="w-60 m-5">
           <Description
             title="Puro senderismo"
             description="¡Explora la belleza natural de la Sierra de Madrid a través de una apasionante experiencia de senderismo! El senderismo te permite sumergirte en la majestuosidad de la naturaleza mientras recorres intrincados caminos y senderos que serpentean a través de paisajes impresionantes."
@@ -73,13 +67,10 @@ function Hiking() {
             text2="Aventura en el monte: Tanto para principiantes como para expertos, ¡hay rutas para todos!"
             text3="Seguridad en Todo Momento: Guías profesionales para una experiencia segura."
             duration="Duración 6 horas  |  Idioma: Español/Inglés"
-            opinion="Valoraciones: 🌟🌟🌟🌟🌟"
+            opinion=":estrella2::estrella2::estrella2::estrella2::estrella2:"
           />
         </div>
         <div>
-          {showResetButton && (
-            <button onClick={handleReset}>Resetear Contador</button>
-          )}
           {showResetButton && (
             <button onClick={handleReset}>Resetear Contador</button>
           )}
@@ -107,4 +98,3 @@ function Hiking() {
   );
 }
 export default Hiking;
-

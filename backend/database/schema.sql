@@ -40,11 +40,12 @@ CREATE TABLE activities (
 SELECT * FROM activities;
 insert into activities(id_activity, activity_image, title, act_description, price, opinion, bookingDate, stock)
 values
-( 1 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_48_kzjk3h.png', 'Escalada', 'Escalada en rocas natulales en paisaje edílico.', 55, '4.7/5 15 opiniones', '15 noviembre 2023' , 8),
-( 2 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_47_vcjwbe.png', 'Senderismo', 'Senderismo, rutas en la sierra de Guadarrama.', 55, '4.7/5 15 opiniones', '10 diciembre 2023' , 8),
-( 3 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633264/Dise%C3%B1o_sin_t%C3%ADtulo_50_zhapmk.png', 'MTB/Enduro-DH', 'MTB/Enduro-DH experiencia extrema en bici.', 45, '4.7/5 12 opiniones' ,  '15 enero 2024', 5),
-( 4 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_49_l8a0rl.png', 'Barranquismo', 'Barranquismo, rapela por íncreibles ríos de Madrid.', 50, '4.5/5 10 opiniones', '20 de febrero 2024', 10),
-( 5 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_52_tvst8q.png', 'Boulder', 'Boulder, vive la experiencia de escalar sin cuerda .', 45, '4.7/5 10 opiniones', '15 de marzo 2024', 8),
+( 1 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_48_kzjk3h.png', 'Escalada', 'Escalada con cuerda.', 55, '4.7/5 15 opiniones', '15 noviembre 2023' , 8),
+( 2 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_47_vcjwbe.png', 'Senderismo', 'Senderismo, rutas en la sierra.', 55, '4.7/5 15 opiniones', '10 diciembre 2023' , 8),
+( 3 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633264/Dise%C3%B1o_sin_t%C3%ADtulo_50_zhapmk.png', 'MTB/Enduro-DH', 'MTB, experiencia extrema en bici.', 45, '4.7/5 12 opiniones' ,  '15 enero 2024', 5),
+( 4 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_49_l8a0rl.png', 'Barranquismo', 'Barranquismo, rapela por íncreibles ríos.', 50, '4.5/5 10 opiniones', '20 de febrero 2024', 10),
+( 5 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_52_tvst8q.png', 'Boulder', 'Boulder, escala sin cuerda.', 45, '4.7/5 10 opiniones', '15 de marzo 2024', 8),
 ( 6 , 'https://res.cloudinary.com/dqj4pvyva/image/upload/v1697633262/Dise%C3%B1o_sin_t%C3%ADtulo_51_m9m6bo.png', 'Kayak' , 'Kayak en río natural con los mejores paisajes.', 55, '4.7/5 15 opiniones' , '12 de abril 2024', 5);
 drop table activities;
 drop table users;
+drop table admins;

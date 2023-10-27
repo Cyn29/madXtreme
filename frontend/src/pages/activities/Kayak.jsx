@@ -70,7 +70,7 @@ function Kayak() {
             text2="Aventura en los ríos: Tanto para principiantes como para expertos, ¡hay rutas para todos!"
             text3="Seguridad en todo momento: Equipamiento y guías profesionales para una experiencia segura."
             duration="Duración 3 horas  |  Idioma: Español/Inglés"
-            opinion="🌟🌟🌟🌟🌟"
+            opinion="Valoraciones: 🌟🌟🌟🌟🌟"
           />
         </div>
         <div>

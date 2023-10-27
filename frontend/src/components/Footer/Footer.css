@@ -1,19 +1,19 @@
-.banner{
-    background-color:#D10505;
-    height:7rem;
-    margin-top: 2rem;
+.banner {
+  background-color: #d10505;
+  height: 7rem;
+  margin-top: 2rem;
 }
 
-.logotype-img{
-    height: 5rem;
+.logotype-img {
+  height: 5rem;
 }
 
-.icon-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.icon-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.socialmedia{
-    height: 2rem;
+.socialmedia {
+  height: 2rem;
 }

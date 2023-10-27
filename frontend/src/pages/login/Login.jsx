@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button, Image, Alert } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Image,
+  Alert,
+} from "react-bootstrap";
 import logotype from "../../assets/logotype/logotype.png";
 import { Link } from "react-router-dom";
 function Login() {
@@ -38,7 +46,7 @@ function Login() {
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Link to = "/"> <Image src={logotype} fluid /> </Link>
+                        <Link to = "/"><Image src={logotype} fluid /></Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">

@@ -1,71 +1,71 @@
 .show-menu {
-    display: block;
+  display: block;
 }
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background-color: white;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  margin-bottom: 1rem;
 }
 .logotype-img {
-    height: 5rem;
+  height: 5rem;
 }
 .ul-container {
-    width: 60vw;
-    display: flex;
-    align-items: center;
-    justify-content: end;
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .links-container {
-    width: 60vw;
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
 }
 .navbar-li {
-    text-decoration: none;
-    margin-right: 3rem;
-    color: black;
-    font-size: larger;
-    font-weight: 500;
+  text-decoration: none;
+  margin-right: 3rem;
+  color: black;
+  font-size: larger;
+  font-weight: 500;
 }
-.right-container{
-    display: flex;
-    justify-content: end;
+.right-container {
+  display: flex;
+  justify-content: end;
 }
 .mobile-menu {
-    display: none;
+  display: none;
 }
 .mobile-menu-button {
-    margin-top: 1rem;
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  margin-top: 1rem;
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
 }
 .mobile-dropdown {
-    display: block;
-    list-style: none;
-    padding: 0;
+  display: block;
+  list-style: none;
+  padding: 0;
 }
 .mobile-dropdown li {
-    padding: 10px;
-    text-align: center;
-    background-color: white;
-    color: black;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
 /* Media query para mostrar/ocultar el menú desplegable */
 @media only screen and (max-width: 768px) {
-    .links-container {
-        display: none;
-    }
-    .mobile-menu {
-        display: block;
-    }
+  .links-container {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
 }

@@ -3,19 +3,19 @@ import Header from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
 function Root() {
-    const location = useLocation();
+  const location = useLocation();
 
-    if (location.pathname === "/login" || location.pathname === "/register") {
-        return <Outlet />;
-    } else {
-        return (
-            <>
-                <Header />
-                <Outlet />
-                <Footer />
-            </>
-        );
-    }
+  if (location.pathname === "/login" || location.pathname === "/register") {
+    return <Outlet />;
+  } else {
+    return (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default Root;

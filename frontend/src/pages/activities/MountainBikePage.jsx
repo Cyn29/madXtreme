@@ -31,6 +31,7 @@ function MountainBike() {
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
         console.error("Error fetching activities", error);
+        console.error("Error fetching activities", error);
       }
     };
     fetchActivities();
@@ -56,7 +57,7 @@ function MountainBike() {
   return (
     <>
       <div>
-        <YouTubeVideo />
+        <YouTubeVideo /> {/* Agrega el componente del video */}
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="w-60 m-5">

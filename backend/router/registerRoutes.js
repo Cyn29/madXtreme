@@ -1,7 +1,7 @@
-import {Router} from 'express'
-import {postRegistration} from '../controllers/registerController.js'
+import { Router } from "express";
+import { postRegistration } from "../controllers/registerController.js";
 
-const registerRoutes = Router()
-registerRoutes.post("/", postRegistration)
+const registerRoutes = Router();
+registerRoutes.post("/", postRegistration);
 
-export default registerRoutes
+export default registerRoutes;

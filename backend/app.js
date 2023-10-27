@@ -16,11 +16,11 @@ app.use(json());
 app.use(cors());
 
 app.use(
-    session({
-        secret: "secret",
-        resave: true,
-        saveUninitialized: true,
-    })
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
 );
 
 app.use("/register", registerRoutes);
@@ -31,5 +31,5 @@ app.use("/activities", activityRoutes);
 
 const PORT = process.env.PORT ?? 3000;
 export const server = app.listen(PORT, () =>
-    console.log(`listening port ${PORT}`)
+  console.log(`listening port ${PORT}`)
 );

@@ -31,6 +31,7 @@ function Hiking() {
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
         console.error("Error fetching activities", error);
+        console.error("Error fetching activities", error);
       }
     };
     fetchActivities();
@@ -50,7 +51,10 @@ function Hiking() {
   const handleReset = () => {
     const initialStock =
       activities.length > 0 ? activities[cardIndexToShow].stock : 0;
+    const initialStock =
+      activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
+    localStorage.removeItem("reservedStockHiking");
     localStorage.removeItem("reservedStockHiking");
   };
   return (
@@ -58,6 +62,8 @@ function Hiking() {
       <div>
         <YouTubeVideo />
       </div>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="w-60 m-5">
       <div className="d-flex justify-content-center align-items-center">
         <div className="w-60 m-5">
           <Description
@@ -71,6 +77,9 @@ function Hiking() {
           />
         </div>
         <div>
+          {showResetButton && (
+            <button onClick={handleReset}>Resetear Contador</button>
+          )}
           {showResetButton && (
             <button onClick={handleReset}>Resetear Contador</button>
           )}

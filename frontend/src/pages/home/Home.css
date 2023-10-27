@@ -1,8 +1,8 @@
-.cards-container{
-    justify-content: center;
-    width: 90vw;
+.cards-container {
+  justify-content: center;
+  width: 90vw;
 }
-.container-father{
-    display: flex;
-    justify-content: center;
+.container-father {
+  display: flex;
+  justify-content: center;
 }

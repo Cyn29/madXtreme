@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { activitiesService } from '../../services/ActivityService';
 import Card from '../../components/DetailedCard/Card';
 import hiking1 from '../../assets/activitiesImages/hiking1.png';
-import kiking2 from '../../assets/activitiesImages/kiking2.png';
+import hiking2 from '../../assets/activitiesImages/kiking2.png';
 import hiking3 from '../../assets/activitiesImages/hiking3.png';
 import hiking4 from '../../assets/activitiesImages/hiking4.png';
 import hiking5 from '../../assets/activitiesImages/hiking5.png';
@@ -86,8 +86,8 @@ function Hiking() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={hiking1} image2={kiking2} image3={hiking3} />
-        <Images image1={hiking4} image2={kiking5} image3={hiking6} />
+        <Images image1={hiking1} image2={hiking2} image3={hiking3} />
+        <Images image1={hiking4} image2={hiking5} image3={hiking6} />
       </div>
     </>
   );

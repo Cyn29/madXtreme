@@ -35,3 +35,11 @@
     width: 40vw;
     height: 40vh;
 }
+
+@media only screen and (max-width: 850px) {
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

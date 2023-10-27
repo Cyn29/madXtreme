@@ -1,0 +1,52 @@
+
+.sectionCard {
+  width: 20rem;
+}
+.priceBtnContainer {
+   height: 2rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d10505;
+    color: white;
+    border: none;
+    width: 6rem;
+    height: 2.2rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+  .sectionCard {
+    width: 15rem;
+    margin: 1rem; 
+  }
+
+  .priceBtnContainer {
+    display: flex;
+  }
+
+  .detail-btn {
+    width: 4rem; 
+    height: 1.7rem;
+    border-radius: 2rem; 
+    font-size: 0.7rem;
+  }
+  .text-price{
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+

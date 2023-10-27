@@ -1,0 +1,19 @@
+.banner {
+  background-color: #d10505;
+  height: 7rem;
+  margin-top: 2rem;
+}
+
+.logotype-img {
+  height: 5rem;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.socialmedia {
+  height: 2rem;
+}

@@ -1,0 +1,31 @@
+.description-container {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.climbing {
+  margin-bottom: 1rem;
+  color: #d10505;
+  font-size: 1.5rem;
+}
+.text:hover {
+  background-color: #d10505;
+  color: white;
+}
+@media (max-width: 768px) {
+  .description-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .climbing {
+    font-size: 1.2rem;
+  }
+  .d-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

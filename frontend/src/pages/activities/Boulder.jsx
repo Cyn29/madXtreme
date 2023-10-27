@@ -107,16 +107,7 @@ function Boulder() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images
-                    image1={boulder1}
-                    image2={boulder2}
-                    image3={boulder3}
-                />
-                <Images
-                    image1={boulder4}
-                    image2={boulder5}
-                    image3={boulder6}
-                />
+                <Images image1={boulder1} image2={boulder2} image3={boulder3} Images image4={boulder4} image5={boulder5} image6={boulder6} />
             </div>
         </div>
     );

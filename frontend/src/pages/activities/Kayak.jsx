@@ -91,8 +91,7 @@ function Kayak() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={kayak1} image2={kayak2} image3={kayak3} />
-        <Images image1={kayak4} image2={kayak5} image3={kayak6} />
+        <Images image1={kayak1} image2={kayak2} image3={kayak3} Images image4={kayak4} image5={kayak5} image6={kayak6} />
       </div>
     </>
   );

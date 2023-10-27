@@ -1,5 +1,5 @@
 .description-container {
-  width: 84wh;
+  width: 70vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,13 +23,9 @@
   .climbing {
     font-size: 1.2rem;
   }
-}
-@media (max-width: 768px) {
   .d-flex {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-
 }

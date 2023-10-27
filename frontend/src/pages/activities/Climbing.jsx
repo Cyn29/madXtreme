@@ -100,16 +100,7 @@ function Climbing() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images
-                    image1={climbing1}
-                    image2={climbing2}
-                    image3={climbing3}
-                />
-                <Images
-                    image1={climbing4}
-                    image2={climbing5}
-                    image3={climbing6}
-                />
+                <Images image1={climbing1} image2={climbing2} image3={climbing3} Images image4={climbing4} image5={climbing5} image6={climbing6} />
             </div>
         </>
     );

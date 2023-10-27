@@ -92,8 +92,7 @@ function MountainBike() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={mtb1} image2={mtb2} image3={mtb3} />
-        <Images image1={mtb4} image2={mtb5} image3={mtb6} />
+        <Images image1={mtb1} image2={mtb2} image3={mtb3} Images image4={mtb4} image5={mtb5} image6={mtb6} />
       </div>
     </>
   );

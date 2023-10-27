@@ -58,7 +58,7 @@ function Hiking() {
       <div>
         <YouTubeVideo />
       </div>
-      <div >
+      <div className="d-flex justify-content-center align-items-center">
         <div >
           <Description
             title="Puro senderismo"
@@ -92,7 +92,6 @@ function Hiking() {
       </div>
       <div className="w-60 m-5">
         <Images image1={hiking1} image2={hiking2} image3={hiking3} Images image4={hiking4} image5={hiking5} image6={hiking6} />
-  
       </div>
     </>
   );

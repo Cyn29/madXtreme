@@ -100,16 +100,7 @@ function Cannoying() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images
-                    image1={cannoying1}
-                    image2={cannoying2}
-                    image3={cannoying3}
-                />
-                <Images
-                    image1={cannoying4}
-                    image2={cannoying5}
-                    image3={cannoying6}
-                />
+                <Images image1={cannoying1} image2={cannoying2} image3={cannoying3} Images image4={cannoying4} image5={cannoying5} image6={cannoying6} />
             </div>
         </div>
     );

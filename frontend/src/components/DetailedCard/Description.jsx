@@ -13,11 +13,9 @@ function Description({
 }) {
   return (
     <Card className="description-container mt-4">
-      <Card.Body>
-        <Card.Title className="climbing">{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-      </Card.Body>
       <ListGroup variant="flush">
+        <ListGroup.Item><h2>{title}</h2></ListGroup.Item>
+        <ListGroup.Item>{description}</ListGroup.Item>
         <ListGroup.Item className="text">{text1}</ListGroup.Item>
         <ListGroup.Item className="text">{text2}</ListGroup.Item>
         <ListGroup.Item className="text">{text3}</ListGroup.Item>

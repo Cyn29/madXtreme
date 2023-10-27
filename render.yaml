@@ -35,8 +35,8 @@ services:
 
     - name: backend madextreme
       type: web
-      buildCommand: cd frontend && npm install
-      startCommand: cd frontend && npm run dev
+      buildCommand: cd backend && npm install
+      startCommand: cd backend && npm run dev
       dependencies:
           - name: "bcrypt"
             version: "^5.1.1"

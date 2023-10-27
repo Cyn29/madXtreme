@@ -1,14 +1,21 @@
-import video from "../../assets/activitiesImages/activityVideo.mp4";
-import "./videoActivities.css";
-
+import { Row, Col } from 'react-bootstrap';
 function YouTubeVideo() {
   return (
     <header>
-      <div className="video-background">
-        <video autoPlay loop playsInline muted>
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
+      <Row>
+        <Col md={12}>
+          <video
+            autoPlay
+            width="100%"
+            height="auto"
+          >
+            <source
+              src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1698366596/activityVideo_ki9j1v.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </Col>
+      </Row>
     </header>
   );
 }

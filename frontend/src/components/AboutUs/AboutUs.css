@@ -1,17 +1,17 @@
 .main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .Card {
-    flex: 1;
-    max-width: 28rem;
-    margin: 2rem;
-    border-bottom: #D10505 0.5rem solid;
+  flex: 1;
+  max-width: 28rem;
+  margin: 2rem;
+  border-bottom: #d10505 0.5rem solid;
 }
 .text-center {
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }

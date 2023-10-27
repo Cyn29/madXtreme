@@ -1,15 +1,15 @@
-import Images from '../../components/DetailedCard/Images';
-import Description from '../../components/DetailedCard/Description';
-import { useState, useEffect } from 'react';
-import { activitiesService } from '../../services/ActivityService';
-import Card from '../../components/DetailedCard/Card';
-import climbing1 from '../../assets/activitiesImages/climbing1.png';
-import climbing2 from '../../assets/activitiesImages/climbing2.png';
-import climbing3 from '../../assets/activitiesImages/climbing3.png';
-import climbing4 from '../../assets/activitiesImages/climbing4.png';
-import climbing5 from '../../assets/activitiesImages/climbing5.png';
-import climbing6 from '../../assets/activitiesImages/climbing6.png';
-import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
+import Images from "../../components/DetailedCard/Images";
+import Description from "../../components/DetailedCard/Description";
+import { useState, useEffect } from "react";
+import { activitiesService } from "../../services/ActivityService";
+import Card from "../../components/DetailedCard/Card";
+import climbing1 from "../../assets/activitiesImages/climbing1.png";
+import climbing2 from "../../assets/activitiesImages/climbing2.png";
+import climbing3 from "../../assets/activitiesImages/climbing3.png";
+import climbing4 from "../../assets/activitiesImages/climbing4.png";
+import climbing5 from "../../assets/activitiesImages/climbing5.png";
+import climbing6 from "../../assets/activitiesImages/climbing6.png";
+import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
 
 function Climbing() {
   const [activities, setActivities] = useState([]);
@@ -24,11 +24,15 @@ function Climbing() {
         const fetchedActivities = await activitiesService.getProducts();
         setActivities(fetchedActivities);
 
-        const reservedStock = localStorage.getItem('reservedStockClimbing') || 0;
-        const initialStock = fetchedActivities.length > 0 ? fetchedActivities[cardIndexToShow].stock : 0;
+        const reservedStock =
+          localStorage.getItem("reservedStockClimbing") || 0;
+        const initialStock =
+          fetchedActivities.length > 0
+            ? fetchedActivities[cardIndexToShow].stock
+            : 0;
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
-        console.error('Error fetching activities', error);
+        console.error("Error fetching activities", error);
       }
     };
 
@@ -39,26 +43,30 @@ function Climbing() {
     if (availableStock >= 1) {
       setAvailableStock(availableStock - 1);
 
-      const reservedStock = localStorage.getItem('reservedStockClimbing') || 0;
-      localStorage.setItem('reservedStockClimbing', parseInt(reservedStock, 10) + 1);
+      const reservedStock = localStorage.getItem("reservedStockClimbing") || 0;
+      localStorage.setItem(
+        "reservedStockClimbing",
+        parseInt(reservedStock, 10) + 1
+      );
     } else {
-      alert('No hay plazas disponibles');
+      alert("No hay plazas disponibles");
     }
   };
 
   const handleReset = () => {
-    const initialStock = activities.length > 0 ? activities[cardIndexToShow].stock : 0;
+    const initialStock =
+      activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
-    localStorage.removeItem('reservedStockClimbing');
+    localStorage.removeItem("reservedStockClimbing");
   };
 
   return (
     <>
       <div>
-        <YouTubeVideo /> {/* Agrega el componente del video */}
+        <YouTubeVideo /> 
       </div>
-      <div className='d-flex justify-content-center align-items-center'>
-        <div className='w-60 m-5'>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="w-60 m-5">
           <Description
             title="Escalada deportiva"
             description="¡Vive la emoción de la escalada con cuerdas en un entorno natural único en la Sierra de Madrid! Nuestra experiencia de escalada con cuerdas te ofrece!"
@@ -70,7 +78,9 @@ function Climbing() {
           />
         </div>
         <div>
-          {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
+          {showResetButton && (
+            <button onClick={handleReset}>Resetear Contador</button>
+          )}
           {cardIndexToShow < activities.length && (
             <Card
               activity_image={activities[cardIndexToShow].activity_image}
@@ -91,4 +101,3 @@ function Climbing() {
 }
 
 export default Climbing;
-

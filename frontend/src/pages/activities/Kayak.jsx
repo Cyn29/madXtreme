@@ -1,16 +1,16 @@
-'../../components/DetailedCard/Images';
-import Description from '../../components/DetailedCard/Description';
-import { useState, useEffect } from 'react';
-import { activitiesService } from '../../services/ActivityService';
-import Card from '../../components/DetailedCard/Card';
-import kayak1 from '../../assets/activitiesImages/kayak1.png'
-import kayak2 from '../../assets/activitiesImages/kayak2.png'
-import kayak3 from '../../assets/activitiesImages/kayak3.png'
-import kayak4 from '../../assets/activitiesImages/kayak4.png'
-import kayak5 from '../../assets/activitiesImages/kayak5.png'
-import kayak6 from '../../assets/activitiesImages/kayak6.png'
-import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
-import Images from '../../components/DetailedCard/Images';
+"../../components/DetailedCard/Images";
+import Description from "../../components/DetailedCard/Description";
+import { useState, useEffect } from "react";
+import { activitiesService } from "../../services/ActivityService";
+import Card from "../../components/DetailedCard/Card";
+import kayak1 from "../../assets/activitiesImages/kayak1.png";
+import kayak2 from "../../assets/activitiesImages/kayak2.png";
+import kayak3 from "../../assets/activitiesImages/kayak3.png";
+import kayak4 from "../../assets/activitiesImages/kayak4.png";
+import kayak5 from "../../assets/activitiesImages/kayak5.png";
+import kayak6 from "../../assets/activitiesImages/kayak6.png";
+import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
+import Images from "../../components/DetailedCard/Images";
 
 function Kayak() {
   const [activities, setActivities] = useState([]);
@@ -25,11 +25,14 @@ function Kayak() {
         const fetchedActivities = await activitiesService.getProducts();
         setActivities(fetchedActivities);
 
-        const reservedStock = localStorage.getItem('reservedStockBoulder') || 0;
-        const initialStock = fetchedActivities.length > 0 ? fetchedActivities[cardIndexToShow].stock : 0;
+        const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
+        const initialStock =
+          fetchedActivities.length > 0
+            ? fetchedActivities[cardIndexToShow].stock
+            : 0;
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
-        console.error('Error fetching activities', error);
+        console.error("Error fetching activities", error);
       }
     };
 
@@ -40,8 +43,11 @@ function Kayak() {
     if (availableStock >= 1) {
       setAvailableStock(availableStock - 1);
 
-      const reservedStock = localStorage.getItem('reservedStockBoulder') || 0;
-      localStorage.setItem('reservedStockBoulder', parseInt(reservedStock, 10) + 1);
+      const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
+      localStorage.setItem(
+        "reservedStockBoulder",
+        parseInt(reservedStock, 10) + 1
+      );
     } else {
       setShowErrorAlert(true);
       setTimeout(() => {
@@ -51,9 +57,10 @@ function Kayak() {
   };
 
   const handleReset = () => {
-    const initialStock = activities.length > 0 ? activities[cardIndexToShow].stock : 0;
+    const initialStock =
+      activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
-    localStorage.removeItem('reservedStockBoulder');
+    localStorage.removeItem("reservedStockBoulder");
   };
 
   return (
@@ -61,8 +68,8 @@ function Kayak() {
       <div>
         <YouTubeVideo /> {/* Agrega el componente del video */}
       </div>
-      <div className='d-flex justify-content-center align-items-center'>
-        <div className='w-60 m-5'>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="w-60 m-5">
           <Description
             title="Emoción en kayak"
             description="¡Sumérgete en la emoción de explorar las aguas cristalinas de un entorno natural único en la Sierra de Madrid con nuestra experiencia de kayak!"
@@ -74,7 +81,9 @@ function Kayak() {
           />
         </div>
         <div>
-          {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
+          {showResetButton && (
+            <button onClick={handleReset}>Resetear Contador</button>
+          )}
           {cardIndexToShow < activities.length && (
             <Card
               activity_image={activities[cardIndexToShow].activity_image}

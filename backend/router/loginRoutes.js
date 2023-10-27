@@ -1,7 +1,7 @@
-import {Router} from 'express'
-import {postLogin} from '../controllers/loginController.js'
+import { Router } from "express";
+import { postLogin } from "../controllers/loginController.js";
 
-const loginRoutes = Router()
-loginRoutes.post("/", postLogin)
+const loginRoutes = Router();
+loginRoutes.post("/", postLogin);
 
-export default loginRoutes
+export default loginRoutes;

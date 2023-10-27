@@ -1,15 +1,15 @@
-import Images from '../../components/DetailedCard/Images';
-import Description from '../../components/DetailedCard/Description';
-import { useState, useEffect } from 'react';
-import { activitiesService } from '../../services/ActivityService';
-import Card from '../../components/DetailedCard/Card';
-import mtb1 from '../../assets/activitiesImages/mtb1.png';
-import mtb2 from '../../assets/activitiesImages/boulder2.png';
-import mtb3 from '../../assets/activitiesImages/boulder3.png';
-import mtb4 from '../../assets/activitiesImages/mtb4.png';
-import mtb5 from '../../assets/activitiesImages/mtb5.png';
-import mtb6 from '../../assets/activitiesImages/mtb6.png';
-import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
+import Images from "../../components/DetailedCard/Images";
+import Description from "../../components/DetailedCard/Description";
+import { useState, useEffect } from "react";
+import { activitiesService } from "../../services/ActivityService";
+import Card from "../../components/DetailedCard/Card";
+import mtb1 from "../../assets/activitiesImages/mtb1.png";
+import mtb2 from "../../assets/activitiesImages/boulder2.png";
+import mtb3 from "../../assets/activitiesImages/boulder3.png";
+import mtb4 from "../../assets/activitiesImages/mtb4.png";
+import mtb5 from "../../assets/activitiesImages/mtb5.png";
+import mtb6 from "../../assets/activitiesImages/mtb6.png";
+import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
 
 function MountainBike() {
   const [activities, setActivities] = useState([]);
@@ -24,11 +24,14 @@ function MountainBike() {
         const fetchedActivities = await activitiesService.getProducts();
         setActivities(fetchedActivities);
 
-        const reservedStock = localStorage.getItem('reservedStockBoulder') || 0;
-        const initialStock = fetchedActivities.length > 0 ? fetchedActivities[cardIndexToShow].stock : 0;
+        const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
+        const initialStock =
+          fetchedActivities.length > 0
+            ? fetchedActivities[cardIndexToShow].stock
+            : 0;
         setAvailableStock(initialStock - parseInt(reservedStock, 10));
       } catch (error) {
-        console.error('Error fetching activities', error);
+        console.error("Error fetching activities", error);
       }
     };
 
@@ -39,8 +42,11 @@ function MountainBike() {
     if (availableStock >= 1) {
       setAvailableStock(availableStock - 1);
 
-      const reservedStock = localStorage.getItem('reservedStockBoulder') || 0;
-      localStorage.setItem('reservedStockBoulder', parseInt(reservedStock, 10) + 1);
+      const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
+      localStorage.setItem(
+        "reservedStockBoulder",
+        parseInt(reservedStock, 10) + 1
+      );
     } else {
       setShowErrorAlert(true);
       setTimeout(() => {
@@ -50,18 +56,19 @@ function MountainBike() {
   };
 
   const handleReset = () => {
-    const initialStock = activities.length > 0 ? activities[cardIndexToShow].stock : 0;
+    const initialStock =
+      activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
-    localStorage.removeItem('reservedStockBoulder');
+    localStorage.removeItem("reservedStockBoulder");
   };
 
   return (
     <>
       <div>
-        <YouTubeVideo /> {/* Agrega el componente del video */}
+        <YouTubeVideo /> 
       </div>
-      <div className='d-flex justify-content-center align-items-center'>
-        <div className='w-60 m-5'>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="w-60 m-5">
           <Description
             title="MTB-Enduro/DH"
             description="¡Embárcate en una emocionante aventura en la Sierra de Madrid y descubre la emoción del MTB Enduro y el Downhill (DH)! Nuestra experiencia de ciclismo de montaña te lleva a través de intrincados senderos, empinadas pendientes y descensos vertiginosos."
@@ -73,7 +80,9 @@ function MountainBike() {
           />
         </div>
         <div>
-          {showResetButton && <button onClick={handleReset}>Resetear Contador</button>}
+          {showResetButton && (
+            <button onClick={handleReset}>Resetear Contador</button>
+          )}
           {cardIndexToShow < activities.length && (
             <Card
               activity_image={activities[cardIndexToShow].activity_image}

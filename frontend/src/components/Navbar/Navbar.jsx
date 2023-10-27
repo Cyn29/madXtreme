@@ -55,8 +55,6 @@ function Header() {
           </ul>
         )}
       </div>
-      <div className="right-container"></div>
-      <main className="links-container">
         <ul className="ul-container">
           <a href="/" className="navbar-li" aria-label="home">
             Inicio
@@ -77,7 +75,7 @@ function Header() {
             />
           </a>
         </ul>
-      </main>
+    
     </nav>
   );
 }

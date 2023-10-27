@@ -1,30 +1,15 @@
-"../../components/DetailedCard/Images";
-import Description from "../../components/DetailedCard/Description";
-import { useState, useEffect } from "react";
-import { activitiesService } from "../../services/ActivityService";
-import Card from "../../components/DetailedCard/Card";
-import kayak1 from "../../assets/activitiesImages/kayak1.png";
-import kayak2 from "../../assets/activitiesImages/kayak2.png";
-import kayak3 from "../../assets/activitiesImages/kayak3.png";
-import kayak4 from "../../assets/activitiesImages/kayak4.png";
-import kayak5 from "../../assets/activitiesImages/kayak5.png";
-import kayak6 from "../../assets/activitiesImages/kayak6.png";
-import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
-import Images from "../../components/DetailedCard/Images";
-
+import {Alert} from 'react-bootstrap'
 function Kayak() {
   const [activities, setActivities] = useState([]);
   const [availableStock, setAvailableStock] = useState(0);
   const [showResetButton, setShowResetButton] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
-  const cardIndexToShow = 4;
-
+  const cardIndexToShow = 5;
   useEffect(() => {
     const fetchActivities = async () => {
       try {
         const fetchedActivities = await activitiesService.getProducts();
         setActivities(fetchedActivities);
-
         const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
         const initialStock =
           fetchedActivities.length > 0
@@ -35,14 +20,11 @@ function Kayak() {
         console.error("Error fetching activities", error);
       }
     };
-
     fetchActivities();
   }, [cardIndexToShow]);
-
   const handleReserve = () => {
     if (availableStock >= 1) {
       setAvailableStock(availableStock - 1);
-
       const reservedStock = localStorage.getItem("reservedStockBoulder") || 0;
       localStorage.setItem(
         "reservedStockBoulder",
@@ -50,19 +32,14 @@ function Kayak() {
       );
     } else {
       setShowErrorAlert(true);
-      setTimeout(() => {
-        setShowErrorAlert(false);
-      }, 10000);
+      }
     }
-  };
-
   const handleReset = () => {
     const initialStock =
       activities.length > 0 ? activities[cardIndexToShow].stock : 0;
     setAvailableStock(initialStock);
-    localStorage.removeItem("reservedStockBoulder");
+    localStorage.removeItem("reservedStockKayak");
   };
-
   return (
     <>
       <div>
@@ -93,6 +70,11 @@ function Kayak() {
               onReserve={handleReserve}
             />
           )}
+          {showErrorAlert && (
+          <Alert variant="danger" onClose={() => setShowErrorAlert(false)} dismissible>
+            No hay plazas disponibles
+          </Alert>
+        )}
         </div>
       </div>
       <div className="w-60 m-5">
@@ -102,5 +84,4 @@ function Kayak() {
     </>
   );
 }
-
 export default Kayak;

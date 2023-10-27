@@ -67,7 +67,7 @@ function Hiking() {
             text2="Aventura en el monte: Tanto para principiantes como para expertos, ¡hay rutas para todos!"
             text3="Seguridad en Todo Momento: Guías profesionales para una experiencia segura."
             duration="Duración 6 horas  |  Idioma: Español/Inglés"
-            opinion=":estrella2::estrella2::estrella2::estrella2::estrella2:"
+            opinion="Valoraciones: 🌟🌟🌟🌟🌟"
           />
         </div>
         <div>

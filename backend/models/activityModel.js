@@ -37,7 +37,7 @@ const ActivityModel = db.define(
       allowNull: false,
     },
     stock: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

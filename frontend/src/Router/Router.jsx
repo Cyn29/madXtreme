@@ -11,7 +11,7 @@ import Hiking from "../pages/activities/Hiking";
 import MountainBike from "../pages/activities/MountainBikePage";
 import Boulder from "../pages/activities/Boulder";
 import Cannoying from "../pages/activities/Cannoying";
-import Kayak from "../pages/activities/Kayak";
+import Kayak from "../pages/activities/Kayak"
 
 const router = createBrowserRouter([
   {

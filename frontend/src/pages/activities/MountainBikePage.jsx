@@ -1,7 +1,6 @@
 import Images from '../../components/DetailedCard/Images';
 import Description from '../../components/DetailedCard/Description';
 import { useState, useEffect } from 'react';
-import { activitiesService } from '../../services/ActivityService';
 import Card from '../../components/DetailedCard/Card';
 import mtb1 from '../../assets/activitiesImages/mtb1.png';
 import mtb2 from '../../assets/activitiesImages/mtb2.png';
@@ -11,6 +10,7 @@ import mtb5 from '../../assets/activitiesImages/mtb5.png';
 import mtb6 from '../../assets/activitiesImages/mtb6.png';
 import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
 import {Alert} from 'react-bootstrap'
+import { activitiesService } from '../../services/ActivityService';
 
 function MountainBike() {
   const [activities, setActivities] = useState([]);

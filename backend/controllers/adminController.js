@@ -1,6 +1,7 @@
 import AdminModel from "../models/adminModel.js";
 import { Sequelize } from "sequelize";
 import { validateAdmin } from "../validations/adminValidations.js";
+import bcrypt from "bcryptjs";
 
 export const getAdmins = async (_req, res) => {
     try {
@@ -9,7 +10,7 @@ export const getAdmins = async (_req, res) => {
             return {
                 id: admin.id,
                 email: admin.email,
-                user_password: admin.admin_password,
+                admin_password: admin.admin_password,
             };
         });
         res.json(adminsWithUUID);
@@ -22,12 +23,12 @@ export const getAdminById = async (req, res) => {
     try {
         const id = req.params.id;
         const admin = await AdminModel.findByPk(id);
-        const adminWithId = {
+        const adminWithHexId = {
             id: admin.id,
             email: admin.email,
-            user_password: admin.user_password,
+            admin_password: admin.admin_password,
         };
-        res.json(adminWithId);
+        res.json(adminWithHexId);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -41,11 +42,15 @@ export const createAdmin = async (req, res) => {
 
         try {
             const newUUID = AdminModel.sequelize.literal("uuid()");
+            const hashedPassword = await bcrypt.hash(
+                adminData.admin_password,
+                10
+            );
 
             const newAdmin = await AdminModel.create({
                 id: newUUID,
                 email: adminData.email,
-                admin_password: adminData.admin_password,
+                admin_password: hashedPassword, 
             });
 
             res.status(201).json({
@@ -65,11 +70,21 @@ export const createAdmin = async (req, res) => {
 export const updateAdmin = async (req, res) => {
     const { id } = req.params;
     try {
-        const updated = await AdminModel.update(req.body, {
+        const admin = await AdminModel.findByPk(id);
+        if (!admin) {
+            return res.status(404).json({ message: "Admin not found" });
+        }
+        if (req.body.admin_password) {
+            req.body.admin_password = await bcrypt.hash(
+                req.body.admin_password,
+                10
+            );
+        }
+        const [updatedCount] = await AdminModel.update(req.body, {
             where: { id: id },
         });
-        if (updated) {
-            const updatedAdmin = await AdminModel.findOne({ where: { id: id } });
+
+        if (updatedCount > 0) {
             res.json({ message: "Admin updated successfully" });
         } else {
             res.status(404).json({ message: "Admin not found" });

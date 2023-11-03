@@ -1,6 +1,7 @@
 import UserModel from "../models/userModel.js";
 import { Sequelize } from "sequelize";
 import { validateUser } from "../validations/userValidations.js";
+import bcrypt from 'bcryptjs';
 
 export const getUsers = async (_req, res) => {
   try {
@@ -63,21 +64,28 @@ export const createUser = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
-  const { id } = req.params; 
+  const { id } = req.params;
   try {
-      const updated = await UserModel.update(req.body, {
-          where: { id: id }
-      });
-      if (updated) {
-          const updatedUser = await UserModel.findOne({ where: { id: id } });
-          res.json({ message: 'User updated successfully' });
-      } else {
-          res.status(404).json({ message: 'User not found' });
-      }
+    const user = await UserModel.findByPk(id);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    if (req.body.user_password) {
+      req.body.user_password = await bcrypt.hash(req.body.user_password, 10);
+    }
+    const [updatedCount] = await UserModel.update(req.body, {
+      where: { id: id }
+    });
+
+    if (updatedCount > 0) {
+      res.json({ message: 'User updated successfully' });
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
   } catch (error) {
-      res.status(500).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
-} 
+}
 
 export const deleteUser = async (req, res) => {
   try {

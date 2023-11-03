@@ -22,4 +22,12 @@ async function checkDatabaseConnection() {
 }
 checkDatabaseConnection();
 
+db.sync({ force: false }) 
+  .then(() => {
+    console.log("Tables synchronized with the database!");
+  })
+  .catch((error) => {
+    console.error("Error synchronizing tables with the database:", error);
+  });
+
 export default db;

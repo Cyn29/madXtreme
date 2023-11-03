@@ -13,8 +13,6 @@ export const postRegistration = async (req, res) => {
   }
 
   const { fullName, email, user_password } = validation.data;
-  const uuid = Sequelize.fn("uuid");
-  const binaryUuid = Sequelize.fn("UUID_TO_BIN", uuid);
   const alreadyExistsUser = await UserModel.findOne({
     where: { email },
   }).catch((err) => {
@@ -30,7 +28,7 @@ export const postRegistration = async (req, res) => {
   const hashedPassword = await bcrypt.hash(user_password, 10);
 
   const newUser = await UserModel.create({
-    id: binaryUuid,
+    id: req.params.id,
     fullName,
     email,
     user_password: hashedPassword,

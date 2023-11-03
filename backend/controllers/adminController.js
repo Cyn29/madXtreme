@@ -1,15 +1,15 @@
 import AdminModel from "../models/adminModel.js";
 import { Sequelize } from "sequelize";
-import { validateAdmin } from "../validations/adminValidations.js"
+import { validateAdmin } from "../validations/adminValidations.js";
 
-export const getAdmins = async (req, res) => {
+export const getAdmins = async (_req, res) => {
     try {
         const admins = await AdminModel.findAll();
         const adminsWithUUID = admins.map((admin) => {
             return {
-                id: admin.id ? Buffer.from(admin.id).toString("hex") : null,
+                id: admin.id,
                 email: admin.email,
-                admin_password: admin.admin_password
+                user_password: admin.admin_password,
             };
         });
         res.json(adminsWithUUID);
@@ -20,14 +20,14 @@ export const getAdmins = async (req, res) => {
 
 export const getAdminById = async (req, res) => {
     try {
-        const id = Buffer.from(req.params.id, "hex");
+        const id = req.params.id;
         const admin = await AdminModel.findByPk(id);
-        const adminWithHexId = {
-            id: admin.id ? admin.id.toString("hex") : null,
+        const adminWithId = {
+            id: admin.id,
             email: admin.email,
-            admin_password: admin.admin_password,
+            user_password: admin.user_password,
         };
-        res.json(adminWithHexId);
+        res.json(adminWithId);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -35,16 +35,19 @@ export const getAdminById = async (req, res) => {
 
 export const createAdmin = async (req, res) => {
     const validationResult = validateAdmin(req.body);
+
     if (validationResult.success) {
-        const adminData = validationResult.data; 
-        const uuid = Sequelize.fn("uuid");
-        const binaryUuid = Sequelize.fn("UUID_TO_BIN", uuid);
+        const adminData = validationResult.data;
+
         try {
+            const newUUID = AdminModel.sequelize.literal("uuid()");
+
             const newAdmin = await AdminModel.create({
-                id: binaryUuid,
+                id: newUUID,
                 email: adminData.email,
                 admin_password: adminData.admin_password,
             });
+
             res.status(201).json({
                 message: "The admin has been created successfully!",
             });
@@ -60,36 +63,33 @@ export const createAdmin = async (req, res) => {
 };
 
 export const updateAdmin = async (req, res) => {
+    const { id } = req.params;
     try {
-        const bufferedId = Buffer.from(req.params.id, "hex");
-        const existingAdmin = await AdminModel.findOne({
-            where: { id: bufferedId },
-        })
-        if(!existingAdmin) {
-            return res.status(400).json({message: "Admin not found"});
-        }
-        const updatedAdmin = await AdminModel.update(req.body, {
-            where: { id: req.params.id },
+        const updated = await AdminModel.update(req.body, {
+            where: { id: id },
         });
-        if (updatedAdmin) {
-            return res.status(200).json({ message: "Admin updated successfully!" });
+        if (updated) {
+            const updatedAdmin = await AdminModel.findOne({ where: { id: id } });
+            res.json({ message: "Admin updated successfully" });
+        } else {
+            res.status(404).json({ message: "Admin not found" });
         }
     } catch (error) {
-        return res.status(500).json({ message: error.message });
+        res.status(500).json({ message: error.message });
     }
 };
 
 export const deleteAdmin = async (req, res) => {
     try {
-        const bufferedId = Buffer.from(req.params.id, "hex");
         const deletedAdmin = await AdminModel.destroy({
-            where: { id: bufferedId },
+            where: { id: req.params.id },
         });
         if (deletedAdmin) {
-            return res.status(200).json({ message: "Admin deleted successfully!" });
+            return res
+                .status(200)
+                .json({ message: "Admin deleted successfully!" });
         }
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
 };
-

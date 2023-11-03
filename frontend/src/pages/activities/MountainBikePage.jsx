@@ -2,7 +2,7 @@ import Images from '../../components/DetailedCard/Images';
 import Description from '../../components/DetailedCard/Description';
 import { useState, useEffect } from 'react';
 import Card from '../../components/DetailedCard/Card';
-import mtb1 from '../../assets/activitiesImages/mtb1.png';
+import mtb1 from 'C:/Users/Aitor/Documents/Bootcamp Factoría F5/madXtreme/frontend/src/assets/activitiesImages/mtb1.png';
 import mtb2 from '../../assets/activitiesImages/mtb2.png';
 import mtb3 from '../../assets/activitiesImages/mtb3.png';
 import mtb4 from '../../assets/activitiesImages/mtb4.png';

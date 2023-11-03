@@ -8,6 +8,7 @@ import userRoutes from "./router/userRoutes.js";
 import adminRoutes from "./router/adminRoutes.js";
 import activityRoutes from "./router/activityRoutes.js";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 export const app = express();

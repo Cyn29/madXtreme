@@ -7,7 +7,7 @@ export const getUsers = async (_req, res) => {
     const users = await UserModel.findAll();
     const usersWithUUID = users.map((user) => {
       return {
-        id: user.id ? Buffer.from(user.id).toString("hex") : null,
+        id: user.id,
         email: user.email,
         user_password: user.user_password,
       };
@@ -20,10 +20,10 @@ export const getUsers = async (_req, res) => {
 
 export const getUserById = async (req, res) => {
   try {
-    const id = Buffer.from(req.params.id, "hex");
+    const id = req.params.id;
     const user = await UserModel.findByPk(id);
     const userWithHexId = {
-      id: user.id ? user.id.toString("hex") : null,
+      id: user.id,
       email: user.email,
       user_password: user.user_password,
     };
@@ -35,16 +35,19 @@ export const getUserById = async (req, res) => {
 
 export const createUser = async (req, res) => {
   const validationResult = validateUser(req.body);
+
   if (validationResult.success) {
     const userData = validationResult.data;
-    const uuid = Sequelize.fn("uuid");
-    const binaryUuid = Sequelize.fn("UUID_TO_BIN", uuid);
+
     try {
+      const newUUID = UserModel.sequelize.literal('uuid()');
+
       const newUser = await UserModel.create({
-        id: binaryUuid,
+        id: newUUID,
         email: userData.email,
         user_password: userData.user_password,
       });
+
       res.status(201).json({
         message: "The user has been created successfully!",
       });
@@ -60,30 +63,26 @@ export const createUser = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
+  const { id } = req.params; 
   try {
-    const bufferedId = Buffer.from(req.params.id, "hex");
-    const existingUser = await UserModel.findOne({
-      where: { id: bufferedId },
-    });
-    if (!existingUser) {
-      return res.status(400).json({ message: "User not found" });
-    }
-    const updatedUser = await UserModel.update(req.body, {
-      where: { id: bufferedId },
-    });
-    if (updatedUser) {
-      return res.status(200).json({ message: "User updated successfully!" });
-    }
+      const updated = await UserModel.update(req.body, {
+          where: { id: id }
+      });
+      if (updated) {
+          const updatedUser = await UserModel.findOne({ where: { id: id } });
+          res.json({ message: 'User updated successfully' });
+      } else {
+          res.status(404).json({ message: 'User not found' });
+      }
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+      res.status(500).json({ message: error.message });
   }
-};
+} 
 
 export const deleteUser = async (req, res) => {
   try {
-    const bufferedId = Buffer.from(req.params.id, "hex");
     const deletedUser = await UserModel.destroy({
-      where: { id: bufferedId },
+      where: { id: req.params.id },
     });
     if (deletedUser) {
       return res.status(200).json({ message: "User deleted successfully!" });

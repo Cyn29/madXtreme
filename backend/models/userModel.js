@@ -5,8 +5,8 @@ const UserModel = db.define(
   "users",
   {
     id: {
-      type: DataTypes.BLOB(16),
-      defaultValue: Sequelize.UUIDV4,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
     },

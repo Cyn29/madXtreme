@@ -3,12 +3,6 @@ import Description from "../../components/DetailedCard/Description";
 import { useState, useEffect } from "react";
 import { activitiesService } from "../../services/ActivityService";
 import Card from "../../components/DetailedCard/Card";
-import climbing1 from "../../assets/activitiesImages/climbing1.png";
-import climbing2 from "../../assets/activitiesImages/climbing2.png";
-import climbing3 from "../../assets/activitiesImages/climbing3.png";
-import climbing4 from "../../assets/activitiesImages/climbing4.png";
-import climbing5 from "../../assets/activitiesImages/climbing5.png";
-import climbing6 from "../../assets/activitiesImages/climbing6.png";
 import Video from "../../components/DetailedCard/videoActivities.jsx";
 import { Alert } from "react-bootstrap";
 
@@ -100,7 +94,7 @@ function Climbing() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images image1={climbing1} image2={climbing2} image3={climbing3} Images image4={climbing4} image5={climbing5} image6={climbing6} />
+                <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123001/climbing1_acil1z.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123002/climbing2_vnuvov.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123002/climbing4_ffp8kt.png"} Images image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123002/climbing3_tgsdwu.png"} image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/climbing7_fbteja.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/climbing6_s7xhqv.png"} />
             </div>
         </>
     );

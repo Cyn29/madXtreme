@@ -91,7 +91,7 @@ function Hiking() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={hiking1} image2={hiking2} image3={hiking3} Images image4={hiking4} image5={hiking5} image6={hiking6} />
+        <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/hiking1_bvxkas.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/hiking5_dbzbvc.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/hiking6_a6qr7n.png"} Images image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123005/kiking2_mx33ue.png"} image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/hiking3_pk1wyg.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123003/hiking4_xg8rp9.png"} />
       </div>
     </>
   );

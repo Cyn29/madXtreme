@@ -3,12 +3,6 @@ import Description from "../../components/DetailedCard/Description";
 import { useState, useEffect } from "react";
 import { activitiesService } from "../../services/ActivityService";
 import Card from "../../components/DetailedCard/Card";
-import kayak1 from "../../assets/activitiesImages/kayak1.png";
-import kayak2 from "../../assets/activitiesImages/kayak2.png";
-import kayak3 from "../../assets/activitiesImages/kayak3.png";
-import kayak4 from "../../assets/activitiesImages/kayak4.png";
-import kayak5 from "../../assets/activitiesImages/kayak5.png";
-import kayak6 from "../../assets/activitiesImages/kayak6.png";
 import Video from "../../components/DetailedCard/videoActivities.jsx";
 import Images from "../../components/DetailedCard/Images";
 import {Alert} from 'react-bootstrap'
@@ -91,7 +85,7 @@ function Kayak() {
         </div>
       </div>
       <div className="w-60 m-5">
-        <Images image1={kayak1} image2={kayak2} image3={kayak3} Images image4={kayak4} image5={kayak5} image6={kayak6} />
+        <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123004/kayak1_gwvb4t.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123005/kayak5_gvkyls.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123004/kayak3_geqwi0.png"} image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123004/kayak2_rpqfaq.png"}  image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123005/kayak6_fnh7l5.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123004/kayak4_nd7ltu.png"} />
       </div>
     </>
   );

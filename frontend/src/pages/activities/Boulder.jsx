@@ -3,7 +3,7 @@ import Images from "../../components/DetailedCard/Images";
 import Description from "../../components/DetailedCard/Description";
 import { useState, useEffect } from "react";
 import { activitiesService } from "../../services/ActivityService";
-import Card from "../../components/DetailedCard/Card";
+import Card from "../../components/DetailedCard/Card.jsx";
 import Video from "../../components/DetailedCard/videoActivities.jsx";
 import { Alert } from "react-bootstrap";
 
@@ -101,7 +101,7 @@ function Boulder() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} Images image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123006/mtb6_jkswxy.png"} />
+                <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder6_gzmhpp.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder5_fufjkm.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder1_upidri.png"} Images image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder3_durxtc.png"} image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder4_mbz4js.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/boulder2_b3zimu.png"} />
             </div>
         </div>
     );

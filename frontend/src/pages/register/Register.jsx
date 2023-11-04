@@ -32,12 +32,12 @@ function Register() {
       setShowSuccessAlert(true);
       setTimeout(() => {
         setShowSuccessAlert(false);
-      }, 10000);
+      }, 3000);
     } else if (result.error) {
       setShowErrorAlert(true);
       setTimeout(() => {
         setShowErrorAlert(false);
-      }, 10000);
+      }, 3000);
     }
   };
 

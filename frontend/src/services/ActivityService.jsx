@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000";
+const baseURL = "https://madxtreme-ecommerce.onrender.com";
 
 export const activitiesService = {
   async getProducts() {

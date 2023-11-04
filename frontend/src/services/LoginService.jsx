@@ -1,5 +1,5 @@
 // loginService.js
-const baseURL = "http://localhost:3000"; 
+const baseURL = "https://madxtreme-ecommerce.onrender.com/"; 
 export const loginService = {
   async postLogin(email, user_password) {
     try {

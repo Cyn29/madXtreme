@@ -38,28 +38,32 @@ export const createUser = async (req, res) => {
   const validationResult = validateUser(req.body);
 
   if (validationResult.success) {
-    const userData = validationResult.data;
+      const userData = validationResult.data;
 
-    try {
-      const newUUID = UserModel.sequelize.literal('uuid()');
+      try {
+          const newUUID = UserModel.sequelize.literal("uuid()");
+          const hashedPassword = await bcrypt.hash(
+              userData.user_password,
+              10
+          );
 
-      const newUser = await UserModel.create({
-        id: newUUID,
-        email: userData.email,
-        user_password: userData.user_password,
-      });
+          const newUser = await UserModel.create({
+              id: newUUID,
+              email: userData.email,
+              user_password: hashedPassword, 
+          });
 
-      res.status(201).json({
-        message: "The user has been created successfully!",
-      });
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
+          res.status(201).json({
+              message: "The user has been created successfully!",
+          });
+      } catch (error) {
+          res.status(500).json({ message: error.message });
+      }
   } else {
-    res.status(400).json({
-      message: "Invalid data in the request body",
-      errors: validationResult.error,
-    });
+      res.status(400).json({
+          message: "Invalid data in the request body",
+          errors: validationResult.error,
+      });
   }
 };
 

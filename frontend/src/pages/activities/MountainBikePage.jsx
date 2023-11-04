@@ -8,7 +8,7 @@ import mtb3 from '../../assets/activitiesImages/mtb3.png';
 import mtb4 from '../../assets/activitiesImages/mtb4.png';
 import mtb5 from '../../assets/activitiesImages/mtb5.png';
 import mtb6 from '../../assets/activitiesImages/mtb6.png';
-import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
+import Video from '../../components/DetailedCard/videoActivities.jsx';
 import {Alert} from 'react-bootstrap'
 import { activitiesService } from '../../services/ActivityService';
 
@@ -57,7 +57,7 @@ function MountainBike() {
   return (
     <>
       <div>
-        <YouTubeVideo /> {/* Agrega el componente del video */}
+        <Video />
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="w-60 m-5">

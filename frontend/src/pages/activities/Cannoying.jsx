@@ -3,7 +3,7 @@ import Description from "../../components/DetailedCard/Description";
 import { useState, useEffect } from "react";
 import { activitiesService } from "../../services/ActivityService";
 import Card from "../../components/DetailedCard/Card";
-import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
+import Video from "../../components/DetailedCard/videoActivities.jsx";
 import cannoying1 from "../../assets/activitiesImages/cannoying1.jpg";
 import cannoying2 from "../../assets/activitiesImages/cannoying2.png";
 import cannoying3 from "../../assets/activitiesImages/cannoying3.png";
@@ -58,7 +58,7 @@ function Cannoying() {
     return (
         <div>
             <div>
-                <YouTubeVideo />
+                <Video />
             </div>
             <div className="d-flex justify-content-center align-items-center">
                 <div className="w-60 m-5">

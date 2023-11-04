@@ -9,7 +9,7 @@ import hiking3 from '../../assets/activitiesImages/hiking3.png';
 import hiking4 from '../../assets/activitiesImages/hiking4.png';
 import hiking5 from '../../assets/activitiesImages/hiking5.png';
 import hiking6 from '../../assets/activitiesImages/hiking6.png';
-import YouTubeVideo from '../../components/DetailedCard/videoActivities.jsx';
+import Video from '../../components/DetailedCard/videoActivities.jsx';
 import {Alert} from 'react-bootstrap'
 
 function Hiking() {
@@ -56,7 +56,7 @@ function Hiking() {
   return (
     <>
       <div>
-        <YouTubeVideo />
+        <Video />
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div >

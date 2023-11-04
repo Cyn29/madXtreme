@@ -1,44 +1,39 @@
 import { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  Image,
-  Alert,
-} from "react-bootstrap";
-import { loginService } from "../../services/LoginService";
+import { Container, Row, Col, Form, Button, Image, Alert } from "react-bootstrap";
+import { loginService } from "../../services/LoginService"; 
 import logotype from "../../assets/logotype/logotype.png";
 import { Link } from "react-router-dom";
+
 function Login() {
     const [email, setEmail] = useState("");
     const [user_password, setPassword] = useState("");
-    const [showErrorAlert, setShowErrorAlert] = useState(false)
+    const [showErrorAlert, setShowErrorAlert] = useState(false);
+
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
+        
         const result = await loginService.postLogin(email, user_password);
 
         if (result.success) {
-            const data = await result.json();
-                console.log("Login status:", data);
-                if (data.message === "Welcome back!") {
-                    window.location.href = "/";
-                } else {
-                    console.error("Email  or password does not match");
-                    setShowErrorAlert(true);
-                    setTimeout(() => {
-                        setShowErrorAlert(false);
-                    }, 10000);
-                }
-            } 
-        } 
+            const data = result.data;
+            if (data.message === "Welcome back!") {
+                window.location.href = "/";
+            } else {
+                setShowErrorAlert(true);
+                setShowErrorAlert("Email or password does not match");
+                setTimeout(() => {
+                    setShowErrorAlert(false);
+                }, 3000);
+            }
+    }
+}
+
     return (
         <Form onSubmit={handleLoginSubmit}>
             <Container className="group-12" style={{ marginTop: "9rem" }}>
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Link to = "/"><Image src={logotype} fluid /></Link>
+                        <Link to="/"><Image src={logotype} fluid /></Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
@@ -119,4 +114,6 @@ function Login() {
         </Form>
     );
 }
+
 export default Login;
+

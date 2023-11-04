@@ -9,7 +9,7 @@ import climbing3 from "../../assets/activitiesImages/climbing3.png";
 import climbing4 from "../../assets/activitiesImages/climbing4.png";
 import climbing5 from "../../assets/activitiesImages/climbing5.png";
 import climbing6 from "../../assets/activitiesImages/climbing6.png";
-import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
+import Video from "../../components/DetailedCard/videoActivities.jsx";
 import { Alert } from "react-bootstrap";
 
 function Climbing() {
@@ -58,7 +58,7 @@ function Climbing() {
     return (
         <>
             <div>
-                <YouTubeVideo />
+                <Video />
             </div>
             <div className="d-flex justify-content-center align-items-center">
                 <div className="w-60 m-5">

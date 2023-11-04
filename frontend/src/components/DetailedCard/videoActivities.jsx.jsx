@@ -1,5 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
-function YouTubeVideo() {
+function Video() {
   return (
     <header>
       <Row>
@@ -20,4 +20,4 @@ function YouTubeVideo() {
   );
 }
 
-export default YouTubeVideo;
+export default Video;

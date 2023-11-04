@@ -9,7 +9,7 @@ import kayak3 from "../../assets/activitiesImages/kayak3.png";
 import kayak4 from "../../assets/activitiesImages/kayak4.png";
 import kayak5 from "../../assets/activitiesImages/kayak5.png";
 import kayak6 from "../../assets/activitiesImages/kayak6.png";
-import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
+import Video from "../../components/DetailedCard/videoActivities.jsx";
 import Images from "../../components/DetailedCard/Images";
 import {Alert} from 'react-bootstrap'
 function Kayak() {
@@ -56,7 +56,7 @@ function Kayak() {
   return (
     <>
       <div>
-        <YouTubeVideo /> {/* Agrega el componente del video */}
+        <Video />
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="w-60 m-5">

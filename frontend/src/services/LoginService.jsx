@@ -1,4 +1,5 @@
-const baseURL = "http://localhost:3000";
+// loginService.js
+const baseURL = "http://localhost:3000"; 
 export const loginService = {
   async postLogin(email, user_password) {
     try {
@@ -7,20 +8,20 @@ export const loginService = {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({email, user_password }),
+        body: JSON.stringify({ email, user_password }),
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log('Login status:', data);
-        return { success: true };
+        return { success: true, data };
       } else {
         console.error('Login error');
-        return { error: 'Login error' };
+        return { success: false, error: 'Login error' };
       }
     } catch (error) {
       console.error('Failed request:', error);
-      return { error: 'Failed request' };
+      return { success: false, error: 'Failed request' };
     }
   },
 };

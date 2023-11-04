@@ -10,7 +10,7 @@ import boulder3 from "../../assets/activitiesImages/boulder3.png";
 import boulder4 from "../../assets/activitiesImages/boulder4.png";
 import boulder5 from "../../assets/activitiesImages/boulder5.png";
 import boulder6 from "../../assets/activitiesImages/boulder6.png";
-import YouTubeVideo from "../../components/DetailedCard/videoActivities.jsx";
+import Video from "../../components/DetailedCard/videoActivities.jsx";
 import { Alert } from "react-bootstrap";
 
 function Boulder() {
@@ -56,7 +56,7 @@ function Boulder() {
     };
     return (
         <div>
-            <YouTubeVideo />
+            <Video />
             <div className="d-flex justify-content-center align-items-center">
                 <div className="w-60 m-5">
                     <Description

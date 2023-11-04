@@ -4,12 +4,6 @@ import { useState, useEffect } from "react";
 import { activitiesService } from "../../services/ActivityService";
 import Card from "../../components/DetailedCard/Card";
 import Video from "../../components/DetailedCard/videoActivities.jsx";
-import cannoying1 from "../../assets/activitiesImages/cannoying1.jpg";
-import cannoying2 from "../../assets/activitiesImages/cannoying2.png";
-import cannoying3 from "../../assets/activitiesImages/cannoying3.png";
-import cannoying4 from "../../assets/activitiesImages/cannoying4.png";
-import cannoying5 from "../../assets/activitiesImages/cannoying5.png";
-import cannoying6 from "../../assets/activitiesImages/cannoying6.png";
 import { Alert } from "react-bootstrap";
 
 function Cannoying() {
@@ -100,7 +94,7 @@ function Cannoying() {
                 </div>
             </div>
             <div className="w-60 m-5">
-                <Images image1={cannoying1} image2={cannoying2} image3={cannoying3} Images image4={cannoying4} image5={cannoying5} image6={cannoying6} />
+                <Images image1={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123001/cannoying5_b0pkdm.png"} image2={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123001/cannoying6_etyqxm.png"} image3={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/cannoying1_jmx21r.jpg"} Images image4={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123001/cannoying4_cwmjgh.png"} image5={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/cannoying3_s1k5oy.png"} image6={"https://res.cloudinary.com/dqj4pvyva/image/upload/v1699123000/cannoying2_fnnoun.png"} />
             </div>
         </div>
     );

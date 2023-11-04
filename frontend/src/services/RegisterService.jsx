@@ -1,18 +1,26 @@
 const baseURL = "http://localhost:3000";
-
-export const registrationService = {
-  async postRegistration({ fullName, email, user_password }) {
+export const registerService = {
+  async registerUser(fullName, email, user_password) {
     try {
-      await fetch(`${baseURL}/register`, {
-        method: "POST",
+      const response = await fetch(`${baseURL}/register`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ fullName, email, user_password }),
       });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Register status:', data);
+        return { success: true };
+      } else {
+        console.error('Register error');
+        return { error: 'Register error' };
+      }
     } catch (error) {
-      console.error("Check that all fields are correct:", error);
-      throw error;
+      console.error('Failed request:', error);
+      return { error: 'Failed request' };
     }
   },
 };

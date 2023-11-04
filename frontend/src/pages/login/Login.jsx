@@ -8,6 +8,7 @@ import {
   Image,
   Alert,
 } from "react-bootstrap";
+import { loginService } from "../../services/LoginService";
 import logotype from "../../assets/logotype/logotype.png";
 import { Link } from "react-router-dom";
 function Login() {
@@ -16,31 +17,22 @@ function Login() {
     const [showErrorAlert, setShowErrorAlert] = useState(false)
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch("http://localhost:3000/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, user_password }),
-            });
-            if (response.ok) {
-                const data = await response.json();
+        const result = await loginService.postLogin(email, user_password);
+
+        if (result.success) {
+            const data = await result.json();
                 console.log("Login status:", data);
                 if (data.message === "Welcome back!") {
                     window.location.href = "/";
                 } else {
-                    console.error('Email  or password does not match');
-                    setShowErrorAlert(true)
-                setTimeout(() => {
-                    setShowErrorAlert(false);
-                }, 10000);
+                    console.error("Email  or password does not match");
+                    setShowErrorAlert(true);
+                    setTimeout(() => {
+                        setShowErrorAlert(false);
+                    }, 10000);
                 }
-            }
-        } catch (error) {
-            console.error("Failed request:", error);
-        }
-    };
+            } 
+        } 
     return (
         <Form onSubmit={handleLoginSubmit}>
             <Container className="group-12" style={{ marginTop: "9rem" }}>

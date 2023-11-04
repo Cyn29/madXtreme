@@ -3,46 +3,38 @@ import logotype from '../../assets/logotype/logotype.png';
 import './Register.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { registerService } from '../../services/RegisterService'; 
+
 function Register() {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [user_password, setPassword] = useState('');
     const [showSuccessAlert, setShowSuccessAlert] = useState(false);
-    const [showErrorAlert, setShowErrorAlert] = useState(false)
+    const [showErrorAlert, setShowErrorAlert] = useState(false);
+
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:3000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ fullName, email, user_password }),
-            });
-            if (response.ok) {
-                const data = await response.json();
-                console.log('Registration status:', data);
-                setShowSuccessAlert(true);
-                setTimeout(() => {
-                    setShowSuccessAlert(false);
-                }, 10000);
-            } else {
-                console.error('Registration error');
-                setShowErrorAlert(true)
-                setTimeout(() => {
-                    setShowErrorAlert(false);
-                }, 10000);
-            }
-        } catch (error) {
-            console.error('Failed request:', error);
+        const result = await registerService.registerUser(fullName, email, user_password);
+
+        if (result.success) {
+            setShowSuccessAlert(true);
+            setTimeout(() => {
+                setShowSuccessAlert(false);
+            }, 10000);
+        } else if (result.error) {
+            setShowErrorAlert(true);
+            setTimeout(() => {
+                setShowErrorAlert(false);
+            }, 10000);
         }
     };
+
     return (
         <Form onSubmit={handleRegisterSubmit}>
             <Container className="register">
                 <Row className="justify-content-center mb-4">
                     <Col xs={12} md={6} lg={4}>
-                        <Link to = "/"> <Image src={logotype} fluid /> </Link>
+                        <Link to="/"> <Image src={logotype} fluid /> </Link>
                     </Col>
                 </Row>
                 <Row className="justify-content-center mb-2">
@@ -94,4 +86,5 @@ function Register() {
         </Form>
     );
 }
+
 export default Register;

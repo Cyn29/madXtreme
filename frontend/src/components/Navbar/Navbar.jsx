@@ -34,12 +34,12 @@ function Header() {
               </a>
             </li>
             <li>
-              <Link to="https://mad-xtreme.vercel.app/aboutus" aria-label="aboutus">
+              <Link to="/aboutus" aria-label="aboutus">
                 Nosotros
               </Link>
             </li>
             <li>
-              <Link to="https://mad-xtreme.vercel.app/contact" aria-label="contact">
+              <Link to="/contact" aria-label="contact">
                 Contacto
               </Link>
             </li>
@@ -60,13 +60,13 @@ function Header() {
           <a href="/" className="navbar-li" aria-label="home">
             Inicio
           </a>
-          <a href="https://mad-xtreme.vercel.app/aboutus" className="navbar-li" aria-label="aboutus">
+          <a href="/aboutus" className="navbar-li" aria-label="aboutus">
             Nosotros
           </a>
-          <a href="https://mad-xtreme.vercel.app/contact" className="navbar-li" aria-label="contact">
+          <a href="/contact" className="navbar-li" aria-label="contact">
             Contacto
           </a>
-          <a href="https://mad-xtreme.vercel.app/login">
+          <a href="/login">
             <img
               className="login-icon"
               aria-label="login"

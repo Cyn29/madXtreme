@@ -7,12 +7,12 @@ import "./Home.css";
 function Home() {
   const [activities, setActivities] = useState([]);
   const activitiesLinks = [
-    "https://mad-xtreme.vercel.app/climbing",
-    "https://mad-xtreme.vercel.app/hiking",
-    "https://mad-xtreme.vercel.app/mountainbike",
-    "https://mad-xtreme.vercel.app/cannoying",
-    "https://mad-xtreme.vercel.app/boulder",
-    "https://mad-xtreme.vercel.app/kayak",
+    "http://localhost:5173/climbing",
+    "http://localhost:5173/hiking",
+    "http://localhost:5173/mountainbike",
+    "http://localhost:5173/cannoying",
+    "http://localhost:5173/boulder",
+    "http://localhost:5173/kayak",
   ];
   useEffect(() => {
     activitiesService

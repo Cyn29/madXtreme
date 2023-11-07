@@ -1,4 +1,4 @@
-const baseURL = "https://madxtreme-ecommerce.onrender.com/";
+const baseURL = "http://localhost:3000";
 export const registerService = {
   async registerUser(fullName, email, user_password) {
     try {
